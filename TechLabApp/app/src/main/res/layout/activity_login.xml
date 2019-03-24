@@ -105,6 +105,15 @@
                 android:text="@string/action_sign_in"
                 android:textStyle="bold" />
 
+            <Button
+                android:id="@+id/Create_account"
+                android:layout_width="263dp"
+                android:layout_height="wrap_content"
+                android:onClick="onButtonClick"
+                android:text="Register"
+                android:visibility="visible" />
         </LinearLayout>
     </ScrollView>
+
+
 </LinearLayout>
