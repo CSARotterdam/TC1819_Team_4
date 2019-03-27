@@ -3,7 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.productinfo.MainActivity">
     <item
-        android:id="@+id/action_settings"
+        android:id="@+id/action_toMenu"
+        android:orderInCategory="50"
+        android:title="Main Menu"
+        app:showAsAction="never"
+        />
+    <item
+        android:id="@+id/action_ToS"
         android:orderInCategory="100"
         android:title="Terms of Service"
         app:showAsAction="never" />
