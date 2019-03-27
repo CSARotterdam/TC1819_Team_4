@@ -3,6 +3,7 @@ package com.example.techlabapp;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
@@ -19,6 +20,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.text.TextUtils;
+import android.view.Display;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -345,5 +347,21 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             mAuthTask = null;
             showProgress(false);
         }
+
+        public void onButtonClick(view v)
+        {
+            editText a = {EditText} findViewById(R.id.HRname);
+            String str = a.getText() .toString();
+
+            Intent i = new Intent(LoginActivity.this, Display.Class);
+            i.putExtra("Username", str);
+            startActivity(i);
+
+        }
+        if(v.getid() == R.id.Bsignup)
+        Intent i = new Intent(LoginActivity.this, signup.Class);
+
+        startActivity(i);
+
     }
 }

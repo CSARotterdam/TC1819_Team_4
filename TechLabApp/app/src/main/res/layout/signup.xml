@@ -5,10 +5,10 @@
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/Name"
+        android:id="@+id/name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Name"
+        android:text="name"
         android:textSize="36sp"
         android:textStyle="bold" />
 
@@ -38,7 +38,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Student Number"
-        android:textSize="36sp" />
+        android:textSize="36sp"
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/HRnmr"
@@ -52,7 +53,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Password"
-        android:textSize="36sp" />
+        android:textSize="36sp"
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/HRpass1"
@@ -66,7 +68,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Confirm Password"
-        android:textSize="36sp" />
+        android:textSize="36sp"
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/HRpass2"
