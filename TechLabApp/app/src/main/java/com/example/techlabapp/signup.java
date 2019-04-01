@@ -12,6 +12,8 @@ public class signup extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.signup);
+        String email = getIntent().getStringExtra("email");
+        TextView HR = (TextView)findViewById(R.id.HRemail);
     }
     public void  onSignUpClick(View v)
     {

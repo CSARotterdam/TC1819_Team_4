@@ -348,20 +348,20 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             showProgress(false);
         }
 
-        public void onButtonClick(view v)
-        {
-            editText a = {EditText} findViewById(R.id.HRname);
-            String str = a.getText() .toString();
+        public void onButtonClick(View v) {
+            findViewById(R.id.HRemail);
+            String str = mEmail;
 
-            Intent i = new Intent(LoginActivity.this, Display.Class);
-            i.putExtra("Username", str);
+            Intent i = new Intent(LoginActivity.this, Display.class);
+            i.putExtra("email", str);
             startActivity(i);
 
+
+
+            if (v.getId() == R.id.email_sign_in_button) {
+
+                startActivity(i);
+            }
         }
-        if(v.getid() == R.id.Bsignup)
-        Intent i = new Intent(LoginActivity.this, signup.Class);
-
-        startActivity(i);
-
     }
 }
