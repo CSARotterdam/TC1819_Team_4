@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Main Menu</string>
+    <string name="Logo_Desc">The Hogeschool Rotterdam Logo</string>
+    <string name="Inventory_Button">View Inventory</string>
+    <string name="Reserve_Button">Reserve Item</string>
+    <string name="My_Items_Button">My Items</string>
+    <string name="ToS_Button">Terms of Service</string>
+    <string name="Log_Out_Button">Log Out</string>
+    <string name="Profile_Button">Account Settings</string>
 </resources>

@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity{
         Button openTOS = findViewById(R.id.tos_btn);
         openTOS.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                System.out.println("Button Clicked!");
+                System.out.println("Pressed ToS Button");
 
                 Intent openTOS = new Intent(getApplicationContext(), TOS.class);
                 startActivity(openTOS);
