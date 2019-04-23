@@ -7,7 +7,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class signup extends Activity {
+/* public class signup extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,5 +40,45 @@ public class signup extends Activity {
 
         }
 
+    }
+} */
+
+public class signup extends Activity {
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        setContentView(R.layout.signup);
+
+        String email = getIntent().getStringExtra("email");
+        TextView HR = (TextView)findViewById(R.id.HRemail);
+
+        final Button button = findViewById(R.id.button_id);
+        button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // Code here executes on main thread after user presses button
+                if(v.getId() == R.id.signup_button)
+                {
+                    EditText name = (EditText)findViewById(R.id.HRname);
+                    EditText email = (EditText)findViewById(R.id.HRemail);
+                    EditText stdnr = (EditText)findViewById(R.id.HRnmr);
+                    EditText Password = (EditText)findViewById(R.id.HRpass1);
+                    EditText Confirm_Password = (EditText)findViewById(R.id.HRpass2);
+
+                    String namestr = name.getText().toString();
+                    String emailstr = email.getText().toString();
+                    String stdnrstr = stdnr.getText().toString();
+                    String Passwordstr = Password.getText().toString();
+                    String Confirm_Passwordstr = Confirm_Password.getText().toString();
+
+                    if(!Passwordstr.equals(Confirm_Passwordstr))
+                    {
+                        //popup msg
+                        Toast pass = Toast.makeText(signup.this, "Passwords don't match!", Toast.LENGTH_SHORT);
+                        pass.show();
+                    }
+
+                }
+            }
+        });
     }
 }
