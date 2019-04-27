@@ -52,7 +52,7 @@ public class signup extends Activity {
         String email = getIntent().getStringExtra("email");
         TextView HR = (TextView)findViewById(R.id.HRemail);
 
-        final Button button = findViewById(R.id.button_id);
+        final Button button = findViewById(R.id.signup_button);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Code here executes on main thread after user presses button
