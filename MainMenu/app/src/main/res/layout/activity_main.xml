@@ -12,84 +12,110 @@
         android:id="@+id/hrlogo"
         android:layout_width="546dp"
         android:layout_height="310dp"
+        android:contentDescription="@string/Logo_Desc"
         android:src="@drawable/logohr2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHeight_percent="0.425"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintVertical_bias="0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0" />
 
     <Button
         android:id="@+id/inventory_btn"
-        android:layout_width="250dp"
-        android:layout_height="60dp"
-        android:text="View Inventory"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="@string/Inventory_Button"
+        android:background="@color/White"
+        android:textColor="@color/Black"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintVertical_bias="0.45"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        app:layout_constraintVertical_bias="0.45"
+        app:layout_constraintHeight_percent="0.08"
+        app:layout_constraintWidth_percent="0.7" />
 
     <Button
         android:id="@+id/usr_reserve_btn"
-        android:layout_width="250dp"
-        android:layout_height="60dp"
-        android:text="Reserve Item"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="@string/Reserve_Button"
+        android:background="@color/White"
+        android:textColor="@color/Black"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintVertical_bias="0.55"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        app:layout_constraintVertical_bias="0.55"
+        app:layout_constraintHeight_percent="0.08"
+        app:layout_constraintWidth_percent="0.7" />
 
     <Button
         android:id="@+id/usr_items_btn"
-        android:layout_width="250dp"
-        android:layout_height="60dp"
-        android:text="My Items"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="@string/My_Items_Button"
+        android:background="@color/White"
+        android:textColor="@color/Black"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintVertical_bias="0.65"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        app:layout_constraintVertical_bias="0.65"
+        app:layout_constraintHeight_percent="0.08"
+        app:layout_constraintWidth_percent="0.7" />
 
     <Button
         android:id="@+id/tos_btn"
-        android:layout_width="125dp"
-        android:layout_height="60dp"
-        android:text="Terms of Service"
-        app:layout_constraintHorizontal_bias="0.285"
-        app:layout_constraintVertical_bias="0.75"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="@string/ToS_Button"
+        android:background="@color/White"
+        android:textColor="@color/Black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.230"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        app:layout_constraintVertical_bias="0.75"
+        app:layout_constraintHeight_percent="0.08"
+        app:layout_constraintWidth_percent="0.34" />
 
     <Button
         android:id="@+id/usr_settings_btn"
-        android:layout_width="125dp"
-        android:layout_height="60dp"
-        android:text="Account Settings"
-        app:layout_constraintHorizontal_bias="0.72"
-        app:layout_constraintVertical_bias="0.75"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="@string/Profile_Button"
+        android:background="@color/White"
+        android:textColor="@color/Black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.775"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        app:layout_constraintVertical_bias="0.75"
+        app:layout_constraintHeight_percent="0.08"
+        app:layout_constraintWidth_percent="0.34" />
 
     <Button
         android:id="@+id/logout_btn"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:text="Log Out"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="@string/Log_Out_Button"
+        android:background="@color/White"
+        android:textColor="@color/Black"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintVertical_bias="0.9"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        app:layout_constraintVertical_bias="0.9"
+        app:layout_constraintHeight_percent="0.08"
+        app:layout_constraintWidth_percent="0.5" />
 
 </android.support.constraint.ConstraintLayout>

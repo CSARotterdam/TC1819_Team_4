@@ -14,12 +14,54 @@ public class MainActivity extends AppCompatActivity{
         setContentView(R.layout.activity_main);
 
         Button openTOS = findViewById(R.id.tos_btn);
+        Button openInventory = findViewById(R.id.inventory_btn);
+        Button openMyItems = findViewById(R.id.usr_items_btn);
+        Button openReserveItems = findViewById(R.id.usr_reserve_btn);
+        Button openAccountSettings = findViewById(R.id.usr_settings_btn);
+
+        openInventory.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                System.out.println("Pressed INV Button");
+
+                Intent openInventory = new Intent(getApplicationContext(), Inventory.class);
+                startActivity(openInventory);
+
+            }
+         });
+
         openTOS.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                System.out.println("Button Clicked!");
+                System.out.println("Pressed ToS Button");
 
                 Intent openTOS = new Intent(getApplicationContext(), TOS.class);
                 startActivity(openTOS);
+            }
+        });
+
+        openMyItems.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                System.out.println("Pressed My Items Button");
+
+                Intent openMyItems = new Intent(getApplicationContext(), MyItems.class);
+                startActivity(openMyItems);
+            }
+        });
+
+        openReserveItems.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                System.out.println("Pressed Reserve Items Button");
+
+                Intent openReserveItems = new Intent(getApplicationContext(), ReserveItems.class);
+                startActivity(openReserveItems);
+            }
+        });
+
+        openAccountSettings.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                System.out.println("Pressed Account Settings Button");
+
+                Intent openAccountSettings = new Intent(getApplicationContext(), AccountSettings.class);
+                startActivity(openAccountSettings);
             }
         });
     }

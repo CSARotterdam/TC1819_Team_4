@@ -1,0 +1,37 @@
+﻿These Terms of Service apply to the use of our service, including all used items, identification, return cards and insurance surrounding the used items and all service related documents. By using the items provided by our service, including handing in your student pass and possessing a return card, you agree to our Terms of Service. In case you have agreed to different terms of service provided by us, the terms of the agreement take priority over the terms provided in this document.
+
+All parties involved:
+The student, referred to as user. 
+The peercoach or teacher, referred to as Techlab Staff.
+Techlab Staff - Stelian Paraschiv, Brian de Lange and John Grobben.
+Identification is a reference to your student pass provided by Hogeschool Rotterdam.
+
+
+Article 1 – Service Description
+
+This service allows users to loan items from the Techlab. In order to manage this service properly, the Techlab Staff is required to possess the identification provided by the user. The identification, together with the signatures of the user and the Techlab Staff, confirm the use of the service and provide certainty regarding the loaning and return of Techlab items.
+
+
+Article 2 – Use of the service
+
+1.	The user agrees to handing in their valid identification and agrees to making their identification available as collateral for the Techlab Staff.
+2.	The user agrees to their identification, as well as the documentation created after the handing in of their identification, being used as evidence of the use of the service.
+3.	The Techlab Staff ensures the user of the safe return of their identification in case all returned items are returned in the correct state. (See article 3.1)
+4.	The user agrees to returning the loaned items before the deadline. The deadline will be provided by Techlab Staff. The user is aware of the deadlines linked to their loaned item(s).
+5.	The user acknowledges that none of the loaned items are allowed to leave the building, located at Wijnhaven 107, Rotterdam. The user is agrees to this restriction and shall only deviate from this when this restriction is removed or changed by Techlab Staff.
+6.	After successful return of all loaned items, Techlab staff will process the return properly via documentation within the Techlab.
+
+
+Article 3 – The loaning of items
+
+1.	Correct State means that any of the returned items should be returned in the same state as when handed out to the user.
+a.	In case the state of the loaned items differs from the correct state, a report will be made containing all working features of the item(s) and any damages. The life expectancy of the items will be factored in during the writing of this report. De Techlab Staff will take care of the report entirely.
+2.	The deadline for the return of the item will be written on the loan form. In case this deadline is not stated on the loan form, the deadline will be assumed to be on the date of issue.
+a.	In case the Emerging Technologies Lab is closed on the moment of return, the user will be able to return the loaned item(s) to any of the Techlab Staff listen on the top of this document.
+b.	In case multiple deadlines are given for a single item, the earliest listed deadline should be used.
+c.	In case the item is not returned before the deadline, a report will be made. The Techlab Staff will attempt to contact the user via Email first. If no contact is made via Email, the Techlab Staff will attempt to contact the user in other ways.
+3.	All loaned items should remain inside of the Hogeschool Rotterdam building. Exceptions may be made for certain items but only if this is stated on the loan form.
+a.	In case several loaned items have different location restrictions and return dates, the user will have to make use of a loan form for each differing item.
+b.	In case the loaned item has left the building while this was not permitted by Techlab Staff, actions deemed necessary by Hogeschool Rotterdam will be taken.
+4.	Loaned items are to be returned in a correct state (See Article 3.1) while the loan form is present. With the use of the loan form, a return card will be made by Techlab Staff.
+5.	Upon the return on all loaned items, the return is processed via administrative reports within the Techlab via return cards. This only happens if all items have been returned properly.
