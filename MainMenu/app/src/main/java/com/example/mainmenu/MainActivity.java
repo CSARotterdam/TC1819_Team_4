@@ -42,8 +42,10 @@ public class MainActivity extends AppCompatActivity{
             public void onClick(View v) {
                 System.out.println("Pressed My Items Button");
 
-                Intent openMyItems = new Intent(getApplicationContext(), MyItems.class);
-                startActivity(openMyItems);
+                //Intent openMyItems = new Intent(getApplicationContext(), MyItems.class);
+                //startActivity(openMyItems);
+                Intent openProductInfo = new Intent(getApplicationContext(), ProductInfo.class);
+                startActivity(openProductInfo);
             }
         });
 
