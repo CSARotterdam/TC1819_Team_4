@@ -1,6 +1,8 @@
 package com.example.mainmenu;
 
+import android.graphics.Bitmap;
 import android.media.Image;
+import android.net.Uri;
 
 import java.net.URL;
 
@@ -9,12 +11,12 @@ public class Product {
     String ID;
     String name;
     String description;
-    URL webPage;
-    Image picture;
+    Uri webPage;
+    Bitmap picture;
     int currentAmount;
     int maxAmount;
 
-    Product(String ID, String name, String description, URL webPage, Image picture, int currentAmount, int maxAmount) {
+    Product(String ID, String name, String description, Uri webPage, Bitmap picture, int currentAmount, int maxAmount) {
         this.ID = ID;
         this.name = name;
         this.description = description;
@@ -25,7 +27,7 @@ public class Product {
 
     }
 
-    public Image getPicture() {
+    public Bitmap getPicture() {
         return picture;
     }
 
@@ -49,7 +51,7 @@ public class Product {
         return name;
     }
 
-    public URL getWebPage() {
+    public Uri getWebPage() {
         return webPage;
     }
 

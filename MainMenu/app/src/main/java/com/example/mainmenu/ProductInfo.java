@@ -24,34 +24,36 @@ import java.util.List;
 
 public class ProductInfo extends AppCompatActivity {
 
-    List<String> testList;
+    //Product testProduct = new Product("idIguess", "VR Headset", "test string about VR headsets or something I don't know I just programmed this page I didn't make VR headsets", Uri.parse("https://en.wikipedia.org/wiki/Virtual_reality_headset"), BitmapFactory.decodeResource(getResources(),R.drawable.hrlogo), 2, 4);
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.info_content);
-/*
-        final ArrayList<String> testList = new ArrayList<String>();
-        testList.add("https://en.wikipedia.org/wiki/Virtual_reality_headset");
-        testList.add("VR Headset");
-        testList.add("test string about VR headsets or something I don't know I just programmed this page I didn't make VR headsets");
+
+        final Product testProduct = new Product("idIguess", "VR Headset", "test string about VR headsets or something I don't know I just programmed this page I didn't make VR headsets", Uri.parse("https://en.wikipedia.org/wiki/Virtual_reality_headset"), BitmapFactory.decodeResource(getResources(),R.drawable.hrlogo), 2, 4);
+
+
+        //final ArrayList<String> testList = new ArrayList<String>();
+        //testList.add("https://en.wikipedia.org/wiki/Virtual_reality_headset");
+        //testList.add("VR Headset");
+        //testList.add("test string about VR headsets or something I don't know I just programmed this page I didn't make VR headsets");
         TextView title = (TextView) findViewById(R.id.itemName);
         TextView body = findViewById(R.id.itemInfo);
         TextView wiki = findViewById(R.id.MoreInfo);
         ImageView exampleImage = findViewById(R.id.imageFile);
-        title.setText(testList.get(1));
-        body.setText(testList.get(2));
-        Bitmap b=BitmapFactory.decodeResource(getResources(),R.drawable.hrlogo);
-        exampleImage.setImageBitmap(b);
+        title.setText(testProduct.getName());
+        body.setText(testProduct.getDescription());
+        exampleImage.setImageBitmap(testProduct.getPicture());
         wiki.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(testList.get(0)));
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, testProduct.getWebPage());
                 startActivity(browserIntent);
 
             }
-        });*/
+        });
     }
 
 
