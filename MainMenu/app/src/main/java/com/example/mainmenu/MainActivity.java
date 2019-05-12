@@ -44,6 +44,8 @@ public class MainActivity extends AppCompatActivity{
 
                 Intent openMyItems = new Intent(getApplicationContext(), MyItems.class);
                 startActivity(openMyItems);
+                //Intent openProductInfo = new Intent(getApplicationContext(), ProductInfo.class);
+                //startActivity(openProductInfo);
             }
         });
 

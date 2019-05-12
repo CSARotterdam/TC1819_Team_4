@@ -25,6 +25,8 @@
         </activity>
         <activity android:name=".MyItems">
         </activity>
+        <activity android:name=".ProductInfo">
+        </activity>
 
     </application>
 
