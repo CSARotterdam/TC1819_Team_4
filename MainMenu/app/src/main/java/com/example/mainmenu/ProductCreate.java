@@ -53,6 +53,7 @@ private String productID;
             try {
                 bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), selectedImage);
                 image.setImageBitmap(bitmap);
+                imageBitmap = bitmap;
             } catch (FileNotFoundException e) {
                 // TODO Auto-generated catch block
                 e.printStackTrace();
