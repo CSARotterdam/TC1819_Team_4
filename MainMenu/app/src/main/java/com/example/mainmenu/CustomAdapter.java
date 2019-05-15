@@ -34,11 +34,9 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, final int position) {
-        // set the data in items
         holder.name.setText(productName.get(position));
         holder.manufacturer.setText(product_manufacturer.get(position));
         holder.prodID.setText(product_id.get(position));
-        // implement setOnClickListener event on item view.
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

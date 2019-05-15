@@ -28,19 +28,18 @@ public class Inventory extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.inventory);
-        RecyclerView recyclerView = findViewById(R.id.recyclerView);
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(linearLayoutManager);
 
         try {
             JSONObject obj = new JSONObject(loadJSONFromAsset());
-            JSONArray userArray = obj.getJSONArray("users");
-            for (int i = 0; i < userArray.length(); i++) {
-                JSONObject userDetail = userArray.getJSONObject(i);
-                productName.add(userDetail.getString("Product: "));
-                product_manufacturer.add(userDetail.getString("Made by: "));
-                JSONObject contact = userDetail.getJSONObject("contact");
-                product_id.add(contact.getString("Product Id: "));
+            JSONArray item = obj.getJSONArray("items");
+            for (int i = 0; i < item.length(); i++) {
+                JSONObject itemDetail = item.getJSONObject(i);
+                productName.add(itemDetail.getString("productName"));
+                product_manufacturer.add(itemDetail.getString("product_manufacturer"));
+                product_id.add(itemDetail.getString("product_id"));
             }
         } catch (JSONException e) {
             e.printStackTrace();
@@ -48,12 +47,14 @@ public class Inventory extends AppCompatActivity{
 
         CustomAdapter customAdapter = new CustomAdapter(Inventory.this, productName, product_manufacturer, product_id);
         recyclerView.setAdapter(customAdapter);
+
+
     }
 
     public String loadJSONFromAsset() {
         String json = null;
         try {
-            InputStream is = getResources().openRawResource(R.raw.invelectronics);
+            InputStream is = getAssets().open("invelectronics.json");
             int size = is.available();
             byte[] buffer = new byte[size];
             is.read(buffer);
