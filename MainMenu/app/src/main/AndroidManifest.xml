@@ -29,6 +29,7 @@
         <activity android:name=".AccountSettings" />
         <activity android:name=".ReserveItems" />
         <activity android:name=".MyItems" />
+        <activity android:name=".ProductCreate"/>
     </application>
 
 </manifest>
