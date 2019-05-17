@@ -13,10 +13,11 @@
         android:layout_marginTop="126dp"
         android:layout_marginBottom="8dp"
         android:ems="10"
-        android:hint="Name"
+        android:hint="UserName"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.08"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
