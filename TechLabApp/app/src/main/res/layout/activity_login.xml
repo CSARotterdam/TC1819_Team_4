@@ -24,8 +24,9 @@
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
-        android:layout_height="316dp"
+        android:layout_height="325dp"
         android:background="#cc0033"
+        android:contentDescription="@string/picture_desc"
         app:srcCompat="@drawable/logohr" />
 
     <ScrollView
@@ -105,6 +106,15 @@
                 android:text="@string/action_sign_in"
                 android:textStyle="bold" />
 
+            <Button
+                android:id="@+id/Create_account"
+                android:layout_width="263dp"
+                android:layout_height="wrap_content"
+                android:onClick="onButtonClick"
+                android:text="Register"
+                android:visibility="visible" />
         </LinearLayout>
     </ScrollView>
+
+
 </LinearLayout>
