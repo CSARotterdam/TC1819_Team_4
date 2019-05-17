@@ -4,7 +4,7 @@ import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -18,7 +18,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class RegisterActivity extends AppCompatActivity {
 
-    private EditText userName, userPassword, userEmail;
+    private EditText userNickName, userPassword, userEmail, userID, userClass, userName,userSurname, userPhone, userBday ;
     private Button regButton;
     private TextView userLogin;
     private FirebaseAuth firebaseAuth;
@@ -68,22 +68,28 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     private void setupUIViews(){
-        userName = (EditText)findViewById(R.id.etUserName);
+        userNickName = (EditText)findViewById(R.id.etUserName);
         userPassword = (EditText)findViewById(R.id.etUserPassword);
         userEmail = (EditText)findViewById(R.id.etUserEmail);
         regButton = (Button)findViewById(R.id.btnRegister);
         userLogin = (TextView)findViewById(R.id.tvUserLogin);
+        userID = (EditText)findViewById(R.id.etID);
+        userClass = (EditText)findViewById(R.id.etClass);
+        userName = (EditText)findViewById(R.id.etName);
+        userPhone = (EditText)findViewById(R.id.etPhone);
+        userSurname = (EditText)findViewById(R.id.etSurName);
+        userBday = (EditText)findViewById(R.id.etBday);
     }
 
 
     private boolean validate(){
         Boolean result = false;
 
-        String name = userName.getText().toString();
+        String Username = userNickName.getText().toString();
         String password = userPassword.getText().toString();
         String email = userEmail.getText().toString();
 
-        if(name.isEmpty() || password.isEmpty() || email.isEmpty() ){
+        if(Username.isEmpty() || password.isEmpty() || email.isEmpty() ){
             Toast.makeText(this, "Please enter all details", Toast.LENGTH_SHORT).show();
         }else {
             result = true;
