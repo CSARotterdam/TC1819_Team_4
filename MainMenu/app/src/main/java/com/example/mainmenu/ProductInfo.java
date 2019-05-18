@@ -31,8 +31,10 @@ public class ProductInfo extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.info_content);
+        Intent i = getIntent();
+        final Product testProduct = new Product(i.getStringExtra("id"),i.getStringExtra("name"),i.getStringExtra("desc"),Uri.parse(i.getStringExtra("uri")),BitmapFactory.decodeResource(getResources(),R.drawable.hrlogo),i.getIntExtra("amount",0),i.getIntExtra("amount",0));
 
-        final Product testProduct = new Product("idIguess", "VR Headset", "test string about VR headsets or something I don't know I just programmed this page I didn't make VR headsets", Uri.parse("https://en.wikipedia.org/wiki/Virtual_reality_headset"), BitmapFactory.decodeResource(getResources(),R.drawable.hrlogo), 2, 4);
+        //final Product testProduct = new Product("idIguess", "VR Headset", "test string about VR headsets or something I don't know I just programmed this page I didn't make VR headsets", Uri.parse("https://en.wikipedia.org/wiki/Virtual_reality_headset"), BitmapFactory.decodeResource(getResources(),R.drawable.hrlogo), 2, 4);
 
 
         //final ArrayList<String> testList = new ArrayList<String>();
