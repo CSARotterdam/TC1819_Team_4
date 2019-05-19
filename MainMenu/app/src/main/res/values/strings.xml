@@ -24,6 +24,11 @@
     <string name="New_User">New user? Click here!</string>
     <string name="Login">Login</string>
 
+    <!-- Registration Screen -->
+    <string name="Prev_Reg">Already have an account? Log in here!</string>
+    <string name="Register">Sign up</string>
+    <string name="Name_Title">Name:</string>
+
     <!--Testing & Development -->
     <string name="Inventory_filler">Inventory screen</string>
     <string name="Reservation_filler">Reserve Item screen</string>
