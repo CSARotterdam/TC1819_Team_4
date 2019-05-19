@@ -1,0 +1,138 @@
+[
+    {
+        "productTitle": "Taming Text",
+        "productWriter": "Grant S. Ingersoll, Thomas Morton, Andrew L. Farris",
+        "productISBN": "978-1-9339-8838-2",
+        "productPublisher": "Manning",
+        "productTotalStock": 1,
+        "productCurrentStock": 1
+    },
+    {
+        "productTitle": "iPhone and iPad Apps for Absolute Beginners",
+        "productWriter": "Dr. Rory Lewis",
+        "productISBN": "978-1-4302-2700-7",
+        "productPublisher": "Apress",
+        "productTotalStock": 1,
+        "productCurrentStock": 1
+    },
+    {
+        "productTitle": "Unlocking Android: A Developer's Guide",
+        "productWriter": "Frank Ableson, Charlie Collins, Robi Sen",
+        "productISBN": "978-1-9339-8867-2",
+        "productPublisher": "Manning",
+        "productTotalStock": 1,
+        "productCurrentStock": 1
+    },
+    {
+        "productTitle": "Building Wireless Sensor Networks",
+        "productWriter": "Robert Faludi",
+        "productISBN": "978-0-5968-0773-3",
+        "productPublisher": "O'Reilly",
+        "productTotalStock": 1,
+        "productCurrentStock": 1
+    },
+    {
+        "productTitle": "OpenGL ER 2.0 Programming Guide",
+        "productWriter": "Aaftab Munshi, Dan Ginsburg, Dave Shreiner",
+        "productISBN": "978-0-3215-0279-7",
+        "productPublisher": "Addison-Wesley",
+        "productTotalStock": 1,
+        "productCurrentStock": 1
+    },
+    {
+        "productTitle": "Data Mining with Rattle and R",
+        "productWriter": "Graham Williams",
+        "productISBN": "978-1-4419-9889-7",
+        "productPublisher": "Springer",
+        "productTotalStock": 1,
+        "productCurrentStock": 1
+    },
+    {
+        "productTitle": "Fundamentals of Computer Graphics",
+        "productWriter": "Peter Shirley",
+        "productISBN": "978-1568-81124-1",
+        "productPublisher": "A K Peters",
+        "productTotalStock": 1,
+        "productCurrentStock": 1
+    },
+    {
+        "productTitle": "Head First: Java",
+        "productWriter": "Kathy Sierra, Bert Bates",
+        "productISBN": "978-0-5960-0920-5",
+        "productPublisher": "O'Reilly",
+        "productTotalStock": 1,
+        "productCurrentStock": 1
+    },
+    {
+        "productTitle": "Head First: Design Patterns",
+        "productWriter": "Eric Freeman, Elisabeth Freeman",
+        "productISBN": "978-0-5960-0712-6",
+        "productPublisher": "O'Reilly",
+        "productTotalStock": 1,
+        "productCurrentStock": 1
+    },
+    {
+        "productTitle": "Programming with Python: Computer Vision",
+        "productWriter": "Jan Erik Solem",
+        "productISBN": "978-1-4493-1654-9",
+        "productPublisher": "O'Reilly",
+        "productTotalStock": 1,
+        "productCurrentStock": 1
+    },
+    {
+        "productTitle": "Good Relationships: the spring Data Neo4J Guide Book",
+        "productWriter": "Michael Hunger",
+        "productISBN": "978-1-1050-6556-9",
+        "productPublisher": "InfoQ",
+        "productTotalStock": 1,
+        "productCurrentStock": 1
+    },
+    {
+        "productTitle": "Natural Language Processing with Python",
+        "productWriter": "Steven Bird, Ewan Klein, Edward Loper",
+        "productISBN": "978-0-5965-1649-9",
+        "productPublisher": "O'Reilly",
+        "productTotalStock": 1,
+        "productCurrentStock": 1
+    },
+    {
+        "productTitle": "Data Mining: practical Machine learning Tools and Techniques",
+        "productWriter": "Ian H. Witten, Eibe Frank",
+        "productISBN": "978-0-1208-8407-0",
+        "productPublisher": "Morgan Kaufmann",
+        "productTotalStock": 1,
+        "productCurrentStock": 1
+    },
+    {
+        "productTitle": "Building Machine Learning Systems with Python",
+        "productWriter": "Willi Richert, Luis Pedro Coelho",
+        "productISBN": "978-1-7821-6140-0",
+        "productPublisher": "PACKT",
+        "productTotalStock": 1,
+        "productCurrentStock": 1
+    },
+    {
+        "productTitle": "Learning Android Game programming",
+        "productWriter": "Rick Rogers",
+        "productISBN": "978-0-3217-6962-6",
+        "productPublisher": "Addison-Wesley",
+        "productTotalStock": 1,
+        "productCurrentStock": 1
+    },
+    {
+        "productTitle": "Mathematics for 3D Game Programming and Computer Graphics",
+        "productWriter": "Eric Lengyel",
+        "productISBN": "978-1-4354-5886-4",
+        "productPublisher": "Course Technology",
+        "productTotalStock": 1,
+        "productCurrentStock": 1
+    },
+    {
+        "productTitle": "Practical computer vision with simplecv",
+        "productWriter": "Kurt Demaagd, Anthony Oliver, Nathan Oostendorp, Katherina Scott",
+        "productISBN": "978-1-449-32036-2",
+        "productPublisher": "O'Reilly",
+        "productTotalStock": 1,
+        "productCurrentStock": 1
+    }
+]

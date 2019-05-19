@@ -12,14 +12,16 @@ public class Product implements Serializable {
     String ID;
     String name;
     String description;
+    String manufacturer;
     Uri webPage;
     Bitmap picture;
     int currentAmount;
     int maxAmount;
 
-    Product(String ID, String name, String description, Uri webPage, Bitmap picture, int currentAmount, int maxAmount) {
+    Product(String ID, String name, String manufacturer, String description, Uri webPage, Bitmap picture, int currentAmount, int maxAmount) {
         this.ID = ID;
         this.name = name;
+        this.manufacturer = manufacturer;
         this.description = description;
         this.webPage = webPage;
         this.picture = picture;
@@ -50,6 +52,10 @@ public class Product implements Serializable {
 
     public String getName() {
         return name;
+    }
+
+    public String getManufacturer() {
+        return manufacturer;
     }
 
     public Uri getWebPage() {

@@ -1,0 +1,343 @@
+{
+    "items":[
+    {
+        "product_id": "vr-msft-hlns",
+        "product_manufacturer": "Microsoft",
+        "productCategory": "Virtual Reality",
+        "productName": "HoloLens",
+        "productTotalStock": 2,
+        "productCurrentStock": 2,
+        "productAmountBroken": 0,
+        "productURL": "https://en.wikipedia.org"
+    },
+    {
+        "product_id": "gc-sony-plst",
+        "product_manufacturer": "Sony",
+        "productCategory": "Game Console",
+        "productName": "Playstation 4",
+        "productTotalStock": 1,
+        "productCurrentStock": 1,
+        "productAmountBroken": 0,
+        "productURL": "https://en.wikipedia.org"
+    },
+    {
+        "product_id": "mc-mcpt-lcdd",
+        "product_manufacturer": "MicroPython",
+        "productCategory": "MicroComputer",
+        "productName": "LCD Display",
+        "productTotalStock": 5,
+        "productCurrentStock": 5,
+        "productAmountBroken": 0,
+        "productURL": "https://en.wikipedia.org"
+    },
+    {
+        "product_id": "mc-mcpt-cpuc",
+        "product_manufacturer": "MicroPython",
+        "productCategory": "MicroComputer",
+        "productName": "Computer Case",
+        "productTotalStock": 4,
+        "productCurrentStock": 4,
+        "productAmountBroken": 0,
+        "productURL": "https://en.wikipedia.org"
+    },
+    {
+        "product_id": "mc-mcpt-cptr",
+        "product_manufacturer": "MicroPython",
+        "productCategory": "MicroComputer",
+        "productName": "Computer",
+        "productTotalStock": 5,
+        "productCurrentStock": 5,
+        "productAmountBroken": 0,
+        "productURL": "https://en.wikipedia.org"
+    },
+    {
+        "product_id": "dr-prrt-drel",
+        "product_manufacturer": "Parrot",
+        "productCategory": "Drone",
+        "productName": "AR Drone Elite Edition",
+        "productTotalStock": 7,
+        "productCurrentStock": 7,
+        "productAmountBroken": 0,
+        "productURL": "https://en.wikipedia.org"
+    },
+    {
+        "product_id": "rc-qunm-vndl",
+        "product_manufacturer": "Quanum",
+        "productCategory": "Radio Controlled",
+        "productName": "Vandal",
+        "productTotalStock": 1,
+        "productCurrentStock": 1,
+        "productAmountBroken": 0,
+        "productURL": "https://en.wikipedia.org"
+    },
+    {
+        "product_id": "ga-eapb-fifa",
+        "product_manufacturer": "EA",
+        "productCategory": "Game",
+        "productName": "FIFA 18",
+        "productTotalStock": 1,
+        "productCurrentStock": 1,
+        "productAmountBroken": 0,
+        "productURL": "https://en.wikipedia.org"
+    },
+    {
+        "product_id": "ga-bana-tkkn",
+        "product_manufacturer": "Bandai Namco",
+        "productCategory": "Game",
+        "productName": "Tekken 7",
+        "productTotalStock": 1,
+        "productCurrentStock": 1,
+        "productAmountBroken": 0,
+        "productURL": "https://en.wikipedia.org"
+    },
+    {
+        "product_id": "st-amzn-echo",
+        "product_manufacturer": "Amazon",
+        "productCategory": "Smart Technology",
+        "productName": "Echo Dot",
+        "productTotalStock": 2,
+        "productCurrentStock": 2,
+        "productAmountBroken": 0,
+        "productURL": "https://en.wikipedia.org"
+    },
+    {
+        "product_id": "mc-lmnt-rpiw",
+        "product_manufacturer": "Element14",
+        "productCategory": "MicroComputer",
+        "productName": "Raspberry Pi Camera",
+        "productTotalStock": 5,
+        "productCurrentStock": 5,
+        "productAmountBroken": 0,
+        "productURL": "https://en.wikipedia.org"
+    },
+    {
+        "product_id": "mc-lmnt-rpic",
+        "product_manufacturer": "Element14",
+        "productCategory": "MicroComputer",
+        "productName": "Raspberry Pi 3 Case",
+        "productTotalStock": 5,
+        "productCurrentStock": 5,
+        "productAmountBroken": 0,
+        "productURL": "https://en.wikipedia.org"
+    },
+    {
+        "product_id": "mc-dxtr-grve",
+        "product_manufacturer": "Dexter",
+        "productCategory": "MicroComputer",
+        "productName": "Grove Pi",
+        "productTotalStock": 12,
+        "productCurrentStock": 12,
+        "productAmountBroken": 0,
+        "productURL": "https://en.wikipedia.org"
+    },
+    {
+        "product_id": "mc-lmnt-rpib",
+        "product_manufacturer": "Element14",
+        "productCategory": "MicroComputer",
+        "productName": "Raspberry Pi 3 Model B",
+        "productTotalStock": 21,
+        "productCurrentStock": 21,
+        "productAmountBroken": 0,
+        "productURL": "https://en.wikipedia.org"
+    },
+    {
+        "product_id": "mc-lmnt-rpis",
+        "product_manufacturer": "Element14",
+        "productCategory": "MicroComputer",
+        "productName": "Raspberry Pi Micro SD",
+        "productTotalStock": 20,
+        "productCurrentStock": 20,
+        "productAmountBroken": 0,
+        "productURL": "https://en.wikipedia.org"
+    },
+    {
+        "product_id": "mc-lmnt-rpip",
+        "product_manufacturer": "Element14",
+        "productCategory": "MicroComputer",
+        "productName": "Raspberry Pi Power Supply",
+        "productTotalStock": 21,
+        "productCurrentStock": 21,
+        "productAmountBroken": 0,
+        "productURL": "https://en.wikipedia.org"
+    },
+    {
+        "product_id": "vr-leap-mion",
+        "product_manufacturer": "Leap",
+        "productCategory": "Virtual Reality",
+        "productName": "Motion",
+        "productTotalStock": 5,
+        "productCurrentStock": 5,
+        "productAmountBroken": 0,
+        "productURL": "https://en.wikipedia.org"
+    },
+    {
+        "product_id": "vr-leap-dvpr",
+        "product_manufacturer": "Leap",
+        "productCategory": "Virtual Reality",
+        "productName": "Developer Mount",
+        "productTotalStock": 5,
+        "productCurrentStock": 5,
+        "productAmountBroken": 0,
+        "productURL": "https://en.wikipedia.org"
+    },
+    {
+        "product_id": "kb-oooo-musb",
+        "product_manufacturer": "Brandless",
+        "productCategory": "Kabels",
+        "productName": "Micro-USB",
+        "productTotalStock": 3,
+        "productCurrentStock": 3,
+        "productAmountBroken": 0,
+        "productURL": "https://en.wikipedia.org"
+    },
+    {
+        "product_id": "kb-dlck-vgak",
+        "product_manufacturer": "DeLock",
+        "productCategory": "Kabels",
+        "productName": "VGA",
+        "productTotalStock": 2,
+        "productCurrentStock": 2,
+        "productAmountBroken": 0,
+        "productURL": "https://en.wikipedia.org"
+    },
+    {
+        "product_id": "kb-dlck-dvik",
+        "product_manufacturer": "DeLock",
+        "productCategory": "Kabels",
+        "productName": "DVI",
+        "productTotalStock": 1,
+        "productCurrentStock": 1,
+        "productAmountBroken": 0,
+        "productURL": "https://en.wikipedia.org"
+    },
+    {
+        "product_id": "ie-ggle-wifi",
+        "product_manufacturer": "Google",
+        "productCategory": "Internet",
+        "productName": "WiFi",
+        "productTotalStock": 1,
+        "productCurrentStock": 1,
+        "productAmountBroken": 0,
+        "productURL": "https://en.wikipedia.org"
+    },
+    {
+        "product_id": "kb-oooo-utpk",
+        "product_manufacturer": "Brandless",
+        "productCategory": "Kabels",
+        "productName": "UTP",
+        "productTotalStock": 2,
+        "productCurrentStock": 2,
+        "productAmountBroken": 0,
+        "productURL": "https://en.wikipedia.org"
+    },
+    {
+        "product_id": "kb-oooo-adap",
+        "product_manufacturer": "Brandless",
+        "productCategory": "Kabels",
+        "productName": "Adapter",
+        "productTotalStock": 2,
+        "productCurrentStock": 2,
+        "productAmountBroken": 0,
+        "productURL": "https://en.wikipedia.org"
+    },
+    {
+        "product_id": "sm-tbii-eytr",
+        "product_manufacturer": "Tobii",
+        "productCategory": "Smart Technology",
+        "productName": "Eye Tracker",
+        "productTotalStock": 5,
+        "productCurrentStock": 5,
+        "productAmountBroken": 0,
+        "productURL": "https://en.wikipedia.org"
+    },
+    {
+        "product_id": "st-esti-lcbc",
+        "product_manufacturer": "Estimote",
+        "productCategory": "Smart Technology",
+        "productName": "Location Beacons",
+        "productTotalStock": 5,
+        "productCurrentStock": 5,
+        "productAmountBroken": 0,
+        "productURL": "https://en.wikipedia.org"
+    },
+    {
+        "product_id": "st-esti-lebc",
+        "product_manufacturer": "Estimote",
+        "productCategory": "Smart Technology",
+        "productName": "Low energy Location beacon",
+        "productTotalStock": 10,
+        "productCurrentStock": 10,
+        "productAmountBroken": 0,
+        "productURL": "https://en.wikipedia.org"
+    },
+    {
+        "product_id": "st-esti-debc",
+        "product_manufacturer": "Estimote",
+        "productCategory": "Smart Technology",
+        "productName": "Dev Preview Location Beacon",
+        "productTotalStock": 2,
+        "productCurrentStock": 2,
+        "productAmountBroken": 0,
+        "productURL": "https://en.wikipedia.org"
+    },
+    {
+        "product_id": "vr-htcv-vive",
+        "product_manufacturer": "HTC",
+        "productCategory": "Virtual Reality",
+        "productName": "Vive",
+        "productTotalStock": 3,
+        "productCurrentStock": 3,
+        "productAmountBroken": 1,
+        "productURL": "https://en.wikipedia.org"
+    },
+    {
+        "product_id": "vr-vrie-vltn",
+        "product_manufacturer": "VRi",
+        "productCategory": "Virtual Reality",
+        "productName": "Evolution",
+        "productTotalStock": 5,
+        "productCurrentStock": 5,
+        "productAmountBroken": 0,
+        "productURL": "https://en.wikipedia.org"
+    },
+    {
+        "product_id": "vr-vrbx-vrbx",
+        "product_manufacturer": "VRBox",
+        "productCategory": "Virtual Reality",
+        "productName": "VRBox",
+        "productTotalStock": 5,
+        "productCurrentStock": 5,
+        "productAmountBroken": 0,
+        "productURL": "https://en.wikipedia.org"
+    },
+    {
+        "product_id": "dr-prrt-drpw",
+        "product_manufacturer": "Parrot",
+        "productCategory": "Drone",
+        "productName": "AR Drone Power Edition",
+        "productTotalStock": 2,
+        "productCurrentStock": 2,
+        "productAmountBroken": 1,
+        "productURL": "https://en.wikipedia.org"
+    },
+    {
+        "product_id": "vr-ocls-rift",
+        "product_manufacturer": "Oculus",
+        "productCategory": "Virtual Reality",
+        "productName": "Rift",
+        "productTotalStock": 3,
+        "productCurrentStock": 3,
+        "productAmountBroken": 0,
+        "productURL": "https://en.wikipedia.org"
+    },
+    {
+        "product_id": "vr-coma-vrpc",
+        "product_manufacturer": "Cooler Master",
+        "productCategory": "Computer",
+        "productName": "VR-PC",
+        "productTotalStock": 1,
+        "productCurrentStock": 1,
+        "productAmountBroken": 0,
+        "productURL": "https://en.wikipedia.org"
+    }
+]}
