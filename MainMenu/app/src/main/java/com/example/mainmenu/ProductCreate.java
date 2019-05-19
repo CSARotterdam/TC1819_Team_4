@@ -49,7 +49,7 @@ private Button creaButton;
         creaButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //if (validate()) {
+                if (validate()) {
                     productName = nameText.getText().toString().trim();
                     productDesc = descText.getText().toString().trim();
                     productAmount = Integer.parseInt(numText.getText().toString().trim());
@@ -64,7 +64,7 @@ private Button creaButton;
                     openProductInfo.putExtra("uri",productUri);
                     openProductInfo.putExtra("amount",productAmount);
                     startActivity(openProductInfo);
-                //}
+                }
 
             }
         });
