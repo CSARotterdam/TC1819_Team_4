@@ -32,6 +32,21 @@
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="16dp" />
 
+    <TextView
+        android:id="@+id/itemManufaturer"
+        android:layout_width="394dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:gravity="center"
+        android:text="null"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/imageFile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
     <ImageView
         android:id="@+id/imageFile"
         android:layout_width="413dp"
