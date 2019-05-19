@@ -21,6 +21,12 @@
     <!-- Inventory Screen -->
     <string name="Inventory_Header">Inventory</string>
 
+    <!--Login Screen -->
+    <string name="Email_Title2">Email</string>
+    <string name="Password_Title">Password</string>
+    <string name="New_User">New user? Click here!</string>
+    <string name="Login">Login</string>
+
     <!--Testing & Development -->
     <string name="Inventory_filler">Inventory screen</string>
     <string name="Reservation_filler">Reserve Item screen</string>
