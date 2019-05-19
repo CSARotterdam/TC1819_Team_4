@@ -28,4 +28,5 @@
     <string name="UserName_Filler">User1293920</string>
     <string name="Email_Filler">ExampleUser1502@email.com</string>
     <string name="StudentNum_Filler">0123456</string>
+    <string name="nickname">NickName</string>
 </resources>
