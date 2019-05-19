@@ -2,10 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cc7bfd4b-6e7e-4b47-99dd-a9791a1a3e9d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MainMenu/.idea/codeStyles/Project.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MainMenu/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/MainMenu/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MainMenu/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/MainMenu/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,34 +33,24 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="TC1819_Team_4" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TC1819_Team_4" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TC1819_Team_4" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TC1819_Team_4" type="462c0819:PsiDirectoryNode" />
-              <item name="MainMenu" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TC1819_Team_4" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TC1819_Team_4" type="462c0819:PsiDirectoryNode" />
-              <item name="Product_info" type="462c0819:PsiDirectoryNode" />
+              <item name="TC1819_Team_4" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/MainMenu" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/MainMenu/app" />
     <property name="not.eligible.for.single.variant.sync" value="true" />
   </component>
   <component name="RunDashboard">
@@ -106,19 +99,21 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info id="Resources Explorer" />
       <window_info id="Captures" order="0" weight="0.25" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.329294" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.33315566" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Image Layers" order="3" />
       <window_info id="Designer" order="4" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info id="Resources Explorer" order="7" />
+      <window_info anchor="bottom" id="Build" sideWeight="0.49946696" visible="true" weight="0.32936078" />
       <window_info anchor="bottom" id="Version Control" order="0" weight="0.329718" />
       <window_info anchor="bottom" id="TODO" order="1" weight="0.329718" />
       <window_info anchor="bottom" id="Terminal" order="2" weight="0.329718" />
-      <window_info active="true" anchor="bottom" id="Event Log" order="3" side_tool="true" visible="true" weight="0.32936078" />
+      <window_info anchor="bottom" id="Event Log" order="3" sideWeight="0.50053304" side_tool="true" visible="true" weight="0.32936078" />
       <window_info anchor="bottom" id="Find" order="4" />
+      <window_info anchor="right" id="Gradle" />
       <window_info anchor="right" id="Capture Analysis" order="0" />
       <window_info anchor="right" id="Theme Preview" order="1" />
       <window_info anchor="right" id="Palette&#9;" order="2" />
@@ -165,11 +160,7 @@
     </option>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/TechLabApp/build.gradle">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TechLabApp/app/build.gradle">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/TechLabApp/build.gradle" />
+    <entry file="file://$PROJECT_DIR$/TechLabApp/app/build.gradle" />
   </component>
 </project>
