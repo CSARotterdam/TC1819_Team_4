@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity{
             public void onClick(View v) {
                 System.out.println("Pressed Account Settings Button");
 
-                Intent openAccountSettings = new Intent(getApplicationContext(), AccountSettings.class);
+                Intent openAccountSettings = new Intent(getApplicationContext(), ProfileActivity.class);
                 startActivity(openAccountSettings);
             }
         });
