@@ -4,7 +4,7 @@ public class userProfile {
     public String userName;
     public String userSurname;
     public String userNickName;
-    public String  userBday;
+    public String userBday;
     public String userEmail;
     public String userID;
     public String userPhone;

@@ -17,7 +17,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class ProfileActivity extends AppCompatActivity {
 
-    private TextView profileNickName, profileBday, profileEmail, profileName, profileSurname, profileStudentNR, profilePhoneNumber;
+    private TextView profileNickName, profileBday, profileEmail, profileName, profileSurname, profileClass, profileStudentNR, profilePhoneNumber;
     private Button profileUpdate;
     private FirebaseAuth firebaseAuth;
     private FirebaseDatabase firebaseDatabase;
@@ -33,6 +33,7 @@ public class ProfileActivity extends AppCompatActivity {
         profileEmail = findViewById(R.id. tvProfileEmail);
         profileName = findViewById(R.id. tvProfileName);
         profileSurname = findViewById(R.id. tvProfileSurname);
+        profileClass = findViewById(R.id. tvProfileClass);
         profileStudentNR = findViewById(R.id. tvProfileID);
         profilePhoneNumber = findViewById(R.id. tvProfilePhone);
         profileUpdate = findViewById(R.id.btnProfileUpdate);
@@ -51,6 +52,7 @@ public class ProfileActivity extends AppCompatActivity {
                 profileEmail.setText("Email: " + userprofile.getUserEmail());
                 profileName.setText("Name: " + userprofile.getUserName());
                 profileSurname.setText("Surname: " + userprofile.getUserSurname());
+                profileClass.setText("Class: " + userprofile.getUserClass());
                 profileStudentNR.setText("StudentNr: " + userprofile.getUserID());
                 profilePhoneNumber.setText("Phone: " + userprofile.getUserPhone());
             }
