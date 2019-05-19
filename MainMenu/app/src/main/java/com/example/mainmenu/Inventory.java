@@ -23,6 +23,12 @@ public class Inventory extends AppCompatActivity{
     ArrayList<String> productName = new ArrayList<>();
     ArrayList<String> product_manufacturer = new ArrayList<>();
     ArrayList<String> product_id = new ArrayList<>();
+    ArrayList<String> productCategory = new ArrayList<>();
+    ArrayList<String> productTotalStock = new ArrayList<>();
+    ArrayList<String> productCurrentStock = new ArrayList<>();
+    ArrayList<String> productAmountBroken = new ArrayList<>();
+    ArrayList<String> productURL = new ArrayList<>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,15 +46,28 @@ public class Inventory extends AppCompatActivity{
                 productName.add(itemDetail.getString("productName"));
                 product_manufacturer.add(itemDetail.getString("product_manufacturer"));
                 product_id.add(itemDetail.getString("product_id"));
+                productCategory.add(itemDetail.getString("productCategory"));
+                productTotalStock.add(itemDetail.getString("productTotalStock"));
+                productCurrentStock.add(itemDetail.getString("productCurrentStock"));
+                productAmountBroken.add(itemDetail.getString("productAmountBroken"));
+                productURL.add(itemDetail.getString("productURL"));
             }
         } catch (JSONException e) {
             e.printStackTrace();
         }
 
-        CustomAdapter customAdapter = new CustomAdapter(Inventory.this, productName, product_manufacturer, product_id);
+        CustomAdapter customAdapter = new CustomAdapter(Inventory.this, productName, product_manufacturer, product_id, productCategory, productTotalStock, productCurrentStock, productAmountBroken, productURL);
         recyclerView.setAdapter(customAdapter);
 
+        Button back = findViewById(R.id.inv_backtomenu_btn);
+        back.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                System.out.println("Button Clicked!");
 
+                Intent back = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(back);
+            }
+        });
     }
 
     public String loadJSONFromAsset() {
