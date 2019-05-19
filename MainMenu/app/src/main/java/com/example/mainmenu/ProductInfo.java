@@ -32,7 +32,17 @@ public class ProductInfo extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.info_content);
 
-        final Product testProduct = new Product("idIguess", "VR Headset", "test string about VR headsets or something I don't know I just programmed this page I didn't make VR headsets", Uri.parse("https://en.wikipedia.org/wiki/Virtual_reality_headset"), BitmapFactory.decodeResource(getResources(),R.drawable.hrlogo), 2, 4);
+        Intent prodinfo = getIntent();
+        String productName = prodinfo.getStringExtra("productName");
+        String product_manufacturer = prodinfo.getStringExtra("product_manufacturer");
+        String product_id = prodinfo.getStringExtra("product_id");
+        String productCategory = prodinfo.getStringExtra("productCategory");
+        int productTotalStock = prodinfo.getIntExtra("productTotalStock", 0);
+        int productCurrentStock = prodinfo.getIntExtra("productCurrentStock", 0);
+        String productAmountBroken = prodinfo.getStringExtra("productAmountBroken");
+        String productURL = prodinfo.getStringExtra("productURL");
+
+        final Product testProduct = new Product(product_id, productName, "Insert Short description (modify JSON file)", Uri.parse(productURL), BitmapFactory.decodeResource(getResources(),R.drawable.hrlogo), productCurrentStock, productTotalStock);
 
 
         //final ArrayList<String> testList = new ArrayList<String>();

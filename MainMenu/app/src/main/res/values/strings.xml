@@ -18,6 +18,9 @@
     <string name="Email_Title">Email:</string>
     <string name="Student_Number_Title">Student Number:</string>
 
+    <!-- Inventory Screen -->
+    <string name="Inventory_Header">Inventory</string>
+
     <!--Login Screen -->
     <string name="Email_Title2">Email</string>
     <string name="Password_Title">Password</string>
