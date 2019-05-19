@@ -4,9 +4,10 @@ import android.graphics.Bitmap;
 import android.media.Image;
 import android.net.Uri;
 
+import java.io.Serializable;
 import java.net.URL;
 
-public class Product {
+public class Product implements Serializable {
 
     String ID;
     String name;
