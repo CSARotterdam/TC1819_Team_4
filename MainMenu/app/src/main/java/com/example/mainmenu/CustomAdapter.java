@@ -64,7 +64,6 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
                 context.startActivity(prodinfo);
             }
         });
-
     }
 
 
