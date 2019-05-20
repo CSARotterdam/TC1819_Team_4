@@ -1,0 +1,4 @@
+#Mon May 06 18:25:39 CEST 2019
+base.0=E\:\\Github project B\\TC1819_Team_4\\TechLabApp\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\7
+path.0=classes.dex
+renamed.0=classes.dex
