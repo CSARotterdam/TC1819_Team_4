@@ -60,6 +60,7 @@
         android:layout_marginBottom="8dp"
         android:text="@string/Login"
         android:background="#ffffff"
+        android:textColor="@color/Black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
