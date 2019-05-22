@@ -1,0 +1,181 @@
+-- Merging decision tree log ---
+manifest
+ADDED from E:\Github project B\TC1819_Team_4\TechLabApp\app\src\main\AndroidManifest.xml:2:1-29:12
+INJECTED from E:\Github project B\TC1819_Team_4\TechLabApp\app\src\main\AndroidManifest.xml:2:1-29:12
+INJECTED from E:\Github project B\TC1819_Team_4\TechLabApp\app\src\main\AndroidManifest.xml:2:1-29:12
+INJECTED from E:\Github project B\TC1819_Team_4\TechLabApp\app\src\main\AndroidManifest.xml:2:1-29:12
+MERGED from [com.android.support:design:28.0.0] C:\Users\timwo\.gradle\caches\transforms-2\files-2.1\3cbcb694b28559074c70348f4be71c45\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\timwo\.gradle\caches\transforms-2\files-2.1\1e37a499af6d71bb3aec2e1131bddb7d\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\timwo\.gradle\caches\transforms-2\files-2.1\3203869b60dc696d7c7cd4388d72f02a\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\timwo\.gradle\caches\transforms-2\files-2.1\c4b1327e6bcb622d1a143433ba64be02\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:recyclerview-v7:28.0.0] C:\Users\timwo\.gradle\caches\transforms-2\files-2.1\d3a624a764c76b6b64c79092a3540f70\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\timwo\.gradle\caches\transforms-2\files-2.1\10d99af235ecd53595d8f26b605af0a4\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\timwo\.gradle\caches\transforms-2\files-2.1\20fbffdbfed117b8aff74397b355f951\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\timwo\.gradle\caches\transforms-2\files-2.1\8844980b5e43c76b8405840250f51e98\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:transition:28.0.0] C:\Users\timwo\.gradle\caches\transforms-2\files-2.1\dab4166a9fc6281e23d5752cc1fac439\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:loader:28.0.0] C:\Users\timwo\.gradle\caches\transforms-2\files-2.1\9aa3956cdd46151f321290e701be4e53\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:viewpager:28.0.0] C:\Users\timwo\.gradle\caches\transforms-2\files-2.1\a57f29cab0292f419ff1096ff8687ea2\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\timwo\.gradle\caches\transforms-2\files-2.1\996d95a0b89045f945f18a84ae1a3744\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\timwo\.gradle\caches\transforms-2\files-2.1\fed38d3cd5a2e06b52f8a903d52b706e\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\timwo\.gradle\caches\transforms-2\files-2.1\75f03cdd936879e9c80a45300fdb7151\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:customview:28.0.0] C:\Users\timwo\.gradle\caches\transforms-2\files-2.1\2a733928d1157add6a43c40369cf264a\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\timwo\.gradle\caches\transforms-2\files-2.1\4a5eea37a9eccb45f551f2e12ba2e879\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\timwo\.gradle\caches\transforms-2\files-2.1\3bd9cd1cc4cf635687a101dfa0390fae\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\timwo\.gradle\caches\transforms-2\files-2.1\c16e44b1ea75ae0e9d030550b8da08fe\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\timwo\.gradle\caches\transforms-2\files-2.1\5686aea5b3153a17277a0625156846ad\AndroidManifest.xml:17:1-25:12
+MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\timwo\.gradle\caches\transforms-2\files-2.1\8bc62b1089b50075888f8a40baa27e9d\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:cardview-v7:28.0.0] C:\Users\timwo\.gradle\caches\transforms-2\files-2.1\e506f72eea2fd3c83d38d2e00525c7d3\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\timwo\.gradle\caches\transforms-2\files-2.1\cfd610aa1f7cbbe56bb3a415515f691e\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:documentfile:28.0.0] C:\Users\timwo\.gradle\caches\transforms-2\files-2.1\ef3c46d4684385bebec27ea0cb053abe\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\timwo\.gradle\caches\transforms-2\files-2.1\dc3162adcfc5870823043f803c68ac6d\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:print:28.0.0] C:\Users\timwo\.gradle\caches\transforms-2\files-2.1\d0840bff8c47bda59702d92a8b482e6a\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\timwo\.gradle\caches\transforms-2\files-2.1\2ff8a3e3f03762423301ec12b83864a7\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:interpolator:28.0.0] C:\Users\timwo\.gradle\caches\transforms-2\files-2.1\ff26ada94bc4167d57f1460c1e936fb0\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\timwo\.gradle\caches\transforms-2\files-2.1\3916f6706c2207e0703f1fe06c0064c8\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\timwo\.gradle\caches\transforms-2\files-2.1\21630ef78d20b40aeb931d5aa62310f3\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.1] C:\Users\timwo\.gradle\caches\transforms-2\files-2.1\7c83d22ee1110ee0d5576fb748f78c73\AndroidManifest.xml:17:1-22:12
+INJECTED from E:\Github project B\TC1819_Team_4\TechLabApp\app\src\main\AndroidManifest.xml:2:1-29:12
+INJECTED from E:\Github project B\TC1819_Team_4\TechLabApp\app\src\main\AndroidManifest.xml:2:1-29:12
+INJECTED from E:\Github project B\TC1819_Team_4\TechLabApp\app\src\main\AndroidManifest.xml:2:1-29:12
+	package
+		ADDED from E:\Github project B\TC1819_Team_4\TechLabApp\app\src\main\AndroidManifest.xml:3:5-37
+		INJECTED from E:\Github project B\TC1819_Team_4\TechLabApp\app\src\main\AndroidManifest.xml
+		INJECTED from E:\Github project B\TC1819_Team_4\TechLabApp\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from E:\Github project B\TC1819_Team_4\TechLabApp\app\src\main\AndroidManifest.xml
+		ADDED from E:\Github project B\TC1819_Team_4\TechLabApp\app\src\main\AndroidManifest.xml:2:1-29:12
+		INJECTED from E:\Github project B\TC1819_Team_4\TechLabApp\app\src\main\AndroidManifest.xml
+	android:versionCode
+		INJECTED from E:\Github project B\TC1819_Team_4\TechLabApp\app\src\main\AndroidManifest.xml
+		ADDED from E:\Github project B\TC1819_Team_4\TechLabApp\app\src\main\AndroidManifest.xml:2:1-29:12
+		INJECTED from E:\Github project B\TC1819_Team_4\TechLabApp\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from E:\Github project B\TC1819_Team_4\TechLabApp\app\src\main\AndroidManifest.xml:2:11-69
+uses-permission#android.permission.GET_ACCOUNTS
+ADDED from E:\Github project B\TC1819_Team_4\TechLabApp\app\src\main\AndroidManifest.xml:6:5-71
+	android:name
+		ADDED from E:\Github project B\TC1819_Team_4\TechLabApp\app\src\main\AndroidManifest.xml:6:22-68
+uses-permission#android.permission.READ_PROFILE
+ADDED from E:\Github project B\TC1819_Team_4\TechLabApp\app\src\main\AndroidManifest.xml:7:5-71
+	android:name
+		ADDED from E:\Github project B\TC1819_Team_4\TechLabApp\app\src\main\AndroidManifest.xml:7:22-68
+uses-permission#android.permission.READ_CONTACTS
+ADDED from E:\Github project B\TC1819_Team_4\TechLabApp\app\src\main\AndroidManifest.xml:8:5-72
+	android:name
+		ADDED from E:\Github project B\TC1819_Team_4\TechLabApp\app\src\main\AndroidManifest.xml:8:22-69
+application
+ADDED from E:\Github project B\TC1819_Team_4\TechLabApp\app\src\main\AndroidManifest.xml:10:5-27:19
+MERGED from [com.android.support:design:28.0.0] C:\Users\timwo\.gradle\caches\transforms-2\files-2.1\3cbcb694b28559074c70348f4be71c45\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design:28.0.0] C:\Users\timwo\.gradle\caches\transforms-2\files-2.1\3cbcb694b28559074c70348f4be71c45\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\timwo\.gradle\caches\transforms-2\files-2.1\c16e44b1ea75ae0e9d030550b8da08fe\AndroidManifest.xml:22:5-94
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\timwo\.gradle\caches\transforms-2\files-2.1\c16e44b1ea75ae0e9d030550b8da08fe\AndroidManifest.xml:22:5-94
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\timwo\.gradle\caches\transforms-2\files-2.1\5686aea5b3153a17277a0625156846ad\AndroidManifest.xml:22:5-23:19
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\timwo\.gradle\caches\transforms-2\files-2.1\5686aea5b3153a17277a0625156846ad\AndroidManifest.xml:22:5-23:19
+	android:appComponentFactory
+		ADDED from [com.android.support:support-compat:28.0.0] C:\Users\timwo\.gradle\caches\transforms-2\files-2.1\c16e44b1ea75ae0e9d030550b8da08fe\AndroidManifest.xml:22:18-91
+	android:supportsRtl
+		ADDED from E:\Github project B\TC1819_Team_4\TechLabApp\app\src\main\AndroidManifest.xml:15:9-35
+	android:label
+		ADDED from E:\Github project B\TC1819_Team_4\TechLabApp\app\src\main\AndroidManifest.xml:13:9-41
+	android:roundIcon
+		ADDED from E:\Github project B\TC1819_Team_4\TechLabApp\app\src\main\AndroidManifest.xml:14:9-45
+	android:icon
+		ADDED from E:\Github project B\TC1819_Team_4\TechLabApp\app\src\main\AndroidManifest.xml:12:9-40
+	android:allowBackup
+		ADDED from E:\Github project B\TC1819_Team_4\TechLabApp\app\src\main\AndroidManifest.xml:11:9-35
+	android:theme
+		ADDED from E:\Github project B\TC1819_Team_4\TechLabApp\app\src\main\AndroidManifest.xml:16:9-40
+activity#com.example.techlabapp.LoginActivity
+ADDED from E:\Github project B\TC1819_Team_4\TechLabApp\app\src\main\AndroidManifest.xml:17:9-25:20
+	android:label
+		ADDED from E:\Github project B\TC1819_Team_4\TechLabApp\app\src\main\AndroidManifest.xml:19:13-45
+	android:name
+		ADDED from E:\Github project B\TC1819_Team_4\TechLabApp\app\src\main\AndroidManifest.xml:18:13-42
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from E:\Github project B\TC1819_Team_4\TechLabApp\app\src\main\AndroidManifest.xml:20:13-24:29
+action#android.intent.action.MAIN
+ADDED from E:\Github project B\TC1819_Team_4\TechLabApp\app\src\main\AndroidManifest.xml:21:17-69
+	android:name
+		ADDED from E:\Github project B\TC1819_Team_4\TechLabApp\app\src\main\AndroidManifest.xml:21:25-66
+category#android.intent.category.LAUNCHER
+ADDED from E:\Github project B\TC1819_Team_4\TechLabApp\app\src\main\AndroidManifest.xml:23:17-77
+	android:name
+		ADDED from E:\Github project B\TC1819_Team_4\TechLabApp\app\src\main\AndroidManifest.xml:23:27-74
+activity#com.example.techlabapp.signup
+ADDED from E:\Github project B\TC1819_Team_4\TechLabApp\app\src\main\AndroidManifest.xml:26:9-53
+	android:name
+		ADDED from E:\Github project B\TC1819_Team_4\TechLabApp\app\src\main\AndroidManifest.xml:26:19-41
+uses-sdk
+INJECTED from E:\Github project B\TC1819_Team_4\TechLabApp\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from E:\Github project B\TC1819_Team_4\TechLabApp\app\src\main\AndroidManifest.xml
+INJECTED from E:\Github project B\TC1819_Team_4\TechLabApp\app\src\main\AndroidManifest.xml
+MERGED from [com.android.support:design:28.0.0] C:\Users\timwo\.gradle\caches\transforms-2\files-2.1\3cbcb694b28559074c70348f4be71c45\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design:28.0.0] C:\Users\timwo\.gradle\caches\transforms-2\files-2.1\3cbcb694b28559074c70348f4be71c45\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\timwo\.gradle\caches\transforms-2\files-2.1\1e37a499af6d71bb3aec2e1131bddb7d\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\timwo\.gradle\caches\transforms-2\files-2.1\1e37a499af6d71bb3aec2e1131bddb7d\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\timwo\.gradle\caches\transforms-2\files-2.1\3203869b60dc696d7c7cd4388d72f02a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\timwo\.gradle\caches\transforms-2\files-2.1\3203869b60dc696d7c7cd4388d72f02a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\timwo\.gradle\caches\transforms-2\files-2.1\c4b1327e6bcb622d1a143433ba64be02\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\timwo\.gradle\caches\transforms-2\files-2.1\c4b1327e6bcb622d1a143433ba64be02\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:28.0.0] C:\Users\timwo\.gradle\caches\transforms-2\files-2.1\d3a624a764c76b6b64c79092a3540f70\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:28.0.0] C:\Users\timwo\.gradle\caches\transforms-2\files-2.1\d3a624a764c76b6b64c79092a3540f70\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\timwo\.gradle\caches\transforms-2\files-2.1\10d99af235ecd53595d8f26b605af0a4\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\timwo\.gradle\caches\transforms-2\files-2.1\10d99af235ecd53595d8f26b605af0a4\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\timwo\.gradle\caches\transforms-2\files-2.1\20fbffdbfed117b8aff74397b355f951\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\timwo\.gradle\caches\transforms-2\files-2.1\20fbffdbfed117b8aff74397b355f951\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\timwo\.gradle\caches\transforms-2\files-2.1\8844980b5e43c76b8405840250f51e98\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\timwo\.gradle\caches\transforms-2\files-2.1\8844980b5e43c76b8405840250f51e98\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:28.0.0] C:\Users\timwo\.gradle\caches\transforms-2\files-2.1\dab4166a9fc6281e23d5752cc1fac439\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:28.0.0] C:\Users\timwo\.gradle\caches\transforms-2\files-2.1\dab4166a9fc6281e23d5752cc1fac439\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:loader:28.0.0] C:\Users\timwo\.gradle\caches\transforms-2\files-2.1\9aa3956cdd46151f321290e701be4e53\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:loader:28.0.0] C:\Users\timwo\.gradle\caches\transforms-2\files-2.1\9aa3956cdd46151f321290e701be4e53\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:viewpager:28.0.0] C:\Users\timwo\.gradle\caches\transforms-2\files-2.1\a57f29cab0292f419ff1096ff8687ea2\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:viewpager:28.0.0] C:\Users\timwo\.gradle\caches\transforms-2\files-2.1\a57f29cab0292f419ff1096ff8687ea2\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\timwo\.gradle\caches\transforms-2\files-2.1\996d95a0b89045f945f18a84ae1a3744\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\timwo\.gradle\caches\transforms-2\files-2.1\996d95a0b89045f945f18a84ae1a3744\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\timwo\.gradle\caches\transforms-2\files-2.1\fed38d3cd5a2e06b52f8a903d52b706e\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\timwo\.gradle\caches\transforms-2\files-2.1\fed38d3cd5a2e06b52f8a903d52b706e\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\timwo\.gradle\caches\transforms-2\files-2.1\75f03cdd936879e9c80a45300fdb7151\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\timwo\.gradle\caches\transforms-2\files-2.1\75f03cdd936879e9c80a45300fdb7151\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customview:28.0.0] C:\Users\timwo\.gradle\caches\transforms-2\files-2.1\2a733928d1157add6a43c40369cf264a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customview:28.0.0] C:\Users\timwo\.gradle\caches\transforms-2\files-2.1\2a733928d1157add6a43c40369cf264a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\timwo\.gradle\caches\transforms-2\files-2.1\4a5eea37a9eccb45f551f2e12ba2e879\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\timwo\.gradle\caches\transforms-2\files-2.1\4a5eea37a9eccb45f551f2e12ba2e879\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\timwo\.gradle\caches\transforms-2\files-2.1\3bd9cd1cc4cf635687a101dfa0390fae\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\timwo\.gradle\caches\transforms-2\files-2.1\3bd9cd1cc4cf635687a101dfa0390fae\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\timwo\.gradle\caches\transforms-2\files-2.1\c16e44b1ea75ae0e9d030550b8da08fe\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\timwo\.gradle\caches\transforms-2\files-2.1\c16e44b1ea75ae0e9d030550b8da08fe\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\timwo\.gradle\caches\transforms-2\files-2.1\5686aea5b3153a17277a0625156846ad\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\timwo\.gradle\caches\transforms-2\files-2.1\5686aea5b3153a17277a0625156846ad\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\timwo\.gradle\caches\transforms-2\files-2.1\8bc62b1089b50075888f8a40baa27e9d\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\timwo\.gradle\caches\transforms-2\files-2.1\8bc62b1089b50075888f8a40baa27e9d\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:28.0.0] C:\Users\timwo\.gradle\caches\transforms-2\files-2.1\e506f72eea2fd3c83d38d2e00525c7d3\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:28.0.0] C:\Users\timwo\.gradle\caches\transforms-2\files-2.1\e506f72eea2fd3c83d38d2e00525c7d3\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\timwo\.gradle\caches\transforms-2\files-2.1\cfd610aa1f7cbbe56bb3a415515f691e\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\timwo\.gradle\caches\transforms-2\files-2.1\cfd610aa1f7cbbe56bb3a415515f691e\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:documentfile:28.0.0] C:\Users\timwo\.gradle\caches\transforms-2\files-2.1\ef3c46d4684385bebec27ea0cb053abe\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:documentfile:28.0.0] C:\Users\timwo\.gradle\caches\transforms-2\files-2.1\ef3c46d4684385bebec27ea0cb053abe\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\timwo\.gradle\caches\transforms-2\files-2.1\dc3162adcfc5870823043f803c68ac6d\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\timwo\.gradle\caches\transforms-2\files-2.1\dc3162adcfc5870823043f803c68ac6d\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:print:28.0.0] C:\Users\timwo\.gradle\caches\transforms-2\files-2.1\d0840bff8c47bda59702d92a8b482e6a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:print:28.0.0] C:\Users\timwo\.gradle\caches\transforms-2\files-2.1\d0840bff8c47bda59702d92a8b482e6a\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\timwo\.gradle\caches\transforms-2\files-2.1\2ff8a3e3f03762423301ec12b83864a7\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\timwo\.gradle\caches\transforms-2\files-2.1\2ff8a3e3f03762423301ec12b83864a7\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:interpolator:28.0.0] C:\Users\timwo\.gradle\caches\transforms-2\files-2.1\ff26ada94bc4167d57f1460c1e936fb0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:interpolator:28.0.0] C:\Users\timwo\.gradle\caches\transforms-2\files-2.1\ff26ada94bc4167d57f1460c1e936fb0\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\timwo\.gradle\caches\transforms-2\files-2.1\3916f6706c2207e0703f1fe06c0064c8\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\timwo\.gradle\caches\transforms-2\files-2.1\3916f6706c2207e0703f1fe06c0064c8\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\timwo\.gradle\caches\transforms-2\files-2.1\21630ef78d20b40aeb931d5aa62310f3\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\timwo\.gradle\caches\transforms-2\files-2.1\21630ef78d20b40aeb931d5aa62310f3\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] C:\Users\timwo\.gradle\caches\transforms-2\files-2.1\7c83d22ee1110ee0d5576fb748f78c73\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] C:\Users\timwo\.gradle\caches\transforms-2\files-2.1\7c83d22ee1110ee0d5576fb748f78c73\AndroidManifest.xml:20:5-44
+INJECTED from E:\Github project B\TC1819_Team_4\TechLabApp\app\src\main\AndroidManifest.xml
+INJECTED from E:\Github project B\TC1819_Team_4\TechLabApp\app\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from E:\Github project B\TC1819_Team_4\TechLabApp\app\src\main\AndroidManifest.xml
+		ADDED from E:\Github project B\TC1819_Team_4\TechLabApp\app\src\main\AndroidManifest.xml
+		INJECTED from E:\Github project B\TC1819_Team_4\TechLabApp\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from E:\Github project B\TC1819_Team_4\TechLabApp\app\src\main\AndroidManifest.xml
+		ADDED from E:\Github project B\TC1819_Team_4\TechLabApp\app\src\main\AndroidManifest.xml
+		INJECTED from E:\Github project B\TC1819_Team_4\TechLabApp\app\src\main\AndroidManifest.xml
