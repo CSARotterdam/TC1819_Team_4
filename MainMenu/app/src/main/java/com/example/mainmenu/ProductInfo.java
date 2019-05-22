@@ -43,8 +43,9 @@ public class ProductInfo extends AppCompatActivity {
         int productCurrentStock = prodinfo.getIntExtra("productCurrentStock", 0);
         String productAmountBroken = prodinfo.getStringExtra("productAmountBroken");
         String productURL = prodinfo.getStringExtra("productURL");
+        String productDescription = prodinfo.getStringExtra("productDescription");
 
-        final Product testProduct = new Product(product_id, productName, product_manufacturer, "Insert Short description (modify JSON file)", Uri.parse(productURL), BitmapFactory.decodeResource(getResources(),R.drawable.hrlogo), productCurrentStock, productTotalStock);
+        final Product testProduct = new Product(product_id, productName, product_manufacturer, productDescription, Uri.parse(productURL), BitmapFactory.decodeResource(getResources(),R.drawable.hrlogo), productCurrentStock, productTotalStock);
 
 
         //final ArrayList<String> testList = new ArrayList<String>();
@@ -54,7 +55,7 @@ public class ProductInfo extends AppCompatActivity {
         TextView title = (TextView) findViewById(R.id.itemName);
         TextView body = findViewById(R.id.itemInfo);
         TextView wiki = findViewById(R.id.MoreInfo);
-        TextView manufacturer = findViewById(R.id.itemManufaturer);
+        TextView manufacturer = findViewById(R.id.itemManufacturer);
         ImageView exampleImage = findViewById(R.id.imageFile);
         title.setText(testProduct.getName());
         body.setText(testProduct.getDescription());

@@ -28,6 +28,8 @@ public class Inventory extends AppCompatActivity{
     ArrayList<String> productCurrentStock = new ArrayList<>();
     ArrayList<String> productAmountBroken = new ArrayList<>();
     ArrayList<String> productURL = new ArrayList<>();
+    ArrayList<String> productDescription = new ArrayList<>();
+
 
 
     @Override
@@ -51,12 +53,13 @@ public class Inventory extends AppCompatActivity{
                 productCurrentStock.add(itemDetail.getString("productCurrentStock"));
                 productAmountBroken.add(itemDetail.getString("productAmountBroken"));
                 productURL.add(itemDetail.getString("productURL"));
+                productDescription.add(itemDetail.getString("productDescription"));
             }
         } catch (JSONException e) {
             e.printStackTrace();
         }
 
-        CustomAdapter customAdapter = new CustomAdapter(Inventory.this, productName, product_manufacturer, product_id, productCategory, productTotalStock, productCurrentStock, productAmountBroken, productURL);
+        CustomAdapter customAdapter = new CustomAdapter(Inventory.this, productName, product_manufacturer, product_id, productCategory, productTotalStock, productCurrentStock, productAmountBroken, productURL, productDescription);
         recyclerView.setAdapter(customAdapter);
 
         Button back = findViewById(R.id.inv_backtomenu_btn);

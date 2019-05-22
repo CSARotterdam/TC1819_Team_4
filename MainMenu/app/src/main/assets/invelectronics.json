@@ -8,7 +8,8 @@
         "productTotalStock": 2,
         "productCurrentStock": 2,
         "productAmountBroken": 0,
-        "productURL": "https://en.wikipedia.org"
+        "productURL": "https://en.wikipedia.org/wiki/Microsoft_HoloLens",
+        "productDescription": "Placeholder description. Please update soon"
     },
     {
         "product_id": "gc-sony-plst",
@@ -18,7 +19,8 @@
         "productTotalStock": 1,
         "productCurrentStock": 1,
         "productAmountBroken": 0,
-        "productURL": "https://en.wikipedia.org"
+        "productURL": "https://en.wikipedia.org/wiki/PlayStation_4",
+        "productDescription": "Placeholder description. Please update soon"
     },
     {
         "product_id": "mc-mcpt-lcdd",
@@ -28,7 +30,8 @@
         "productTotalStock": 5,
         "productCurrentStock": 5,
         "productAmountBroken": 0,
-        "productURL": "https://en.wikipedia.org"
+        "productURL": "https://micropython.org/",
+        "productDescription": "Placeholder description. Please update soon"
     },
     {
         "product_id": "mc-mcpt-cpuc",
@@ -38,7 +41,8 @@
         "productTotalStock": 4,
         "productCurrentStock": 4,
         "productAmountBroken": 0,
-        "productURL": "https://en.wikipedia.org"
+        "productURL": "https://micropython.org/",
+        "productDescription": "Placeholder description. Please update soon"
     },
     {
         "product_id": "mc-mcpt-cptr",
@@ -48,7 +52,8 @@
         "productTotalStock": 5,
         "productCurrentStock": 5,
         "productAmountBroken": 0,
-        "productURL": "https://en.wikipedia.org"
+        "productURL": "https://micropython.org/",
+        "productDescription": "Placeholder description. Please update soon"
     },
     {
         "product_id": "dr-prrt-drel",
@@ -58,7 +63,8 @@
         "productTotalStock": 7,
         "productCurrentStock": 7,
         "productAmountBroken": 0,
-        "productURL": "https://en.wikipedia.org"
+        "productURL": "https://www.parrot.com/global/drones/parrot-ardrone-20-elite-edition",
+        "productDescription": "Placeholder description. Please update soon"
     },
     {
         "product_id": "rc-qunm-vndl",
@@ -68,7 +74,8 @@
         "productTotalStock": 1,
         "productCurrentStock": 1,
         "productAmountBroken": 0,
-        "productURL": "https://en.wikipedia.org"
+        "productURL": "https://hobbyking.com/en_us/quanum-vandal-1-10-4wd-electric-racing-buggy-rtr.html",
+        "productDescription": "Placeholder description. Please update soon"
     },
     {
         "product_id": "ga-eapb-fifa",
@@ -78,7 +85,8 @@
         "productTotalStock": 1,
         "productCurrentStock": 1,
         "productAmountBroken": 0,
-        "productURL": "https://en.wikipedia.org"
+        "productURL": "https://en.wikipedia.org/wiki/FIFA_18",
+        "productDescription": "Placeholder description. Please update soon"
     },
     {
         "product_id": "ga-bana-tkkn",
@@ -88,7 +96,8 @@
         "productTotalStock": 1,
         "productCurrentStock": 1,
         "productAmountBroken": 0,
-        "productURL": "https://en.wikipedia.org"
+        "productURL": "https://en.wikipedia.org/wiki/Tekken_7",
+        "productDescription": "Placeholder description. Please update soon"
     },
     {
         "product_id": "st-amzn-echo",
@@ -98,7 +107,8 @@
         "productTotalStock": 2,
         "productCurrentStock": 2,
         "productAmountBroken": 0,
-        "productURL": "https://en.wikipedia.org"
+        "productURL": "https://en.wikipedia.org/wiki/Amazon_Echo",
+        "productDescription": "Placeholder description. Please update soon"
     },
     {
         "product_id": "mc-lmnt-rpiw",
@@ -108,7 +118,8 @@
         "productTotalStock": 5,
         "productCurrentStock": 5,
         "productAmountBroken": 0,
-        "productURL": "https://en.wikipedia.org"
+        "productURL": "https://www.raspberrypi.org/",
+        "productDescription": "Placeholder description. Please update soon"
     },
     {
         "product_id": "mc-lmnt-rpic",
@@ -118,7 +129,8 @@
         "productTotalStock": 5,
         "productCurrentStock": 5,
         "productAmountBroken": 0,
-        "productURL": "https://en.wikipedia.org"
+        "productURL": "https://www.raspberrypi.org/",
+        "productDescription": "Placeholder description. Please update soon"
     },
     {
         "product_id": "mc-dxtr-grve",
@@ -128,7 +140,8 @@
         "productTotalStock": 12,
         "productCurrentStock": 12,
         "productAmountBroken": 0,
-        "productURL": "https://en.wikipedia.org"
+        "productURL": "https://www.dexterindustries.com/grovepi/",
+        "productDescription": "Placeholder description. Please update soon"
     },
     {
         "product_id": "mc-lmnt-rpib",
@@ -138,7 +151,8 @@
         "productTotalStock": 21,
         "productCurrentStock": 21,
         "productAmountBroken": 0,
-        "productURL": "https://en.wikipedia.org"
+        "productURL": "https://www.raspberrypi.org/",
+        "productDescription": "Placeholder description. Please update soon"
     },
     {
         "product_id": "mc-lmnt-rpis",
@@ -148,7 +162,8 @@
         "productTotalStock": 20,
         "productCurrentStock": 20,
         "productAmountBroken": 0,
-        "productURL": "https://en.wikipedia.org"
+        "productURL": "https://www.raspberrypi.org/",
+        "productDescription": "Placeholder description. Please update soon"
     },
     {
         "product_id": "mc-lmnt-rpip",
@@ -158,7 +173,8 @@
         "productTotalStock": 21,
         "productCurrentStock": 21,
         "productAmountBroken": 0,
-        "productURL": "https://en.wikipedia.org"
+        "productURL": "https://www.raspberrypi.org/",
+        "productDescription": "Placeholder description. Please update soon"
     },
     {
         "product_id": "vr-leap-mion",
@@ -168,7 +184,8 @@
         "productTotalStock": 5,
         "productCurrentStock": 5,
         "productAmountBroken": 0,
-        "productURL": "https://en.wikipedia.org"
+        "productURL": "https://www.leapmotion.com/",
+        "productDescription": "Placeholder description. Please update soon"
     },
     {
         "product_id": "vr-leap-dvpr",
@@ -178,7 +195,8 @@
         "productTotalStock": 5,
         "productCurrentStock": 5,
         "productAmountBroken": 0,
-        "productURL": "https://en.wikipedia.org"
+        "productURL": "https://www.leapmotion.com/",
+        "productDescription": "Placeholder description. Please update soon"
     },
     {
         "product_id": "kb-oooo-musb",
@@ -188,7 +206,8 @@
         "productTotalStock": 3,
         "productCurrentStock": 3,
         "productAmountBroken": 0,
-        "productURL": "https://en.wikipedia.org"
+        "productURL": "https://en.wikipedia.org/wiki/USB_hardware#Connector_types",
+        "productDescription": "Placeholder description. Please update soon"
     },
     {
         "product_id": "kb-dlck-vgak",
@@ -198,7 +217,8 @@
         "productTotalStock": 2,
         "productCurrentStock": 2,
         "productAmountBroken": 0,
-        "productURL": "https://en.wikipedia.org"
+        "productURL": "https://en.wikipedia.org/wiki/Video_Graphics_Array",
+        "productDescription": "Placeholder description. Please update soon"
     },
     {
         "product_id": "kb-dlck-dvik",
@@ -208,7 +228,8 @@
         "productTotalStock": 1,
         "productCurrentStock": 1,
         "productAmountBroken": 0,
-        "productURL": "https://en.wikipedia.org"
+        "productURL": "https://en.wikipedia.org/wiki/Digital_Visual_Interface",
+        "productDescription": "Placeholder description. Please update soon"
     },
     {
         "product_id": "ie-ggle-wifi",
@@ -218,7 +239,8 @@
         "productTotalStock": 1,
         "productCurrentStock": 1,
         "productAmountBroken": 0,
-        "productURL": "https://en.wikipedia.org"
+        "productURL": "https://en.wikipedia.org/wiki/Wi-Fi",
+        "productDescription": "Placeholder description. Please update soon"
     },
     {
         "product_id": "kb-oooo-utpk",
@@ -228,7 +250,8 @@
         "productTotalStock": 2,
         "productCurrentStock": 2,
         "productAmountBroken": 0,
-        "productURL": "https://en.wikipedia.org"
+        "productURL": "https://en.wikipedia.org/wiki/Twisted_pair",
+        "productDescription": "Placeholder description. Please update soon"
     },
     {
         "product_id": "kb-oooo-adap",
@@ -238,7 +261,8 @@
         "productTotalStock": 2,
         "productCurrentStock": 2,
         "productAmountBroken": 0,
-        "productURL": "https://en.wikipedia.org"
+        "productURL": "https://en.wikipedia.org/wiki/Adapter",
+        "productDescription": "Placeholder description. Please update soon"
     },
     {
         "product_id": "sm-tbii-eytr",
@@ -248,7 +272,8 @@
         "productTotalStock": 5,
         "productCurrentStock": 5,
         "productAmountBroken": 0,
-        "productURL": "https://en.wikipedia.org"
+        "productURL": "https://gaming.tobii.com/products/",
+        "productDescription": "Placeholder description. Please update soon"
     },
     {
         "product_id": "st-esti-lcbc",
@@ -258,7 +283,8 @@
         "productTotalStock": 5,
         "productCurrentStock": 5,
         "productAmountBroken": 0,
-        "productURL": "https://en.wikipedia.org"
+        "productURL": "https://estimote.com/",
+        "productDescription": "Placeholder description. Please update soon"
     },
     {
         "product_id": "st-esti-lebc",
@@ -268,7 +294,8 @@
         "productTotalStock": 10,
         "productCurrentStock": 10,
         "productAmountBroken": 0,
-        "productURL": "https://en.wikipedia.org"
+        "productURL": "https://estimote.com/",
+        "productDescription": "Placeholder description. Please update soon"
     },
     {
         "product_id": "st-esti-debc",
@@ -278,7 +305,8 @@
         "productTotalStock": 2,
         "productCurrentStock": 2,
         "productAmountBroken": 0,
-        "productURL": "https://en.wikipedia.org"
+        "productURL": "https://estimote.com/",
+        "productDescription": "Placeholder description. Please update soon"
     },
     {
         "product_id": "vr-htcv-vive",
@@ -288,7 +316,8 @@
         "productTotalStock": 3,
         "productCurrentStock": 3,
         "productAmountBroken": 1,
-        "productURL": "https://en.wikipedia.org"
+        "productURL": "https://www.vive.com/eu/",
+        "productDescription": "Placeholder description. Please update soon"
     },
     {
         "product_id": "vr-vrie-vltn",
@@ -298,7 +327,8 @@
         "productTotalStock": 5,
         "productCurrentStock": 5,
         "productAmountBroken": 0,
-        "productURL": "https://en.wikipedia.org"
+        "productURL": "https://www.vr-i.nl/",
+        "productDescription": "Placeholder description. Please update soon"
     },
     {
         "product_id": "vr-vrbx-vrbx",
@@ -308,7 +338,8 @@
         "productTotalStock": 5,
         "productCurrentStock": 5,
         "productAmountBroken": 0,
-        "productURL": "https://en.wikipedia.org"
+        "productURL": "https://tweakers.net/productreview/130037/vr-box-vr-bril.html",
+        "productDescription": "Placeholder description. Please update soon"
     },
     {
         "product_id": "dr-prrt-drpw",
@@ -318,7 +349,8 @@
         "productTotalStock": 2,
         "productCurrentStock": 2,
         "productAmountBroken": 1,
-        "productURL": "https://en.wikipedia.org"
+        "productURL": "https://www.parrot.com/nl/en/drones/parrot-ardrone-20-power-edition",
+        "productDescription": "Placeholder description. Please update soon"
     },
     {
         "product_id": "vr-ocls-rift",
@@ -328,7 +360,8 @@
         "productTotalStock": 3,
         "productCurrentStock": 3,
         "productAmountBroken": 0,
-        "productURL": "https://en.wikipedia.org"
+        "productURL": "https://www.oculus.com/rift/",
+        "productDescription": "Placeholder description. Please update soon"
     },
     {
         "product_id": "vr-coma-vrpc",
@@ -338,6 +371,7 @@
         "productTotalStock": 1,
         "productCurrentStock": 1,
         "productAmountBroken": 0,
-        "productURL": "https://en.wikipedia.org"
+        "productURL": "https://www.coolermaster.com/",
+        "productDescription": "Placeholder description. Please update soon"
     }
 ]}

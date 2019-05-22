@@ -22,10 +22,12 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
     ArrayList<String> productCurrentStock;
     ArrayList<String> productAmountBroken;
     ArrayList<String> productURL;
+    ArrayList<String> productDescription;
+
 
     Context context;
 
-    public CustomAdapter(Context context, ArrayList<String> productName, ArrayList<String> product_manufacturer, ArrayList<String> product_id, ArrayList<String> productCategory, ArrayList<String> productTotalStock, ArrayList<String> productCurrentStock, ArrayList<String> productAmountBroken, ArrayList<String> productURL) {
+    public CustomAdapter(Context context, ArrayList<String> productName, ArrayList<String> product_manufacturer, ArrayList<String> product_id, ArrayList<String> productCategory, ArrayList<String> productTotalStock, ArrayList<String> productCurrentStock, ArrayList<String> productAmountBroken, ArrayList<String> productURL, ArrayList<String> productDescription) {
         this.context = context;
         this.productName = productName;
         this.product_manufacturer = product_manufacturer;
@@ -35,6 +37,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
         this.productCurrentStock = productCurrentStock;
         this.productAmountBroken = productAmountBroken;
         this.productURL = productURL;
+        this.productDescription = productDescription;
     }
 
     @Override
@@ -61,6 +64,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
                 prodinfo.putExtra("productCurrentStock", productCurrentStock.get(position));
                 prodinfo.putExtra("productAmountBroken", productAmountBroken.get(position));
                 prodinfo.putExtra("productURL", productURL.get(position));
+                prodinfo.putExtra("productDescription", productDescription.get(position));
                 context.startActivity(prodinfo);
             }
         });
