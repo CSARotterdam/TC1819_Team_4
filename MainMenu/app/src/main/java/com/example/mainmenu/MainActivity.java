@@ -36,10 +36,10 @@ public class MainActivity extends AppCompatActivity{
             public void onClick(View v) {
                 System.out.println("Pressed INV Button");
 
-                Intent openInventory = new Intent(getApplicationContext(), Inventory.class);
-                startActivity(openInventory);
-                //Intent openCreateProduct = new Intent(getApplicationContext(), ProductCreate.class);
-                //startActivity(openCreateProduct);
+                //Intent openInventory = new Intent(getApplicationContext(), Inventory.class);
+                //startActivity(openInventory);
+                Intent openCreateProduct = new Intent(getApplicationContext(), ProductCreate.class);
+                startActivity(openCreateProduct);
             }
          });
 
