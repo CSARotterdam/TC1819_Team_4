@@ -7,13 +7,16 @@ public class listItem {
     public String productName;
     public String product_manufacturer;
     public String productCategory;
-    public String productTotalStock;
-    public String productCurrentStock;
-    public String productAmountBroken;
+    public Long productTotalStock;
+    public Long productCurrentStock;
+    public Long productAmountBroken;
     public String productURL;
     public String productDescription;
 
-    public listItem(String productName, String product_manufacturer, String product_id, String productCategory, String productTotalStock, String productCurrentStock, String productAmountBroken, String productURL, String productDescription) {
+    public listItem(){
+    }
+
+    public listItem(String productName, String product_manufacturer, String product_id, String productCategory, Long productTotalStock, Long productCurrentStock, Long productAmountBroken, String productURL, String productDescription) {
         this.productName = productName;
         this.product_manufacturer = product_manufacturer;
         this.product_id = product_id;
@@ -37,13 +40,16 @@ public class listItem {
         return productCategory;
     }
     public String getProductTotalStock(){
-        return productTotalStock;
+        String productTotalStock1 = Long.toString(productTotalStock);
+        return productTotalStock1;
     }
     public String getProductCurrentStock(){
-        return productCurrentStock;
+        String productCurrentStock1 = Long.toString(productCurrentStock);
+        return productCurrentStock1;
     }
     public String getProductAmountBroken(){
-        return productAmountBroken;
+        String productAmountBroken1 = Long.toString(productAmountBroken);
+        return productAmountBroken1;
     }
     public String getProductURL(){
         return productURL;
