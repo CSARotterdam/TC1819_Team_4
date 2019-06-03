@@ -42,8 +42,12 @@ public class ProductInfo extends AppCompatActivity {
         String product_manufacturer = prodinfo.getStringExtra("product_manufacturer");
         String product_id = prodinfo.getStringExtra("product_id");
         //String productCategory = prodinfo.getStringExtra("productCategory");
-        int productTotalStock = prodinfo.getIntExtra("productTotalStock", 0);
-        int productCurrentStock = prodinfo.getIntExtra("productCurrentStock", 0);
+        //int productTotalStock = prodinfo.getIntExtra("productTotalStock", 0);
+        //int productCurrentStock = prodinfo.getIntExtra("productCurrentStock", 0);
+        String productTotalStockStr = prodinfo.getStringExtra("productTotalStock");
+        String productCurrentStockStr = prodinfo.getStringExtra("productCurrentStock");
+        int productTotalStock = Integer.parseInt(productTotalStockStr);
+        int productCurrentStock = Integer.parseInt(productCurrentStockStr);
         //String productAmountBroken = prodinfo.getStringExtra("productAmountBroken");
         String productURL = prodinfo.getStringExtra("productURL");
         String productDescription = prodinfo.getStringExtra("productDescription");
