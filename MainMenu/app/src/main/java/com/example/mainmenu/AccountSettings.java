@@ -37,6 +37,7 @@ public class AccountSettings extends AppCompatActivity {
         newUserPhoneNumber = findViewById(R.id.UPUserPhone);
         newUserName = findViewById(R.id.UpUserName);
         newUserSurName = findViewById(R.id.UPUserSurName);
+        UPUpdateButton = findViewById(R.id.UPUpdateButton);
 
 
         firebaseAuth = FirebaseAuth.getInstance();
