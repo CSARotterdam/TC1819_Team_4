@@ -9,6 +9,7 @@ import android.graphics.drawable.Drawable;
 import android.graphics.drawable.DrawableContainer;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -17,6 +18,14 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -29,6 +38,10 @@ public class ProductInfo extends AppCompatActivity {
 
     //Product testProduct = new Product("idIguess", "VR Headset", "test string about VR headsets or something I don't know I just programmed this page I didn't make VR headsets", Uri.parse("https://en.wikipedia.org/wiki/Virtual_reality_headset"), BitmapFactory.decodeResource(getResources(),R.drawable.hrlogo), 2, 4);
     int currAmount;
+    private FirebaseAuth firebaseAuth;
+    private FirebaseDatabase firebaseDatabase;
+    String UID;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,11 +91,26 @@ public class ProductInfo extends AppCompatActivity {
 
             }
         });
+        firebaseAuth = FirebaseAuth.getInstance();
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        DatabaseReference databaseReference = firebaseDatabase.getReference(firebaseAuth.getUid());
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                userProfile userprofile = dataSnapshot.getValue(userProfile.class);
+                UID = userprofile.getUserID();
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Toast.makeText(ProductInfo.this, databaseError.getCode(), Toast.LENGTH_SHORT);
+
+            }
+        });
         reserve.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (currAmount > 0) {
-                    showChoiceDialog(ProductInfo.this, "Reserve Item", "Would you like to reserve this item?");
+                    showChoiceDialog(ProductInfo.this, "Reserve Item "+UID + " " + testProduct.getName(), "Would you like to reserve this item?");
                 }
                 else {
                     AlertDialog.Builder builder = new AlertDialog.Builder(ProductInfo.this);
