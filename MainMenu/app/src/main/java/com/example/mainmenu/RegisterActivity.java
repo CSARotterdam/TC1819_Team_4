@@ -103,10 +103,6 @@ public class RegisterActivity extends AppCompatActivity {
         phone = userPhone.getText().toString();
         Class = userClass.getText().toString();
         Borrowlist = new ArrayList<>();
-        Borrowlist.add("Item1");
-
-
-
 
         if(Username.isEmpty() || password.isEmpty() || email.isEmpty() ){
             Toast.makeText(this, "Please enter all details", Toast.LENGTH_SHORT).show();
