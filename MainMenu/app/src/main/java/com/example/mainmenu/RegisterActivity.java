@@ -24,7 +24,7 @@ public class RegisterActivity extends AppCompatActivity {
     private Button regButton;
     private TextView userLogin;
     private FirebaseAuth firebaseAuth;
-    String email, Username, bday, password, name, surname, id, phone, Class ;
+    String email, Username, bday, password, name, surname, id, phone, Class, Role ;
 
 
     @Override
@@ -115,7 +115,7 @@ public class RegisterActivity extends AppCompatActivity {
     private void sendUserData(){
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
         DatabaseReference myRef = firebaseDatabase.getReference(firebaseAuth.getUid());
-        userProfile userProfile = new userProfile(name,surname,Username,bday,email,id,phone,Class);
+        userProfile userProfile = new userProfile(name,surname,Username,bday,email,id,phone,Class, Role);
         myRef.setValue(userProfile);
 
     }
