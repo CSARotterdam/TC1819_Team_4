@@ -21,7 +21,7 @@ public class ProfileActivity extends AppCompatActivity {
     private Button profileUpdate;
     private FirebaseAuth firebaseAuth;
     private FirebaseDatabase firebaseDatabase;
-
+    private String Role;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +37,8 @@ public class ProfileActivity extends AppCompatActivity {
         profileStudentNR = findViewById(R.id. tvProfileID);
         profilePhoneNumber = findViewById(R.id. tvProfilePhone);
         profileUpdate = findViewById(R.id.btnProfileUpdate);
+
+        Role = userProfile.UserRole
 
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseDatabase = FirebaseDatabase.getInstance();
@@ -55,6 +57,7 @@ public class ProfileActivity extends AppCompatActivity {
                 profileClass.setText("Class: " + userprofile.getUserClass());
                 profileStudentNR.setText("StudentNr: " + userprofile.getUserID());
                 profilePhoneNumber.setText("Phone: " + userprofile.getUserPhone());
+                Role = userProfile.getUserRole();
             }
 
             @Override
