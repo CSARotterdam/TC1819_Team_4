@@ -24,6 +24,9 @@
     <!-- Inventory Screen -->
     <string name="Inventory_Header">Inventory</string>
 
+    <!-- My Items Screen -->
+    <string name="MyItems_Header">My Items</string>
+
     <!-- Reserve Items Screen -->
     <string name="Reserve_Header">Reserve Items</string>
     <string name="Confirmsel_Button">Confirm Selection</string>
