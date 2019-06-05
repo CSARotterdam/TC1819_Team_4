@@ -9,12 +9,12 @@ public class userProfile {
     public String userID;
     public String userPhone;
     public String userClass;
-    public String UserRole;
+    public String userRole;
 
     public userProfile(){
     }
 
-    public userProfile(String userName, String userSurname, String userNickName, String userBday, String userEmail, String userID, String userPhone, String userClass, String UserRole) {
+    public userProfile(String userName, String userSurname, String userNickName, String userBday, String userEmail, String userID, String userPhone, String userClass, String userRole) {
         this.userName = userName;
         this.userSurname = userSurname;
         this.userNickName = userNickName;
@@ -23,7 +23,7 @@ public class userProfile {
         this.userID = userID;
         this.userPhone = userPhone;
         this.userClass = userClass;
-        this.UserRole = "User";
+        this.userRole = "User";
     }
 
     public String getUserName() {
@@ -91,11 +91,7 @@ public class userProfile {
     }
 
     public void setUserRole(String UserRole){
-        this.UserRole = "User";
-    }
-
-    public String getUserRole() {
-        return UserRole;
+        this.userRole = "User";
     }
 }
 
