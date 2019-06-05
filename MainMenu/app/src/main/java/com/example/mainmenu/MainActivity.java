@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity{
         Button openInventory = findViewById(R.id.inventory_btn);
         Button openMyItems = findViewById(R.id.usr_items_btn);
         Button openReserveItems = findViewById(R.id.usr_reserve_btn);
-        Button openProfileActivity = findViewById(R.id.usr_settings_btn);
+        Button openAccountSettings = findViewById(R.id.usr_settings_btn);
         firebaseAuth = FirebaseAuth.getInstance();
         logout = (Button)findViewById(R.id.logout_btn);
 
@@ -72,12 +72,12 @@ public class MainActivity extends AppCompatActivity{
             }
         });
 
-        openProfileActivity.setOnClickListener(new View.OnClickListener() {
+        openAccountSettings.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 System.out.println("Pressed Account Settings Button");
 
-                Intent openProfileActivity = new Intent(getApplicationContext(), ProfileActivity.class);
-                startActivity(openProfileActivity);
+                Intent openAccountSettings = new Intent(getApplicationContext(), ProfileActivity.class);
+                startActivity(openAccountSettings);
             }
         });
 

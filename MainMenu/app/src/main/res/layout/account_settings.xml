@@ -7,68 +7,8 @@
     android:background="#cc0033">
 
     <FrameLayout
-        android:id="@+id/frameLayout8"
         android:layout_width="301dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        android:foreground="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/UPUserClass"
-        app:layout_constraintVertical_bias="0.035"
-        tools:visibility="visible">
-
-    </FrameLayout>
-
-    <FrameLayout
-        android:id="@+id/frameLayout6"
-        android:layout_width="301dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="12dp"
-        android:background="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/UPUserEmail"
-        app:layout_constraintVertical_bias="0.026">
-
-    </FrameLayout>
-
-    <FrameLayout
-        android:id="@+id/frameLayout5"
-        android:layout_width="301dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        android:background="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/frameLayout8"
-        app:layout_constraintVertical_bias="0.0">
-
-    </FrameLayout>
-
-    <FrameLayout
-        android:id="@+id/frameLayout3"
-        android:layout_width="301dp"
-        android:layout_height="60dp"
+        android:layout_height="67dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
@@ -80,26 +20,43 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.113">
+        app:layout_constraintVertical_bias="0.405">
 
     </FrameLayout>
 
     <FrameLayout
-        android:id="@+id/frameLayout4"
         android:layout_width="301dp"
-        android:layout_height="60dp"
+        android:layout_height="67dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="12dp"
         android:background="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/frameLayout7"
-        app:layout_constraintVertical_bias="0.007">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.165">
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="301dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="12dp"
+        android:background="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.285">
 
     </FrameLayout>
 
@@ -118,12 +75,98 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.048" />
 
+    <TextView
+        android:id="@+id/DataFiller"
+        android:layout_width="296dp"
+        android:layout_height="20dp"
+        android:gravity="center"
+        android:text="@string/UserName_Filler"
+        android:textColor="#000000"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.216" />
+
+    <TextView
+        android:id="@+id/dataFiller"
+        android:layout_width="291dp"
+        android:layout_height="20dp"
+        android:gravity="center"
+        android:text="@string/StudentNum_Filler"
+        android:textColor="#000000"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.319" />
+
+    <TextView
+        android:id="@+id/dataFiller2"
+        android:layout_width="295dp"
+        android:layout_height="23dp"
+        android:gravity="center"
+        android:text="@string/Email_Filler"
+        android:textColor="#000000"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.422" />
+
+    <TextView
+        android:id="@+id/accountUsernameTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Username_Title"
+        android:textColor="#000000"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.194"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.177" />
+
+    <TextView
+        android:id="@+id/AccountStudentnumTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Student_Number_Title"
+        android:textColor="#000000"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.222"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.282" />
+
+    <TextView
+        android:id="@+id/AccountEmailTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Email_Title"
+        android:textColor="#000000"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.177"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.392" />
+
     <Button
-        android:id="@+id/UPUpdateButton"
+        android:id="@+id/usr_items_btn2"
         android:layout_width="148dp"
         android:layout_height="44dp"
         android:background="@color/White"
-        android:text="Confirm"
+        android:text="@string/My_Items_Button"
         android:textColor="@color/Black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHeight_percent="0.08"
@@ -131,167 +174,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.976"
+        app:layout_constraintVertical_bias="0.531"
         app:layout_constraintWidth_percent="0.7" />
-
-    <EditText
-        android:id="@+id/UPUserNickName"
-        android:layout_width="284dp"
-        android:layout_height="48dp"
-        android:layout_marginBottom="8dp"
-        android:ems="10"
-        android:hint="Username"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="@+id/frameLayout3"
-        app:layout_constraintEnd_toEndOf="@+id/frameLayout3"
-        app:layout_constraintHorizontal_bias="0.476"
-        app:layout_constraintStart_toStartOf="@+id/frameLayout3"
-        app:layout_constraintTop_toTopOf="@+id/frameLayout3"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <EditText
-        android:id="@+id/UPUserEmail"
-        android:layout_width="284dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="8dp"
-        android:ems="10"
-        android:hint="E-mail"
-        android:inputType="textEmailAddress"
-        app:layout_constraintBottom_toBottomOf="@+id/frameLayout4"
-        app:layout_constraintStart_toStartOf="@+id/frameLayout4"
-        app:layout_constraintTop_toBottomOf="@+id/frameLayout7" />
-
-    <EditText
-        android:id="@+id/UPUserPhone"
-        android:layout_width="284dp"
-        android:layout_height="48dp"
-        android:ems="10"
-        android:hint="Phone Number"
-        android:inputType="phone"
-        app:layout_constraintBottom_toBottomOf="@+id/frameLayout5"
-        app:layout_constraintEnd_toEndOf="@+id/frameLayout5"
-        app:layout_constraintStart_toStartOf="@+id/frameLayout5"
-        app:layout_constraintTop_toTopOf="@+id/frameLayout5" />
-
-    <EditText
-        android:id="@+id/UPUserClass"
-        android:layout_width="284dp"
-        android:layout_height="48dp"
-        android:ems="10"
-        android:hint="Class"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="@+id/frameLayout6"
-        app:layout_constraintEnd_toEndOf="@+id/frameLayout6"
-        app:layout_constraintStart_toStartOf="@+id/frameLayout6"
-        app:layout_constraintTop_toTopOf="@+id/frameLayout6" />
-
-    <FrameLayout
-        android:id="@+id/frameLayout7"
-        android:layout_width="301dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        android:foreground="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/UPUserNickName"
-        app:layout_constraintVertical_bias="0.016"
-        tools:visibility="visible">
-
-    </FrameLayout>
-
-    <EditText
-        android:id="@+id/UPUserDateBirth"
-        android:layout_width="284dp"
-        android:layout_height="48dp"
-        android:ems="10"
-        android:hint="Date Of Birth"
-        android:inputType="date"
-        app:layout_constraintBottom_toBottomOf="@+id/frameLayout7"
-        app:layout_constraintEnd_toEndOf="@+id/frameLayout7"
-        app:layout_constraintStart_toStartOf="@+id/frameLayout7"
-        app:layout_constraintTop_toTopOf="@+id/frameLayout7" />
-
-    <EditText
-        android:id="@+id/UPUserstdNr"
-        android:layout_width="284dp"
-        android:layout_height="48dp"
-        android:ems="10"
-        android:hint="Student Number"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="@+id/frameLayout8"
-        app:layout_constraintEnd_toEndOf="@+id/frameLayout8"
-        app:layout_constraintStart_toStartOf="@+id/frameLayout8"
-        app:layout_constraintTop_toTopOf="@+id/frameLayout8" />
-
-    <FrameLayout
-        android:id="@+id/frameLayout"
-        android:layout_width="301dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        android:foreground="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/frameLayout5"
-        app:layout_constraintVertical_bias="0.0">
-
-    </FrameLayout>
-
-    <EditText
-        android:id="@+id/UpUserName"
-        android:layout_width="284dp"
-        android:layout_height="48dp"
-        android:ems="10"
-        android:hint="Name"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="@+id/frameLayout"
-        app:layout_constraintEnd_toEndOf="@+id/frameLayout"
-        app:layout_constraintStart_toStartOf="@+id/frameLayout"
-        app:layout_constraintTop_toTopOf="@+id/frameLayout" />
-
-    <FrameLayout
-        android:id="@+id/frameLayout2"
-        android:layout_width="301dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        android:foreground="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/frameLayout"
-        app:layout_constraintVertical_bias="0.0">
-
-    </FrameLayout>
-
-    <EditText
-        android:id="@+id/UPUserSurName"
-        android:layout_width="284dp"
-        android:layout_height="48dp"
-        android:ems="10"
-        android:hint="Surname"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="@+id/frameLayout2"
-        app:layout_constraintEnd_toEndOf="@+id/frameLayout2"
-        app:layout_constraintStart_toStartOf="@+id/frameLayout2"
-        app:layout_constraintTop_toTopOf="@+id/frameLayout2" />
 
 </android.support.constraint.ConstraintLayout>

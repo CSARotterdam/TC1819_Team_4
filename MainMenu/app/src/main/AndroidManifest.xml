@@ -9,8 +9,7 @@
         android:roundIcon="@drawable/hrlogo3"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
-        <activity android:name=".UpdatePassword"></activity>
-        <activity android:name=".ProfileActivity" />
+        <activity android:name=".ProfileActivity"></activity>
         <activity android:name=".RegisterActivity" />
         <activity android:name=".LoginActivityActivity">
             <intent-filter>
@@ -25,8 +24,8 @@
         <activity android:name=".AccountSettings" />
         <activity android:name=".ReserveItems" />
         <activity android:name=".MyItems" />
-        <activity android:name=".ProductCreate" />
-        <activity android:name=".ProductInfo" />
+        <activity android:name=".ProductCreate"/>
+        <activity android:name=".ProductInfo"/>
     </application>
 
 </manifest>
