@@ -49,6 +49,7 @@ public class Inventory extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.inventory);
         final RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+        recyclerView.setHasFixedSize(true);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(linearLayoutManager);
 
@@ -79,7 +80,6 @@ public class Inventory extends AppCompatActivity{
                     productAmountBroken.add(newproductAmountBroken);
                     productURL.add(newproductURL);
                     productDescription.add(newproductDescription);
-                    System.out.println(product_manufacturer);
                     CustomAdapter customAdapter = new CustomAdapter(Inventory.this, productName, product_manufacturer, product_id, productCategory, productTotalStock, productCurrentStock, productAmountBroken, productURL, productDescription);
                     recyclerView.setAdapter(customAdapter);
                 }

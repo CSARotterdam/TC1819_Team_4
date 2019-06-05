@@ -24,6 +24,10 @@
     <!-- Inventory Screen -->
     <string name="Inventory_Header">Inventory</string>
 
+    <!-- Reserve Items Screen -->
+    <string name="Reserve_Header">Reserve Items</string>
+    <string name="Confirmsel_Button">Confirm Selection</string>
+
     <!--Login Screen -->
     <string name="Email_Title2">Email</string>
     <string name="Password_Title">Password</string>
