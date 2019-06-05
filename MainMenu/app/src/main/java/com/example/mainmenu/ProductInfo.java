@@ -128,7 +128,7 @@ public class ProductInfo extends AppCompatActivity {
                         userProfile userprofile = dataSnapshot.getValue(userProfile.class);
                         FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
                         DatabaseReference myRef = firebaseDatabase.getReference(firebaseAuth.getUid());
-                        myRef.child("itemsBorrowed").setValue(testProduct.getID());
+                        myRef.child("itemsBorrowed").push().setValue(testProduct.getID());
                         testProduct.getID();
                     }
 
