@@ -18,6 +18,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.ArrayList;
+
 public class RegisterActivity extends AppCompatActivity {
 
     private EditText userNickName, userPassword, userEmail, userID, userClass, userName,userSurname, userPhone, userBday ;
@@ -25,6 +27,7 @@ public class RegisterActivity extends AppCompatActivity {
     private TextView userLogin;
     private FirebaseAuth firebaseAuth;
     String email, Username, bday, password, name, surname, id, phone, Class ;
+    ArrayList<String> Borrowlist;
 
 
     @Override
@@ -99,6 +102,7 @@ public class RegisterActivity extends AppCompatActivity {
         id = userID.getText().toString();
         phone = userPhone.getText().toString();
         Class = userClass.getText().toString();
+        Borrowlist = new ArrayList<>();
 
 
 
@@ -115,7 +119,7 @@ public class RegisterActivity extends AppCompatActivity {
     private void sendUserData(){
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
         DatabaseReference myRef = firebaseDatabase.getReference(firebaseAuth.getUid());
-        userProfile userProfile = new userProfile(name,surname,Username,bday,email,id,phone,Class);
+        userProfile userProfile = new userProfile(name,surname,Username,bday,email,id,phone,Class,Borrowlist);
         myRef.setValue(userProfile);
 
     }
