@@ -2,6 +2,8 @@ package com.example.mainmenu;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 
 public class ResAdapter extends RecyclerView.Adapter<ResAdapter.MyViewHolder> {
@@ -23,6 +26,9 @@ public class ResAdapter extends RecyclerView.Adapter<ResAdapter.MyViewHolder> {
     ArrayList<String> productAmountBroken;
     ArrayList<String> productURL;
     ArrayList<String> productDescription;
+
+    //ArrayList<Integer> selectedPositions = new ArrayList<>();
+    //int selectedPosition=-1;
 
 
     Context context;
@@ -52,9 +58,17 @@ public class ResAdapter extends RecyclerView.Adapter<ResAdapter.MyViewHolder> {
         holder.name.setText(productName.get(position));
         holder.manufacturer.setText(product_manufacturer.get(position));
         holder.prodID.setText(product_id.get(position));
+        //if(selectedPosition==position)
+        //    holder.itemView.setBackgroundColor(Color.parseColor("#000000"));
+        //else
+        //   holder.itemView.setBackgroundColor(Color.parseColor("#ffffff"));
+
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //selectedPosition = position;
+                //System.out.println(selectedPosition);
+                //notifyItemChanged(position);
                 System.out.println("Clicked: " + productName.get(position));
             }
         });
