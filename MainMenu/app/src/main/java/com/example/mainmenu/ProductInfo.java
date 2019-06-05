@@ -2,6 +2,8 @@ package com.example.mainmenu;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -9,6 +11,7 @@ import android.graphics.drawable.Drawable;
 import android.graphics.drawable.DrawableContainer;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -17,6 +20,13 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -29,6 +39,8 @@ public class ProductInfo extends AppCompatActivity {
 
     //Product testProduct = new Product("idIguess", "VR Headset", "test string about VR headsets or something I don't know I just programmed this page I didn't make VR headsets", Uri.parse("https://en.wikipedia.org/wiki/Virtual_reality_headset"), BitmapFactory.decodeResource(getResources(),R.drawable.hrlogo), 2, 4);
     int currAmount;
+    Product testProduct;
+    private FirebaseDatabase firebaseDatabase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,7 +64,7 @@ public class ProductInfo extends AppCompatActivity {
         String productURL = prodinfo.getStringExtra("productURL");
         String productDescription = prodinfo.getStringExtra("productDescription");
 
-        final Product testProduct = new Product(product_id, productName, product_manufacturer, productDescription, Uri.parse(productURL), BitmapFactory.decodeResource(getResources(),R.drawable.hrlogo), productCurrentStock, productTotalStock);
+        testProduct = new Product(product_id, productName, product_manufacturer, productDescription, Uri.parse(productURL), BitmapFactory.decodeResource(getResources(),R.drawable.hrlogo), productCurrentStock, productTotalStock);
 
 
         //final ArrayList<String> testList = new ArrayList<String>();
@@ -104,9 +116,34 @@ public class ProductInfo extends AppCompatActivity {
 
         if (title != null) builder.setTitle(title);
 
+        DialogInterface.OnClickListener reserving = new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                firebaseDatabase = FirebaseDatabase.getInstance();
+                DatabaseReference databaseReference = firebaseDatabase.getReference().child("items");
+                databaseReference.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        userProfile userprofile = dataSnapshot.getValue(userProfile.class);
+                        ArrayList<String> userItemList = userprofile.itemsBorrowed;
+                        System.out.println(userItemList);
+                        System.out.println(testProduct.getID());
+                        userItemList.add(testProduct.getID());
+                        userprofile.itemsBorrowed = userItemList;
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+                        Toast.makeText(ProductInfo.this, databaseError.getCode(), Toast.LENGTH_SHORT);
+
+                    }
+                });
+            }
+        };
+
         builder.setMessage(message);
         builder.setNegativeButton("No", null);
-        builder.setPositiveButton("Yes", null);
+        builder.setPositiveButton("Yes", reserving);
         builder.show();
     }
 

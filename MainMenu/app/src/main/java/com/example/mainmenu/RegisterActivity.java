@@ -103,6 +103,7 @@ public class RegisterActivity extends AppCompatActivity {
         phone = userPhone.getText().toString();
         Class = userClass.getText().toString();
         Borrowlist = new ArrayList<>();
+        Borrowlist.add("Item1");
 
 
 
