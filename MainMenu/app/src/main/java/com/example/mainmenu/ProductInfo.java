@@ -22,6 +22,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -125,11 +126,10 @@ public class ProductInfo extends AppCompatActivity {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         userProfile userprofile = dataSnapshot.getValue(userProfile.class);
-                        ArrayList<String> userItemList = userprofile.itemsBorrowed;
-                        System.out.println(userItemList);
-                        System.out.println(testProduct.getID());
-                        userItemList.add(testProduct.getID());
-                        userprofile.itemsBorrowed = userItemList;
+                        FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
+                        DatabaseReference myRef = firebaseDatabase.getReference(firebaseAuth.getUid());
+                        myRef.child("itemsBorrowed").setValue(testProduct.getID());
+                        testProduct.getID();
                     }
 
                     @Override
