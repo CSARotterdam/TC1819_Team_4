@@ -15,6 +15,9 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URI;
@@ -32,6 +35,8 @@ private String productID;
 private EditText nameText, descText, idText, URLText, numText, manuText;
 private Button creaButton;
 private String manu;
+private FirebaseDatabase firebaseDatabase;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,15 +64,25 @@ private String manu;
                     manu = manuText.getText().toString().trim();
 
                     //Product newProd = new Product(productID,productName,productDesc,productUri,imageBitmap,productAmount,productAmount);
-                    Intent openProductInfo = new Intent(getApplicationContext(), ProductInfo.class);
-                    openProductInfo.putExtra("product_id",productID);
-                    openProductInfo.putExtra("productName", productName);
-                    openProductInfo.putExtra("productDescription", productDesc);
-                    openProductInfo.putExtra("productURL",productUri);
-                    openProductInfo.putExtra("productTotalStock",productAmount);
-                    openProductInfo.putExtra("productCurrentStock",productAmount);
-                    openProductInfo.putExtra("product_manufacturer", manu);
-                    startActivity(openProductInfo);
+                    //Intent openProductInfo = new Intent(getApplicationContext(), ProductInfo.class);
+                    //openProductInfo.putExtra("product_id",productID);
+                    //openProductInfo.putExtra("productName", productName);
+                    //openProductInfo.putExtra("productDescription", productDesc);
+                    //openProductInfo.putExtra("productURL",productUri);
+                    //openProductInfo.putExtra("productTotalStock",productAmount);
+                    //openProductInfo.putExtra("productCurrentStock",productAmount);
+                    //openProductInfo.putExtra("product_manufacturer", manu);
+                    //startActivity(openProductInfo);
+
+                    firebaseDatabase = FirebaseDatabase.getInstance();
+                    DatabaseReference databaseReference = firebaseDatabase.getReference().child("items").child(productName); //make a child with product name as name
+                    databaseReference.child("productCurrentStock").setValue(String.valueOf(productAmount));
+                    databaseReference.child("productTotalStock").setValue(String.valueOf(productAmount));
+                    databaseReference.child("productDescription").setValue(productDesc);
+                    databaseReference.child("productName").setValue(productName);
+                    databaseReference.child("product_id").setValue(productID);
+                    databaseReference.child("productURL").setValue(productUri);
+                    databaseReference.child("product_manufacturer").setValue(manu);
                 }
 
             }

@@ -38,8 +38,7 @@ public class MainActivity extends AppCompatActivity{
 
                 Intent openInventory = new Intent(getApplicationContext(), Inventory.class);
                 startActivity(openInventory);
-                //Intent openCreateProduct = new Intent(getApplicationContext(), ProductCreate.class);
-                //startActivity(openCreateProduct);
+
             }
          });
 
@@ -69,6 +68,8 @@ public class MainActivity extends AppCompatActivity{
 
                 Intent openReserveItems = new Intent(getApplicationContext(), ReserveItems.class);
                 startActivity(openReserveItems);
+                //Intent openCreateProduct = new Intent(getApplicationContext(), ProductCreate.class);
+                //startActivity(openCreateProduct);
             }
         });
 
