@@ -125,11 +125,9 @@ public class ProductInfo extends AppCompatActivity {
                 databaseReference.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        userProfile userprofile = dataSnapshot.getValue(userProfile.class);
                         FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
                         DatabaseReference myRef = firebaseDatabase.getReference(firebaseAuth.getUid());
                         myRef.child("itemsBorrowed").push().setValue(testProduct.getID());
-                        testProduct.getID();
                     }
 
                     @Override
