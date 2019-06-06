@@ -61,7 +61,6 @@ public class MyItemsAdapter extends RecyclerView.Adapter<MyItemsAdapter.MyViewHo
         holder.name.setText(productName.get(position));
         holder.manufacturer.setText(product_manufacturer.get(position));
         holder.prodID.setText(product_id.get(position));
-
         holder.button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

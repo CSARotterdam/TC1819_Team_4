@@ -1,8 +1,12 @@
 package com.example.mainmenu;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
+import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -46,9 +50,8 @@ public class MyItems extends AppCompatActivity{
     public String newproductURL;
     public String newproductDescription;
 
-
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.my_items);
         final RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView2);
@@ -56,10 +59,11 @@ public class MyItems extends AppCompatActivity{
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(linearLayoutManager);
 
-        firebaseDatabase = FirebaseDatabase.getInstance();
+        final ArrayList<String> itemsBorrowed = getIntent().getStringArrayListExtra("itemsBorrowed");
 
+        firebaseDatabase = FirebaseDatabase.getInstance();
         FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
-        DatabaseReference MyRef = firebaseDatabase.getReference(firebaseAuth.getUid()).child("itemsBorrowed");
+
         DatabaseReference databaseReference1 = firebaseDatabase.getReference().child("items");
 
         databaseReference1.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -77,17 +81,20 @@ public class MyItems extends AppCompatActivity{
                     newproductURL = listItem.getProductURL();
                     newproductDescription = listItem.getProductDescription();
 
-                    productName.add(newproductName);
-                    product_manufacturer.add(newproduct_manufacturer);
-                    product_id.add(newproduct_id);
-                    productCategory.add(newproductCategory);
-                    productTotalStock.add(newproductTotalStock);
-                    productCurrentStock.add(newproductCurrentStock);
-                    productAmountBroken.add(newproductAmountBroken);
-                    productURL.add(newproductURL);
-                    productDescription.add(newproductDescription);
+                    if (itemsBorrowed.contains(newproduct_id)){
+                        productName.add(newproductName);
+                        product_manufacturer.add(newproduct_manufacturer);
+                        product_id.add(newproduct_id);
+                        productCategory.add(newproductCategory);
+                        productTotalStock.add(newproductTotalStock);
+                        productCurrentStock.add(newproductCurrentStock);
+                        productAmountBroken.add(newproductAmountBroken);
+                        productURL.add(newproductURL);
+                        productDescription.add(newproductDescription);
+                        MyItemsAdapter MyItemsAdapter = new MyItemsAdapter(MyItems.this, productName, product_manufacturer, product_id, productCategory, productTotalStock, productCurrentStock, productAmountBroken, productURL, productDescription);
+                        recyclerView.setAdapter(MyItemsAdapter);
+                    }
                 }
-
             }
 
             @Override
@@ -95,6 +102,8 @@ public class MyItems extends AppCompatActivity{
 
             }
         });
+
+
         Button back = findViewById(R.id.mitems_backtomenu_btn);
         back.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
