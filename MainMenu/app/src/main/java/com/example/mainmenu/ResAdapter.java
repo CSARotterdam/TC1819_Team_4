@@ -27,8 +27,8 @@ public class ResAdapter extends RecyclerView.Adapter<ResAdapter.MyViewHolder> {
     ArrayList<String> productURL;
     ArrayList<String> productDescription;
 
-    //ArrayList<Integer> selectedPositions = new ArrayList<>();
-    //int selectedPosition=-1;
+    ArrayList<Integer> selectedPositions = new ArrayList<>();
+    int selectedPosition=-1;
 
 
     Context context;
@@ -58,17 +58,17 @@ public class ResAdapter extends RecyclerView.Adapter<ResAdapter.MyViewHolder> {
         holder.name.setText(productName.get(position));
         holder.manufacturer.setText(product_manufacturer.get(position));
         holder.prodID.setText(product_id.get(position));
-        //if(selectedPosition==position)
-        //    holder.itemView.setBackgroundColor(Color.parseColor("#000000"));
-        //else
-        //   holder.itemView.setBackgroundColor(Color.parseColor("#ffffff"));
+        if(selectedPosition==position)
+            holder.rowlayout.setBackgroundColor(Color.parseColor("#000000"));
+        else
+           holder.rowlayout.setBackgroundColor(Color.parseColor("#ffffff"));
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //selectedPosition = position;
+                selectedPosition = position;
                 //System.out.println(selectedPosition);
-                //notifyItemChanged(position);
+                notifyItemChanged(position);
                 System.out.println("Clicked: " + productName.get(position));
             }
         });
@@ -81,11 +81,11 @@ public class ResAdapter extends RecyclerView.Adapter<ResAdapter.MyViewHolder> {
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        TextView name, manufacturer, prodID;
+        TextView name, manufacturer, prodID, rowlayout;
 
         public MyViewHolder(View itemView) {
             super(itemView);
-
+            rowlayout = itemView.findViewById(R.id.row_layout);
             name = itemView.findViewById(R.id.name);
             manufacturer = itemView.findViewById(R.id.manufacturer);
             prodID = itemView.findViewById(R.id.prodid);
