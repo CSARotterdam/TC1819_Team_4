@@ -38,6 +38,8 @@ private EditText nameText, descText, idText, URLText, numText, manuText, categor
 private Button creaButton;
 private String manu;
 private FirebaseDatabase firebaseDatabase;
+private Long amountBroken;
+private Long productAmountLong;
 
 
     @Override
@@ -79,15 +81,17 @@ private FirebaseDatabase firebaseDatabase;
 
                     firebaseDatabase = FirebaseDatabase.getInstance();
                     DatabaseReference databaseReference = firebaseDatabase.getReference().child("items").child(productName); //make a child with product name as name
-                    databaseReference.child("productCurrentStock").setValue(String.valueOf(productAmount));
-                    databaseReference.child("productTotalStock").setValue(String.valueOf(productAmount));
+                    productAmountLong = Long.parseLong(String.valueOf(productAmount));
+                    databaseReference.child("productCurrentStock").setValue(productAmountLong);
+                    databaseReference.child("productTotalStock").setValue(productAmountLong);
                     databaseReference.child("productDescription").setValue(productDesc);
                     databaseReference.child("productName").setValue(productName);
                     databaseReference.child("product_id").setValue(productID);
                     databaseReference.child("productURL").setValue(productUri);
                     databaseReference.child("product_manufacturer").setValue(manu);
                     databaseReference.child("product_manufacturer").setValue(productCat);
-                    databaseReference.child("productAmountBroken").setValue(0);
+                    amountBroken = 0L;
+                    databaseReference.child("productAmountBroken").setValue(amountBroken);
                 }
 
             }

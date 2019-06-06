@@ -86,7 +86,6 @@ public class MyItems extends AppCompatActivity{
                     productAmountBroken.add(newproductAmountBroken);
                     productURL.add(newproductURL);
                     productDescription.add(newproductDescription);
-
                 }
 
             }
