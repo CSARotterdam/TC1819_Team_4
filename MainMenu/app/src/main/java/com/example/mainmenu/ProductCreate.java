@@ -21,6 +21,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URI;
+import java.util.Locale;
 
 public class ProductCreate extends AppCompatActivity {
 
@@ -32,7 +33,8 @@ private String productName;
 private String productDesc;
 private int productAmount;
 private String productID;
-private EditText nameText, descText, idText, URLText, numText, manuText;
+private String productCat;
+private EditText nameText, descText, idText, URLText, numText, manuText, categoryText;
 private Button creaButton;
 private String manu;
 private FirebaseDatabase firebaseDatabase;
@@ -62,6 +64,7 @@ private FirebaseDatabase firebaseDatabase;
                     productID = idText.getText().toString().trim();
                     productUri = URLText.getText().toString().trim();
                     manu = manuText.getText().toString().trim();
+                    productCat = categoryText.getText().toString().trim();
 
                     //Product newProd = new Product(productID,productName,productDesc,productUri,imageBitmap,productAmount,productAmount);
                     //Intent openProductInfo = new Intent(getApplicationContext(), ProductInfo.class);
@@ -83,6 +86,8 @@ private FirebaseDatabase firebaseDatabase;
                     databaseReference.child("product_id").setValue(productID);
                     databaseReference.child("productURL").setValue(productUri);
                     databaseReference.child("product_manufacturer").setValue(manu);
+                    databaseReference.child("product_manufacturer").setValue(productCat);
+                    databaseReference.child("productAmountBroken").setValue(0);
                 }
 
             }
@@ -122,6 +127,7 @@ private FirebaseDatabase firebaseDatabase;
         numText = findViewById(R.id.productAmount);
         creaButton = findViewById(R.id.btnCreate);
         manuText = findViewById(R.id.productManu);
+        categoryText = findViewById(R.id.productCategory);
     }
 
 
@@ -135,8 +141,9 @@ private FirebaseDatabase firebaseDatabase;
         String URL = URLText.getText().toString();
         String amount = numText.getText().toString();
         String manufacturer = manuText.getText().toString();
+        String category = categoryText.getText().toString();
 
-        if(name.isEmpty() || manufacturer.isEmpty() || description.isEmpty() || id.isEmpty() || imageBitmap == null || URLUtil.isValidUrl(URL) == false || amount.isEmpty()){
+        if(name.isEmpty() || manufacturer.isEmpty() || description.isEmpty() || id.isEmpty() || imageBitmap == null || URLUtil.isValidUrl(URL) == false || amount.isEmpty() || category.isEmpty()){
             Toast.makeText(this, "Please enter all details", Toast.LENGTH_SHORT).show();
         }else {
             result = true;
