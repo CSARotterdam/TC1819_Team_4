@@ -15,10 +15,6 @@ public class userProfile {
     public ArrayList <String> itemsBorrowed;
 
 
-    public userProfile(){
-    }
-
-
     public userProfile(String userName, String userSurname, String userNickName, String userBday, String userEmail, String userID, String userPhone, String userClass, String userRole, ArrayList<String> itemsBorrowed) {
 
         this.userName = userName;

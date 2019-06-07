@@ -165,13 +165,9 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvProfileSurname"
-<<<<<<< HEAD
-        app:layout_constraintVertical_bias="0.14" />
-=======
         app:layout_constraintVertical_bias="0.303"
         app:layout_constraintWidth_percent="0.5"
         app:layout_constraintHeight_percent="0.07"/>
->>>>>>> master
 
     <TextView
         android:id="@+id/tvProfileClass"
@@ -184,7 +180,6 @@
         android:textColorHighlight="#000000"
         android:textColorHint="#000000"
         android:textColorLink="#000000"
-<<<<<<< HEAD
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -202,13 +197,6 @@
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
         android:text="Change Password"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnProfileUpdate"
-        app:layout_constraintVertical_bias="0.326" />
-=======
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHeight_percent="0.07"
@@ -218,5 +206,5 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.35"
         app:layout_constraintWidth_percent="0.7" />
->>>>>>> master
+
 </android.support.constraint.ConstraintLayout>
