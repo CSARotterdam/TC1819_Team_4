@@ -18,13 +18,20 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.ArrayList;
+
 public class RegisterActivity extends AppCompatActivity {
 
     private EditText userNickName, userPassword, userEmail, userID, userClass, userName,userSurname, userPhone, userBday ;
     private Button regButton;
     private TextView userLogin;
     private FirebaseAuth firebaseAuth;
+<<<<<<< HEAD
     String email, Username, bday, password, name, surname, id, phone, Class, Role ;
+=======
+    String email, Username, bday, password, name, surname, id, phone, Class ;
+    ArrayList<String> Borrowlist;
+>>>>>>> master
 
 
     @Override
@@ -48,10 +55,10 @@ public class RegisterActivity extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if(task.isSuccessful()){
                                 sendUserData();
-                                Toast.makeText(RegisterActivity.this, "registration succesfull", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(RegisterActivity.this, "Registration successful", Toast.LENGTH_SHORT).show();
                                 startActivity(new Intent(RegisterActivity.this, LoginActivityActivity.class));
                             }else{
-                                Toast.makeText(RegisterActivity.this, "registration failed", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(RegisterActivity.this, "Registration failed", Toast.LENGTH_SHORT).show();
                             }
                         }
 
@@ -99,6 +106,7 @@ public class RegisterActivity extends AppCompatActivity {
         id = userID.getText().toString();
         phone = userPhone.getText().toString();
         Class = userClass.getText().toString();
+        Borrowlist = new ArrayList<>();
 
 
 
@@ -115,7 +123,11 @@ public class RegisterActivity extends AppCompatActivity {
     private void sendUserData(){
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
         DatabaseReference myRef = firebaseDatabase.getReference(firebaseAuth.getUid());
+<<<<<<< HEAD
         userProfile userProfile = new userProfile(name,surname,Username,bday,email,id,phone,Class, Role);
+=======
+        userProfile userProfile = new userProfile(name,surname,Username,bday,email,id,phone,Class,Borrowlist);
+>>>>>>> master
         myRef.setValue(userProfile);
 
     }
