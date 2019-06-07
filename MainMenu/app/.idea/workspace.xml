@@ -117,6 +117,7 @@
       </file>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/example/mainmenu/userProfile.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -126,6 +127,8 @@
           </provider>
         </entry>
       </file>
+=======
+>>>>>>> parent of 969723b... Revert "Merge branch 'master' into DataBase-and-Moderator"
 =======
 >>>>>>> parent of 969723b... Revert "Merge branch 'master' into DataBase-and-Moderator"
 =======
@@ -172,6 +175,7 @@
     <panes>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       <pane id="AndroidView">
         <subPane>
           <expand>
@@ -198,16 +202,21 @@
       <pane id="Scope" />
       <pane id="ProjectPane" />
 =======
+=======
+>>>>>>> parent of 969723b... Revert "Merge branch 'master' into DataBase-and-Moderator"
       <pane id="ProjectPane" />
       <pane id="Scope" />
       <pane id="AndroidView" />
       <pane id="PackagesPane" />
+<<<<<<< HEAD
 >>>>>>> parent of 969723b... Revert "Merge branch 'master' into DataBase-and-Moderator"
 =======
       <pane id="ProjectPane" />
       <pane id="Scope" />
       <pane id="AndroidView" />
       <pane id="PackagesPane" />
+>>>>>>> parent of 969723b... Revert "Merge branch 'master' into DataBase-and-Moderator"
+=======
 >>>>>>> parent of 969723b... Revert "Merge branch 'master' into DataBase-and-Moderator"
     </panes>
   </component>
@@ -307,7 +316,11 @@
   <component name="ToolWindowManager">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+=======
+    <frame x="1912" y="1" width="1936" height="1056" extended-state="6" />
+>>>>>>> parent of 969723b... Revert "Merge branch 'master' into DataBase-and-Moderator"
 =======
     <frame x="1912" y="1" width="1936" height="1056" extended-state="6" />
 >>>>>>> parent of 969723b... Revert "Merge branch 'master' into DataBase-and-Moderator"
@@ -350,8 +363,12 @@
     </entry>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_profile.xml">
       <provider selected="true" editor-type-id="android-designer2" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/account_settings.xml">
+>>>>>>> parent of 969723b... Revert "Merge branch 'master' into DataBase-and-Moderator"
 =======
     <entry file="file://$PROJECT_DIR$/src/main/res/layout/account_settings.xml">
 >>>>>>> parent of 969723b... Revert "Merge branch 'master' into DataBase-and-Moderator"
@@ -363,6 +380,7 @@
       <provider selected="true" editor-type-id="android-designer2" />
 =======
     <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_profile.xml">
+<<<<<<< HEAD
 >>>>>>> parent of 969723b... Revert "Merge branch 'master' into DataBase-and-Moderator"
 =======
     <entry file="file://$PROJECT_DIR$/src/main/res/layout/account_settings.xml">
@@ -370,6 +388,8 @@
       <provider selected="true" editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_profile.xml">
+>>>>>>> parent of 969723b... Revert "Merge branch 'master' into DataBase-and-Moderator"
+=======
 >>>>>>> parent of 969723b... Revert "Merge branch 'master' into DataBase-and-Moderator"
       <provider editor-type-id="text-editor" />
       <provider selected="true" editor-type-id="android-designer2" />
@@ -381,6 +401,7 @@
         </state>
       </provider>
 <<<<<<< HEAD
+<<<<<<< HEAD
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/example/mainmenu/userProfile.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -388,6 +409,8 @@
           <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
         </state>
       </provider>
+=======
+>>>>>>> parent of 969723b... Revert "Merge branch 'master' into DataBase-and-Moderator"
 =======
 >>>>>>> parent of 969723b... Revert "Merge branch 'master' into DataBase-and-Moderator"
     </entry>
