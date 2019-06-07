@@ -27,8 +27,10 @@ public class RegisterActivity extends AppCompatActivity {
     private Button regButton;
     private TextView userLogin;
     private FirebaseAuth firebaseAuth;
-    String email, Username, bday, password, name, surname, id, phone, Class ;
+
+    String email, Username, bday, password, name, surname, id, phone, Class, Role ;
     HashMap<String,Object> Borrowlist;
+
 
 
     @Override
@@ -117,7 +119,7 @@ public class RegisterActivity extends AppCompatActivity {
     private void sendUserData(){
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
         DatabaseReference myRef = firebaseDatabase.getReference(firebaseAuth.getUid());
-        userProfile userProfile = new userProfile(name,surname,Username,bday,email,id,phone,Class,Borrowlist);
+        userProfile userProfile = new userProfile(name,surname,Username,bday,email,id,phone,Class,Role,Borrowlist);
         myRef.setValue(userProfile);
 
     }
@@ -128,6 +130,3 @@ public class RegisterActivity extends AppCompatActivity {
 
   //end of file
 }
-
-
-

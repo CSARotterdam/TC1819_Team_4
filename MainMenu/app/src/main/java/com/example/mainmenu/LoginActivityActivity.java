@@ -1,3 +1,4 @@
+
 package com.example.mainmenu;
 
 import android.app.ProgressDialog;
@@ -20,7 +21,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivityActivity extends AppCompatActivity {
 
-    private EditText Name;
+    private EditText Email;
     private EditText Password;
     private Button Login;
     private TextView Register;
@@ -34,7 +35,7 @@ public class LoginActivityActivity extends AppCompatActivity {
         setContentView(R.layout.login_activity);
         setupUIViews();
 
-        Name =(EditText)findViewById(R.id.etEmail);
+        Email =(EditText)findViewById(R.id.etEmail);
         Password = (EditText)findViewById(R.id.etUserPassword);
         Login = (Button)findViewById(R.id.btnLogin);
 
@@ -52,10 +53,10 @@ public class LoginActivityActivity extends AppCompatActivity {
         Login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if ((Name.getText().toString().isEmpty()) && (Password.getText().toString().isEmpty()) ){
+                if ((Email.getText().toString().isEmpty()) && (Password.getText().toString().isEmpty()) ){
                     return;
                 }else{
-                    validate(Name.getText().toString(), Password.getText().toString());
+                    validate(Email.getText().toString(), Password.getText().toString());
                 }
             }
         });
@@ -74,27 +75,28 @@ public class LoginActivityActivity extends AppCompatActivity {
     }
 
     private void validate(String userName, String userPassword) {
-
         progressDialog.setMessage("Logging In");
         progressDialog.show();
-
-        firebaseAuth.signInWithEmailAndPassword(userName, userPassword).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if(task.isSuccessful()){
-                    progressDialog.dismiss();
-                    Toast.makeText(LoginActivityActivity.this,"Login Successful", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(LoginActivityActivity.this, MainActivity.class));
-                }else{
-                    Toast.makeText(LoginActivityActivity.this,"Login Failed", Toast.LENGTH_SHORT).show();
-                    progressDialog.dismiss();
+        if ((Email.getText().toString().isEmpty()) || (Password.getText().toString().isEmpty())) {
+            Toast.makeText(LoginActivityActivity.this, "Login Failed", Toast.LENGTH_SHORT).show();
+            progressDialog.dismiss();
+        }else {
+            firebaseAuth.signInWithEmailAndPassword(userName, userPassword).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                @Override
+                public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            progressDialog.dismiss();
+                            Toast.makeText(LoginActivityActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(LoginActivityActivity.this, MainActivity.class));
+                        } else {
+                            Toast.makeText(LoginActivityActivity.this, "Login Failed", Toast.LENGTH_SHORT).show();
+                            progressDialog.dismiss();
+                        }
                     }
-                }
-
-        });
+            });
 
 
-    }
+    }}
 
         private void setupUIViews(){
             Register = (TextView)findViewById(R.id.tvRegister);

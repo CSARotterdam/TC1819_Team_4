@@ -1,8 +1,10 @@
 package com.example.mainmenu;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -23,7 +25,7 @@ import java.util.Map;
 public class ProfileActivity extends AppCompatActivity {
 
     private TextView profileNickName, profileBday, profileEmail, profileName, profileSurname, profileClass, profileStudentNR, profilePhoneNumber;
-    private Button profileUpdate;
+    private Button profileUpdate, changePassword;
     private FirebaseAuth firebaseAuth;
     private FirebaseDatabase firebaseDatabase;
     private ArrayList <String> itemsBorrowed;
@@ -43,6 +45,7 @@ public class ProfileActivity extends AppCompatActivity {
         profileStudentNR = findViewById(R.id. tvProfileID);
         profilePhoneNumber = findViewById(R.id. tvProfilePhone);
         profileUpdate = findViewById(R.id.btnProfileUpdate);
+        changePassword = findViewById(R.id.btnChangePassword);
 
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseDatabase = FirebaseDatabase.getInstance();
@@ -69,6 +72,19 @@ public class ProfileActivity extends AppCompatActivity {
                 Toast.makeText(ProfileActivity.this, databaseError.getCode(), Toast.LENGTH_SHORT);
                 throw databaseError.toException();
 
+            }
+        });
+
+        profileUpdate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ProfileActivity.this, AccountSettings.class));
+            }
+        });
+        changePassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ProfileActivity.this, UpdatePassword.class));
             }
         });
     }
