@@ -26,12 +26,10 @@ public class RegisterActivity extends AppCompatActivity {
     private Button regButton;
     private TextView userLogin;
     private FirebaseAuth firebaseAuth;
-<<<<<<< HEAD
+
     String email, Username, bday, password, name, surname, id, phone, Class, Role ;
-=======
-    String email, Username, bday, password, name, surname, id, phone, Class ;
     ArrayList<String> Borrowlist;
->>>>>>> master
+
 
 
     @Override
@@ -123,11 +121,7 @@ public class RegisterActivity extends AppCompatActivity {
     private void sendUserData(){
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
         DatabaseReference myRef = firebaseDatabase.getReference(firebaseAuth.getUid());
-<<<<<<< HEAD
-        userProfile userProfile = new userProfile(name,surname,Username,bday,email,id,phone,Class, Role);
-=======
-        userProfile userProfile = new userProfile(name,surname,Username,bday,email,id,phone,Class,Borrowlist);
->>>>>>> master
+        userProfile userProfile = new userProfile(name,surname,Username,bday,email,id,phone,Class,Role,Borrowlist);
         myRef.setValue(userProfile);
 
     }
