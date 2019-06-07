@@ -14,6 +14,8 @@ public class userProfile {
     public String userRole;
     public ArrayList <String> itemsBorrowed;
 
+    public userProfile(){
+    }
 
     public userProfile(String userName, String userSurname, String userNickName, String userBday, String userEmail, String userID, String userPhone, String userClass, String userRole, ArrayList<String> itemsBorrowed) {
 
@@ -93,7 +95,6 @@ public class userProfile {
     public void setUserClass(String userClass) {
         this.userClass = userClass;
     }
-
 
     public String getUserRole() {
         return userRole;
