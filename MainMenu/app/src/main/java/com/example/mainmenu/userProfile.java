@@ -1,7 +1,5 @@
 package com.example.mainmenu;
 
-import java.util.ArrayList;
-
 public class userProfile {
     public String userName;
     public String userSurname;
@@ -11,20 +9,12 @@ public class userProfile {
     public String userID;
     public String userPhone;
     public String userClass;
-<<<<<<< HEAD
     public String userRole;
-=======
-    public ArrayList <String> itemsBorrowed;
->>>>>>> master
 
     public userProfile(){
     }
 
-<<<<<<< HEAD
     public userProfile(String userName, String userSurname, String userNickName, String userBday, String userEmail, String userID, String userPhone, String userClass, String userRole) {
-=======
-    public userProfile(String userName, String userSurname, String userNickName, String userBday, String userEmail, String userID, String userPhone, String userClass, ArrayList<String> itemsBorrowed) {
->>>>>>> master
         this.userName = userName;
         this.userSurname = userSurname;
         this.userNickName = userNickName;
@@ -33,11 +23,7 @@ public class userProfile {
         this.userID = userID;
         this.userPhone = userPhone;
         this.userClass = userClass;
-<<<<<<< HEAD
         this.userRole = "User";
-=======
-        this.itemsBorrowed = itemsBorrowed;
->>>>>>> master
     }
 
     public String getUserName() {
@@ -104,15 +90,9 @@ public class userProfile {
         this.userClass = userClass;
     }
 
-<<<<<<< HEAD
     public void setUserRole(String UserRole){
         this.userRole = "User";
     }
-=======
-    public ArrayList<String> getItemsBorrowed() {return itemsBorrowed; }
-
-    public void setItemsBorrowed(ArrayList<String> itemsBorrowed) { this.itemsBorrowed = itemsBorrowed; }
->>>>>>> master
 }
 
 

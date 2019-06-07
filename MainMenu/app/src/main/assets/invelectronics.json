@@ -9,7 +9,7 @@
         "productCurrentStock": 2,
         "productAmountBroken": 0,
         "productURL": "https://en.wikipedia.org/wiki/Microsoft_HoloLens",
-        "productDescription": "The HoloLens is a pair of mixed reality smartglasses developed and manufactured by Microsoft. The sunglasses can display most of the UWP apps and even some 3D holographic apps (developed in Unity or Vuforia."
+        "productDescription": "Placeholder description. Please update soon"
     },
     {
         "product_id": "gc-sony-plst",
@@ -20,7 +20,7 @@
         "productCurrentStock": 1,
         "productAmountBroken": 0,
         "productURL": "https://en.wikipedia.org/wiki/PlayStation_4",
-        "productDescription": "The PS4 is a home video game console produced by Sony. It was launched in 2013, and supports many different games including Minecraft, Just Cause 3 and Call of Duty."
+        "productDescription": "Placeholder description. Please update soon"
     },
     {
         "product_id": "mc-mcpt-lcdd",
@@ -31,7 +31,7 @@
         "productCurrentStock": 5,
         "productAmountBroken": 0,
         "productURL": "https://micropython.org/",
-        "productDescription": "The LCD Display is a 128x32 pixel monochrome screen, part NHD-C12832A1Z. This display can be used to output many different things using Python."
+        "productDescription": "Placeholder description. Please update soon"
     },
     {
         "product_id": "mc-mcpt-cpuc",
@@ -42,7 +42,7 @@
         "productCurrentStock": 4,
         "productAmountBroken": 0,
         "productURL": "https://micropython.org/",
-        "productDescription": "A case for the MicroComputer computer (product ID: mc-mcpt-cpuc)"
+        "productDescription": "Placeholder description. Please update soon"
     },
     {
         "product_id": "mc-mcpt-cptr",
@@ -53,7 +53,7 @@
         "productCurrentStock": 5,
         "productAmountBroken": 0,
         "productURL": "https://micropython.org/",
-        "productDescription": "A microcomputer made for building/running python programms/scripts."
+        "productDescription": "Placeholder description. Please update soon"
     },
     {
         "product_id": "dr-prrt-drel",
@@ -64,7 +64,7 @@
         "productCurrentStock": 7,
         "productAmountBroken": 0,
         "productURL": "https://www.parrot.com/global/drones/parrot-ardrone-20-elite-edition",
-        "productDescription": "The AR Drone Elite is a quadcopter equipped with 2 cameras (one of which is a 720p HD camera) and a sturdy design. The drone can be easilly controlled with a smartphone/tablet"
+        "productDescription": "Placeholder description. Please update soon"
     },
     {
         "product_id": "rc-qunm-vndl",
@@ -75,7 +75,7 @@
         "productCurrentStock": 1,
         "productAmountBroken": 0,
         "productURL": "https://hobbyking.com/en_us/quanum-vandal-1-10-4wd-electric-racing-buggy-rtr.html",
-        "productDescription": "The Vandal is a 1/10 scale 4WD offroad RC Buggy, perfect for jumps, offroad racing or just having fun, racing around the park. The right setup allows for speeds up to 62km/h."
+        "productDescription": "Placeholder description. Please update soon"
     },
     {
         "product_id": "ga-eapb-fifa",
@@ -86,7 +86,7 @@
         "productCurrentStock": 1,
         "productAmountBroken": 0,
         "productURL": "https://en.wikipedia.org/wiki/FIFA_18",
-        "productDescription": "FIFA 18 is a football simulation game developed and published by EA. Released in 2017, this game allows the player to control either a player or a whole team into progressing and winning worldwide tournaments."
+        "productDescription": "Placeholder description. Please update soon"
     },
     {
         "product_id": "ga-bana-tkkn",
@@ -97,7 +97,7 @@
         "productCurrentStock": 1,
         "productAmountBroken": 0,
         "productURL": "https://en.wikipedia.org/wiki/Tekken_7",
-        "productDescription": "Tekken 7 is a fighting game developed and published by Bandai Namco. The game was released in 2017, and makes use of the Unreal Engine 4."
+        "productDescription": "Placeholder description. Please update soon"
     },
     {
         "product_id": "st-amzn-echo",
@@ -108,7 +108,7 @@
         "productCurrentStock": 2,
         "productAmountBroken": 0,
         "productURL": "https://en.wikipedia.org/wiki/Amazon_Echo",
-        "productDescription": "The Echo Dot is an Alexa-enabled smart bluetooth speaker, that allows you to control and automate your smart home using your voice."
+        "productDescription": "Placeholder description. Please update soon"
     },
     {
         "product_id": "mc-lmnt-rpiw",
@@ -119,7 +119,7 @@
         "productCurrentStock": 5,
         "productAmountBroken": 0,
         "productURL": "https://www.raspberrypi.org/",
-        "productDescription": "The Raspberry Pi Camera allows you to take high-def video and pictures using your Raspberry Pi. This is mainly used in home security applications or wildlife camera traps."
+        "productDescription": "Placeholder description. Please update soon"
     },
     {
         "product_id": "mc-lmnt-rpic",
@@ -130,7 +130,7 @@
         "productCurrentStock": 5,
         "productAmountBroken": 0,
         "productURL": "https://www.raspberrypi.org/",
-        "productDescription": "The Raspberry Pi case is useful if you want to protect your Pi, or safely story it in a permanent spot without worrying about damaging it."
+        "productDescription": "Placeholder description. Please update soon"
     },
     {
         "product_id": "mc-dxtr-grve",
@@ -141,7 +141,7 @@
         "productCurrentStock": 12,
         "productAmountBroken": 0,
         "productURL": "https://www.dexterindustries.com/grovepi/",
-        "productDescription": "The Grove Pi combines the Raspberry Pi and sensors, thus letting you interact and monitor the outside world and store and process the data."
+        "productDescription": "Placeholder description. Please update soon"
     },
     {
         "product_id": "mc-lmnt-rpib",
@@ -152,7 +152,7 @@
         "productCurrentStock": 21,
         "productAmountBroken": 0,
         "productURL": "https://www.raspberrypi.org/",
-        "productDescription": "The Raspberry Pi is known as the perfect board for learning, coding and creating your own projects. The 3rd revision brings around 10x the performance of the Raspberry Pi 2."
+        "productDescription": "Placeholder description. Please update soon"
     },
     {
         "product_id": "mc-lmnt-rpis",
@@ -163,7 +163,7 @@
         "productCurrentStock": 20,
         "productAmountBroken": 0,
         "productURL": "https://www.raspberrypi.org/",
-        "productDescription": "A Micro SD card used with the Raspberry Pi."
+        "productDescription": "Placeholder description. Please update soon"
     },
     {
         "product_id": "mc-lmnt-rpip",
@@ -174,7 +174,7 @@
         "productCurrentStock": 21,
         "productAmountBroken": 0,
         "productURL": "https://www.raspberrypi.org/",
-        "productDescription": "This Power Supply allows the user to power a Raspberry Pi. This Power Supply will make sure the Pi is supplied with the correct amount of power, preventing the Pi from being damaged."
+        "productDescription": "Placeholder description. Please update soon"
     },
     {
         "product_id": "vr-leap-mion",
@@ -185,7 +185,7 @@
         "productCurrentStock": 5,
         "productAmountBroken": 0,
         "productURL": "https://www.leapmotion.com/",
-        "productDescription": "The leap motion is a hand/finger motion tracker that gives the user a whole new way of input that can be used in many various ways."
+        "productDescription": "Placeholder description. Please update soon"
     },
     {
         "product_id": "vr-leap-dvpr",
@@ -196,7 +196,7 @@
         "productCurrentStock": 5,
         "productAmountBroken": 0,
         "productURL": "https://www.leapmotion.com/",
-        "productDescription": "The developer mount attaches your Leap to any VR headset, allowing a direct hand motion input into any VR enviroment."
+        "productDescription": "Placeholder description. Please update soon"
     },
     {
         "product_id": "kb-oooo-musb",
@@ -207,7 +207,7 @@
         "productCurrentStock": 3,
         "productAmountBroken": 0,
         "productURL": "https://en.wikipedia.org/wiki/USB_hardware#Connector_types",
-        "productDescription": "The Micro-USB cable is used for connecting compact devices, such as smart phones, mp3 players and even photo copiers."
+        "productDescription": "Placeholder description. Please update soon"
     },
     {
         "product_id": "kb-dlck-vgak",
@@ -218,7 +218,7 @@
         "productCurrentStock": 2,
         "productAmountBroken": 0,
         "productURL": "https://en.wikipedia.org/wiki/Video_Graphics_Array",
-        "productDescription": "The VGA cable is used to connect an (older) output device such as a monitor to a computer."
+        "productDescription": "Placeholder description. Please update soon"
     },
     {
         "product_id": "kb-dlck-dvik",
@@ -229,7 +229,7 @@
         "productCurrentStock": 1,
         "productAmountBroken": 0,
         "productURL": "https://en.wikipedia.org/wiki/Digital_Visual_Interface",
-        "productDescription": "The DVI cable is used to connect and output device, such as a monitor to a computer"
+        "productDescription": "Placeholder description. Please update soon"
     },
     {
         "product_id": "ie-ggle-wifi",
@@ -240,7 +240,7 @@
         "productCurrentStock": 1,
         "productAmountBroken": 0,
         "productURL": "https://en.wikipedia.org/wiki/Wi-Fi",
-        "productDescription": "This WiFi extender allows devices to connect to a WiFi network, even if they are out of the original reach distance."
+        "productDescription": "Placeholder description. Please update soon"
     },
     {
         "product_id": "kb-oooo-utpk",
@@ -251,7 +251,7 @@
         "productCurrentStock": 2,
         "productAmountBroken": 0,
         "productURL": "https://en.wikipedia.org/wiki/Twisted_pair",
-        "productDescription": "The UTP cable allows you to connect a computer to a LAN network."
+        "productDescription": "Placeholder description. Please update soon"
     },
     {
         "product_id": "kb-oooo-adap",
@@ -262,7 +262,7 @@
         "productCurrentStock": 2,
         "productAmountBroken": 0,
         "productURL": "https://en.wikipedia.org/wiki/Adapter",
-        "productDescription": "**Placeholder description. Please update soon"
+        "productDescription": "Placeholder description. Please update soon"
     },
     {
         "product_id": "sm-tbii-eytr",
@@ -273,7 +273,7 @@
         "productCurrentStock": 5,
         "productAmountBroken": 0,
         "productURL": "https://gaming.tobii.com/products/",
-        "productDescription": "The Tobii Eye Tracker allows a computer to receive input about where a user is currently looking at, and even display it on the screen. This is often used to test what the most eye catching parts of an app/website are."
+        "productDescription": "Placeholder description. Please update soon"
     },
     {
         "product_id": "st-esti-lcbc",
@@ -284,18 +284,18 @@
         "productCurrentStock": 5,
         "productAmountBroken": 0,
         "productURL": "https://estimote.com/",
-        "productDescription": "These location beacons allow you to locate users and items precisely, watch their real-time position, collect attendace data and even deliver way finding instructions."
+        "productDescription": "Placeholder description. Please update soon"
     },
     {
         "product_id": "st-esti-lebc",
         "product_manufacturer": "Estimote",
         "productCategory": "Smart Technology",
-        "productName": "Low Energy Location Beacon",
+        "productName": "Low energy Location beacon",
         "productTotalStock": 10,
         "productCurrentStock": 10,
         "productAmountBroken": 0,
         "productURL": "https://estimote.com/",
-        "productDescription": "These location beacons allow you to locate users and items precisely, watch their real-time position, collect attendace data and even deliver way finding instructions."
+        "productDescription": "Placeholder description. Please update soon"
     },
     {
         "product_id": "st-esti-debc",
@@ -306,7 +306,7 @@
         "productCurrentStock": 2,
         "productAmountBroken": 0,
         "productURL": "https://estimote.com/",
-        "productDescription": "These location beacons allow you to locate users and items precisely, watch their real-time position, collect attendace data and even deliver way finding instructions."
+        "productDescription": "Placeholder description. Please update soon"
     },
     {
         "product_id": "vr-htcv-vive",
@@ -317,7 +317,7 @@
         "productCurrentStock": 3,
         "productAmountBroken": 1,
         "productURL": "https://www.vive.com/eu/",
-        "productDescription": "The HTC Vive is a VR headset, that allows you to explore and enjoy virtual reality enviroments."
+        "productDescription": "Placeholder description. Please update soon"
     },
     {
         "product_id": "vr-vrie-vltn",
@@ -328,7 +328,7 @@
         "productCurrentStock": 5,
         "productAmountBroken": 0,
         "productURL": "https://www.vr-i.nl/",
-        "productDescription": "The VRi Evolution is a VR headset, that allows you to explore and enjoy various virtual reality enviroments"
+        "productDescription": "Placeholder description. Please update soon"
     },
     {
         "product_id": "vr-vrbx-vrbx",
@@ -339,7 +339,7 @@
         "productCurrentStock": 5,
         "productAmountBroken": 0,
         "productURL": "https://tweakers.net/productreview/130037/vr-box-vr-bril.html",
-        "productDescription": "The VRBox is a tool that lets you use your smartphone as a VR Headset, allowing you to enjoy VR apps and games on a budget."
+        "productDescription": "Placeholder description. Please update soon"
     },
     {
         "product_id": "dr-prrt-drpw",
@@ -350,7 +350,7 @@
         "productCurrentStock": 2,
         "productAmountBroken": 1,
         "productURL": "https://www.parrot.com/nl/en/drones/parrot-ardrone-20-power-edition",
-        "productDescription": "The AR Drone Power is a equipped with a HD camera and a massive battery, allowing up to 36 mintues of non-stop flying. The drone can be controlled using your phone and tablet."
+        "productDescription": "Placeholder description. Please update soon"
     },
     {
         "product_id": "vr-ocls-rift",
@@ -361,7 +361,7 @@
         "productCurrentStock": 3,
         "productAmountBroken": 0,
         "productURL": "https://www.oculus.com/rift/",
-        "productDescription": "The Oculus Rift is a VR headset, that allows you to experience various VR scenes, apps and games using your pc."
+        "productDescription": "Placeholder description. Please update soon"
     },
     {
         "product_id": "vr-coma-vrpc",
@@ -372,6 +372,6 @@
         "productCurrentStock": 1,
         "productAmountBroken": 0,
         "productURL": "https://www.coolermaster.com/",
-        "productDescription": "This is a powerful VR PC, that should have no problem running any virtual reality applications."
+        "productDescription": "Placeholder description. Please update soon"
     }
 ]}

@@ -29,9 +29,8 @@ private String productName;
 private String productDesc;
 private int productAmount;
 private String productID;
-private EditText nameText, descText, idText, URLText, numText, manuText;
+private EditText nameText, descText, idText, URLText, numText;
 private Button creaButton;
-private String manu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,17 +55,14 @@ private String manu;
                     productAmount = Integer.parseInt(numText.getText().toString().trim());
                     productID = idText.getText().toString().trim();
                     productUri = URLText.getText().toString().trim();
-                    manu = manuText.getText().toString().trim();
 
                     //Product newProd = new Product(productID,productName,productDesc,productUri,imageBitmap,productAmount,productAmount);
                     Intent openProductInfo = new Intent(getApplicationContext(), ProductInfo.class);
-                    openProductInfo.putExtra("product_id",productID);
-                    openProductInfo.putExtra("productName", productName);
-                    openProductInfo.putExtra("productDescription", productDesc);
-                    openProductInfo.putExtra("productURL",productUri);
-                    openProductInfo.putExtra("productTotalStock",productAmount);
-                    openProductInfo.putExtra("productCurrentStock",productAmount);
-                    openProductInfo.putExtra("product_manufacturer", manu);
+                    openProductInfo.putExtra("id",productID);
+                    openProductInfo.putExtra("name", productName);
+                    openProductInfo.putExtra("desc", productDesc);
+                    openProductInfo.putExtra("uri",productUri);
+                    openProductInfo.putExtra("amount",productAmount);
                     startActivity(openProductInfo);
                 }
 
@@ -106,7 +102,6 @@ private String manu;
         URLText = findViewById(R.id.productURL);
         numText = findViewById(R.id.productAmount);
         creaButton = findViewById(R.id.btnCreate);
-        manuText = findViewById(R.id.productManu);
     }
 
 
@@ -119,9 +114,8 @@ private String manu;
         String id = idText.getText().toString();
         String URL = URLText.getText().toString();
         String amount = numText.getText().toString();
-        String manufacturer = manuText.getText().toString();
 
-        if(name.isEmpty() || manufacturer.isEmpty() || description.isEmpty() || id.isEmpty() || imageBitmap == null || URLUtil.isValidUrl(URL) == false || amount.isEmpty()){
+        if(name.isEmpty() || description.isEmpty() || id.isEmpty() || imageBitmap == null || URLUtil.isValidUrl(URL) == false || amount.isEmpty()){
             Toast.makeText(this, "Please enter all details", Toast.LENGTH_SHORT).show();
         }else {
             result = true;

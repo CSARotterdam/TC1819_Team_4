@@ -19,10 +19,10 @@
         android:textColor="#FFFFFF"
         android:textSize="20dp"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintVertical_bias="0.1"
+        app:layout_constraintVertical_bias="0.52"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/imageFile"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent" />
 
     <TextView
@@ -51,16 +51,16 @@
         android:textColor="#FFFFFF"
         android:textSize="20sp"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintVertical_bias="0.02"
+        app:layout_constraintVertical_bias="0.12"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/itemName"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"  />
 
 
     <ImageView
         android:id="@+id/imageFile"
-        android:layout_width="350dp"
+        android:layout_width="450dp"
         android:layout_height="200dp"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintVertical_bias="0.25"
