@@ -16,6 +16,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
+
 public class AccountSettings extends AppCompatActivity {
 
     private EditText newUserNickName, newUserDOB, newUserEmail, newUserClass, newUserStudentNumber, newUserPhoneNumber, newUserName, newUserSurName;
@@ -76,9 +78,9 @@ public class AccountSettings extends AppCompatActivity {
             String Class = newUserClass.getText().toString();
             String Studentnr = newUserStudentNumber.getText().toString();
             String Phone = newUserPhoneNumber.getText().toString();
-            String Role = "User";
+            String Borrowed = userProfile.getItemsBorrowed();
 
-            userProfile userprofile = new userProfile(Name, Surname, Nickname, DOB, email, Studentnr, Phone, Class, Role);
+            userProfile userprofile = new userProfile(Name, Surname, Nickname, DOB, email, Studentnr, Phone, Class, "User", );
 
             databaseReference.setValue(userprofile);
 

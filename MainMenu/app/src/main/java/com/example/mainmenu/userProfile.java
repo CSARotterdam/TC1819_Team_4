@@ -95,9 +95,14 @@ public class userProfile {
     }
 
 
+    public String getUserRole() {
+        return userRole;
+    }
+
     public void setUserRole(String UserRole){
         this.userRole = "User";
     }
+
     public ArrayList<String> getItemsBorrowed() {return itemsBorrowed; }
 
     public void setItemsBorrowed(ArrayList<String> itemsBorrowed) { this.itemsBorrowed = itemsBorrowed; }
