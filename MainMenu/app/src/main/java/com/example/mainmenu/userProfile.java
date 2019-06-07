@@ -1,6 +1,7 @@
 package com.example.mainmenu;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class userProfile {
     public String userName;
@@ -11,12 +12,12 @@ public class userProfile {
     public String userID;
     public String userPhone;
     public String userClass;
-    public ArrayList <String> itemsBorrowed;
+    public HashMap<String,Object> itemsBorrowed;
 
     public userProfile(){
     }
 
-    public userProfile(String userName, String userSurname, String userNickName, String userBday, String userEmail, String userID, String userPhone, String userClass, ArrayList<String> itemsBorrowed) {
+    public userProfile(String userName, String userSurname, String userNickName, String userBday, String userEmail, String userID, String userPhone, String userClass, HashMap<String,Object> itemsBorrowed) {
         this.userName = userName;
         this.userSurname = userSurname;
         this.userNickName = userNickName;
@@ -25,7 +26,6 @@ public class userProfile {
         this.userID = userID;
         this.userPhone = userPhone;
         this.userClass = userClass;
-        this.itemsBorrowed = itemsBorrowed;
     }
 
     public String getUserName() {
@@ -92,9 +92,13 @@ public class userProfile {
         this.userClass = userClass;
     }
 
-    public ArrayList<String> getItemsBorrowed() {return itemsBorrowed; }
+    public HashMap<String,Object>  getItemsBorrowed() {
+        return itemsBorrowed;
+    }
 
-    public void setItemsBorrowed(ArrayList<String> itemsBorrowed) { this.itemsBorrowed = itemsBorrowed; }
+    public void setItemsBorrowed(HashMap<String,Object> itemsBorrowed) {
+        this.itemsBorrowed = itemsBorrowed;
+    }
 }
 
 

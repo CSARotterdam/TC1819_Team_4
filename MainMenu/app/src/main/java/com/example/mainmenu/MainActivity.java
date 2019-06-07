@@ -96,6 +96,7 @@ public class MainActivity extends AppCompatActivity{
                 System.out.println("Pressed Account Settings Button");
 
                 Intent openAccountSettings = new Intent(getApplicationContext(), ProfileActivity.class);
+                openAccountSettings.putExtra("itemsBorrowed" , itemsBorrowed);
                 startActivity(openAccountSettings);
             }
         });
