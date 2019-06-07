@@ -18,6 +18,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class AccountSettings extends AppCompatActivity {
 
@@ -25,7 +26,7 @@ public class AccountSettings extends AppCompatActivity {
     private Button UPUpdateButton;
     private FirebaseAuth firebaseAuth;
     private FirebaseDatabase firebaseDatabase;
-    private ArrayList<String> newItemsBurrowed;
+    private HashMap<String,Object> newItemsBurrowed;
 
 
     @Override
@@ -61,7 +62,7 @@ public class AccountSettings extends AppCompatActivity {
                 newUserClass.setText(userprofile.getUserClass());
                 newUserStudentNumber.setText(userprofile.getUserID());
                 newUserPhoneNumber.setText(userprofile.getUserPhone());
-                newItemsBurrowed.addAll(userprofile.getItemsBorrowed());
+                newItemsBurrowed = (userprofile.getItemsBorrowed());
             }
 
             @Override
@@ -81,9 +82,8 @@ public class AccountSettings extends AppCompatActivity {
             String Class = newUserClass.getText().toString();
             String Studentnr = newUserStudentNumber.getText().toString();
             String Phone = newUserPhoneNumber.getText().toString();
-            ArrayList <String> Borrowed = newItemsBurrowed;
 
-            userProfile userprofile = new userProfile(Name, Surname, Nickname, DOB, email, Studentnr, Phone, Class, "User", Borrowed);
+            userProfile userprofile = new userProfile(Name, Surname, Nickname, DOB, email, Studentnr, Phone, Class, "User", newItemsBurrowed);
 
             databaseReference.setValue(userprofile);
 

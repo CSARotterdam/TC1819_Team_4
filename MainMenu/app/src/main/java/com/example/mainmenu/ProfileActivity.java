@@ -64,7 +64,6 @@ public class ProfileActivity extends AppCompatActivity {
                 profileClass.setText("Class: " + userprofile.getUserClass());
                 profileStudentNR.setText("StudentNr: " + userprofile.getUserID());
                 profilePhoneNumber.setText("Phone: " + userprofile.getUserPhone());
-                final ArrayList<String> itemsBorrowed = getIntent().getStringArrayListExtra("itemsBorrowed");
             }
 
             @Override
