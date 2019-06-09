@@ -56,7 +56,7 @@ public class ReserveItems extends AppCompatActivity{
     BroadcastReceiver mMessageReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
-            itemsChosen= intent.getStringArrayListExtra("itemsChosen");
+            itemsChosen = intent.getStringArrayListExtra("itemsChosen");
         }
     };
     @Override
@@ -74,6 +74,15 @@ public class ReserveItems extends AppCompatActivity{
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                productName.clear();
+                product_manufacturer.clear();
+                product_id.clear();
+                productCategory.clear();
+                productTotalStock.clear();
+                productCurrentStock.clear();
+                productAmountBroken.clear();
+                productURL.clear();
+                productDescription.clear();
                 for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
                     listItem listItem = dataSnapshot1.getValue(listItem.class);
                     newproductName = listItem.getProductName();
@@ -95,10 +104,10 @@ public class ReserveItems extends AppCompatActivity{
                     productAmountBroken.add(newproductAmountBroken);
                     productURL.add(newproductURL);
                     productDescription.add(newproductDescription);
-                    ResAdapter ResAdapter = new ResAdapter(ReserveItems.this, productName, product_manufacturer, product_id, productCategory, productTotalStock, productCurrentStock, productAmountBroken, productURL, productDescription);
-                    recyclerView.setAdapter(ResAdapter);
                 }
-
+                ResAdapter ResAdapter = new ResAdapter(ReserveItems.this, productName, product_manufacturer, product_id, productCategory, productTotalStock, productCurrentStock, productAmountBroken, productURL, productDescription);
+                recyclerView.setAdapter(ResAdapter);
+                ResAdapter.notifyDataSetChanged();
             }
 
             @Override
@@ -126,12 +135,22 @@ public class ReserveItems extends AppCompatActivity{
                 if (itemsChosen.size() == 1){
                     item1 = itemsChosen.get(0);
                     myRef.child("itemsBorrowed").push().setValue(item1);
+                    finish();
+                    overridePendingTransition(0, 0);
+                    startActivity(getIntent());
+                    overridePendingTransition(0, 0);
+                    Toast.makeText(ReserveItems.this,"Items successfully reserved!", Toast.LENGTH_SHORT).show();
                 }
                 else if(itemsChosen.size() == 2){
                     item1 = itemsChosen.get(0);
                     myRef.child("itemsBorrowed").push().setValue(item1);
                     item2 = itemsChosen.get(1);
                     myRef.child("itemsBorrowed").push().setValue(item2);
+                    finish();
+                    overridePendingTransition(0, 0);
+                    startActivity(getIntent());
+                    overridePendingTransition(0, 0);
+                    Toast.makeText(ReserveItems.this,"Items successfully reserved!", Toast.LENGTH_SHORT).show();
                 }
                 else if(itemsChosen.size() == 3){
                     item1 = itemsChosen.get(0);
@@ -140,6 +159,11 @@ public class ReserveItems extends AppCompatActivity{
                     myRef.child("itemsBorrowed").push().setValue(item2);
                     item3 = itemsChosen.get(2);
                     myRef.child("itemsBorrowed").push().setValue(item3);
+                    finish();
+                    overridePendingTransition(0, 0);
+                    startActivity(getIntent());
+                    overridePendingTransition(0, 0);
+                    Toast.makeText(ReserveItems.this,"Items successfully reserved!", Toast.LENGTH_SHORT).show();
                 }
                 else{
                     Toast.makeText(ReserveItems.this,"Something has gone wrong. Try again.", Toast.LENGTH_SHORT).show();

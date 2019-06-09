@@ -50,7 +50,10 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
     public void onBindViewHolder(MyViewHolder holder, final int position) {
         holder.name.setText(productName.get(position));
         holder.manufacturer.setText(product_manufacturer.get(position));
-        holder.prodID.setText(product_id.get(position));
+        if(Integer.parseInt(productCurrentStock.get(position)) < 1){
+            holder.stock.setText("Currently not in stock.");
+        }
+        else{ holder.stock.setText("Currently " + productCurrentStock.get(position) + " out of " + productTotalStock.get(position) + " in stock."); }
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -76,14 +79,14 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        TextView name, manufacturer, prodID;
+        TextView name, manufacturer, stock;
 
         public MyViewHolder(View itemView) {
             super(itemView);
 
             name = itemView.findViewById(R.id.name);
             manufacturer = itemView.findViewById(R.id.manufacturer);
-            prodID = itemView.findViewById(R.id.prodid);
+            stock = itemView.findViewById(R.id.stock);
 
         }
     }

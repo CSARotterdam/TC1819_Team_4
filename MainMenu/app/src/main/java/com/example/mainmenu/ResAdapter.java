@@ -2,8 +2,10 @@ package com.example.mainmenu;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.graphics.Color;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.content.LocalBroadcastManager;
@@ -39,7 +41,6 @@ public class ResAdapter extends RecyclerView.Adapter<ResAdapter.MyViewHolder> {
     ArrayList<Integer> selectedPosition = new ArrayList<>();
     ArrayList<String> Selection = new ArrayList<>();
 
-
     Context context;
 
     public ResAdapter(Context context, ArrayList<String> productName, ArrayList<String> product_manufacturer, ArrayList<String> product_id, ArrayList<String> productCategory, ArrayList<String> productTotalStock, ArrayList<String> productCurrentStock, ArrayList<String> productAmountBroken, ArrayList<String> productURL, ArrayList<String> productDescription) {
@@ -66,7 +67,7 @@ public class ResAdapter extends RecyclerView.Adapter<ResAdapter.MyViewHolder> {
     public void onBindViewHolder(MyViewHolder holder, final int position) {
         holder.name.setText(productName.get(position));
         holder.manufacturer.setText(product_manufacturer.get(position));
-        holder.prodID.setText(product_id.get(position));
+        holder.stock.setText("Currently " + productCurrentStock.get(position) + " out of " + productTotalStock.get(position) + " in stock.");
         Intent intent = new Intent("message_subject_intent");
         intent.putExtra("itemsChosen" , Selection);
         LocalBroadcastManager.getInstance(context).sendBroadcast(intent);
@@ -77,30 +78,35 @@ public class ResAdapter extends RecyclerView.Adapter<ResAdapter.MyViewHolder> {
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(selectedPosition.contains(position)) {
-                    position1 = position;
-                    selectedPosition.remove(position1);
-                    notifyItemChanged(position);
-                    ChosenItem = product_id.get(position);
-                    Selection.remove(ChosenItem);
+                if (Integer.parseInt(productCurrentStock.get(position)) < 1){
+                    Toast.makeText(context,"This item is currently unavailable.", Toast.LENGTH_SHORT).show();
                 }
                 else {
-                    if(selectedPosition.size() < 3) {
-                        selectedPosition.add(position);
+                    if(selectedPosition.contains(position)) {
+                        position1 = position;
+                        selectedPosition.remove(position1);
                         notifyItemChanged(position);
-                        ChosenItem2 = product_id.get(position);
+                        ChosenItem = product_id.get(position);
                         Selection.remove(ChosenItem);
-                        Selection.add(ChosenItem2);
                     }
                     else {
-                        AlertDialog.Builder builder;
-                        builder = new AlertDialog.Builder(view.getRootView().getContext());
+                        if(selectedPosition.size() < 3) {
+                            selectedPosition.add(position);
+                            notifyItemChanged(position);
+                            ChosenItem2 = product_id.get(position);
+                            Selection.remove(ChosenItem);
+                            Selection.add(ChosenItem2);
+                        }
+                        else {
+                            AlertDialog.Builder builder;
+                            builder = new AlertDialog.Builder(view.getRootView().getContext());
 
-                        builder.setTitle("Too many items selected");
+                            builder.setTitle("Too many items selected");
 
-                        builder.setMessage("You may only select up to 3 items as once. Please deselect a different item to select this one.");
-                        builder.setNeutralButton("OK", null);
-                        builder.show();
+                            builder.setMessage("You may only select up to 3 items as once. Please deselect a different item to select this one.");
+                            builder.setNeutralButton("OK", null);
+                            builder.show();
+                        }
                     }
                 }
             }
@@ -114,7 +120,7 @@ public class ResAdapter extends RecyclerView.Adapter<ResAdapter.MyViewHolder> {
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        TextView name, manufacturer, prodID;
+        TextView name, manufacturer, stock;
         LinearLayout resrow_layout;
 
         public MyViewHolder(View itemView) {
@@ -122,7 +128,7 @@ public class ResAdapter extends RecyclerView.Adapter<ResAdapter.MyViewHolder> {
             resrow_layout = itemView.findViewById(R.id.resrow_layout);
             name = itemView.findViewById(R.id.name);
             manufacturer = itemView.findViewById(R.id.manufacturer);
-            prodID = itemView.findViewById(R.id.prodid);
+            stock = itemView.findViewById(R.id.stock);
 
         }
     }
