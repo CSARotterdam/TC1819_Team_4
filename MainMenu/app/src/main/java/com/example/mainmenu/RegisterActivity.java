@@ -19,6 +19,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -28,7 +29,7 @@ public class RegisterActivity extends AppCompatActivity {
     private FirebaseAuth firebaseAuth;
 
     String email, Username, bday, password, name, surname, id, phone, Class, Role ;
-    ArrayList<String> Borrowlist;
+    HashMap<String,Object> Borrowlist;
 
 
 
@@ -104,10 +105,7 @@ public class RegisterActivity extends AppCompatActivity {
         id = userID.getText().toString();
         phone = userPhone.getText().toString();
         Class = userClass.getText().toString();
-        Borrowlist = new ArrayList<>();
-
-
-
+        Borrowlist = new HashMap<>();
 
         if(Username.isEmpty() || password.isEmpty() || email.isEmpty() ){
             Toast.makeText(this, "Please enter all details", Toast.LENGTH_SHORT).show();
@@ -132,6 +130,3 @@ public class RegisterActivity extends AppCompatActivity {
 
   //end of file
 }
-
-
-

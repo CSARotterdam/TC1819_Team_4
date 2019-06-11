@@ -2,7 +2,12 @@ package com.example.mainmenu;
 
 //  https://console.firebase.google.com/u/0/project/database-a772f/overview //
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
+import android.support.annotation.NonNull;
+import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -12,10 +17,20 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity{
 
+    ArrayList<String> itemsBorrowed = new ArrayList<>();
+
     private FirebaseAuth firebaseAuth;
+    private FirebaseDatabase firebaseDatabase;
     private Button logout;
 
     @Override
@@ -38,8 +53,7 @@ public class MainActivity extends AppCompatActivity{
 
                 Intent openInventory = new Intent(getApplicationContext(), Inventory.class);
                 startActivity(openInventory);
-                //Intent openCreateProduct = new Intent(getApplicationContext(), ProductCreate.class);
-                //startActivity(openCreateProduct);
+
             }
          });
 
@@ -57,7 +71,10 @@ public class MainActivity extends AppCompatActivity{
                 System.out.println("Pressed My Items Button");
 
                 Intent openMyItems = new Intent(getApplicationContext(), MyItems.class);
+                openMyItems.putExtra("itemsBorrowed" , itemsBorrowed);
                 startActivity(openMyItems);
+
+
                 //Intent openProductInfo = new Intent(getApplicationContext(), ProductInfo.class);
                 //startActivity(openProductInfo);
             }
@@ -69,6 +86,8 @@ public class MainActivity extends AppCompatActivity{
 
                 Intent openReserveItems = new Intent(getApplicationContext(), ReserveItems.class);
                 startActivity(openReserveItems);
+                //Intent openCreateProduct = new Intent(getApplicationContext(), ProductCreate.class);
+                //startActivity(openCreateProduct);
             }
         });
 
@@ -90,6 +109,21 @@ public class MainActivity extends AppCompatActivity{
             }
         });
 
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        DatabaseReference MyRef = firebaseDatabase.getReference(firebaseAuth.getUid()).child("itemsBorrowed");
+        MyRef.addValueEventListener(new ValueEventListener() {
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()){
+                    String item = (String) dataSnapshot1.getValue();
+                    itemsBorrowed.add(item);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
     }
 }
-
