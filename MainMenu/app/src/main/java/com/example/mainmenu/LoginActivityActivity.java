@@ -27,6 +27,7 @@ public class LoginActivityActivity extends AppCompatActivity {
     private TextView Register;
     private FirebaseAuth firebaseAuth;
     private ProgressDialog progressDialog;
+    private String userRoleAdmin;
 
 
     @Override
@@ -38,6 +39,9 @@ public class LoginActivityActivity extends AppCompatActivity {
         Email =(EditText)findViewById(R.id.etEmail);
         Password = (EditText)findViewById(R.id.etUserPassword);
         Login = (Button)findViewById(R.id.btnLogin);
+
+        //userRoleAdmin = "Admin";
+        userRoleAdmin = (userProfile.getUserRole());
 
         firebaseAuth = FirebaseAuth.getInstance();
 
@@ -56,6 +60,7 @@ public class LoginActivityActivity extends AppCompatActivity {
                 if ((Email.getText().toString().isEmpty()) && (Password.getText().toString().isEmpty()) ){
                     return;
                 }else{
+
                     validate(Email.getText().toString(), Password.getText().toString());
                 }
             }
@@ -80,10 +85,25 @@ public class LoginActivityActivity extends AppCompatActivity {
         if ((Email.getText().toString().isEmpty()) || (Password.getText().toString().isEmpty())) {
             Toast.makeText(LoginActivityActivity.this, "Login Failed", Toast.LENGTH_SHORT).show();
             progressDialog.dismiss();
-        }else {
-            firebaseAuth.signInWithEmailAndPassword(userName, userPassword).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                @Override
-                public void onComplete(@NonNull Task<AuthResult> task) {
+        } else {
+            if (userRoleAdmin == "Admin") {
+                firebaseAuth.signInWithEmailAndPassword(userName, userPassword).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            progressDialog.dismiss();
+                            Toast.makeText(LoginActivityActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(LoginActivityActivity.this, MainActivityAdmin.class));
+                        } else {
+                            Toast.makeText(LoginActivityActivity.this, "Login Failed", Toast.LENGTH_SHORT).show();
+                            progressDialog.dismiss();
+                        }
+                    }
+                });
+            } else {
+                firebaseAuth.signInWithEmailAndPassword(userName, userPassword).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             progressDialog.dismiss();
                             Toast.makeText(LoginActivityActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
@@ -93,10 +113,12 @@ public class LoginActivityActivity extends AppCompatActivity {
                             progressDialog.dismiss();
                         }
                     }
-            });
+                });
 
+            }
+        }
+    }
 
-    }}
 
         private void setupUIViews(){
             Register = (TextView)findViewById(R.id.tvRegister);
