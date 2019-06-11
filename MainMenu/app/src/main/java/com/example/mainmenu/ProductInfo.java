@@ -23,6 +23,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -78,7 +79,8 @@ public class ProductInfo extends AppCompatActivity {
         //testList.add("https://en.wikipedia.org/wiki/Virtual_reality_headset");
         //testList.add("VR Headset");
         //testList.add("test string about VR headsets or something I don't know I just programmed this page I didn't make VR headsets");
-        TextView title = (TextView) findViewById(R.id.itemName);
+        TextView title =findViewById(R.id.itemName);
+        title.setSelected(true);
         TextView body = findViewById(R.id.itemInfo);
         TextView wiki = findViewById(R.id.MoreInfo);
         TextView manufacturer = findViewById(R.id.itemManufacturer);
@@ -96,6 +98,10 @@ public class ProductInfo extends AppCompatActivity {
                 ImageView exampleImage = findViewById(R.id.imageFile);
                 Glide.with(getApplicationContext())
                         .load(downloadUri)
+                        .apply(RequestOptions.fitCenterTransform())
+                        .placeholder(R.drawable.hrlogo)
+                        .fallback(R.drawable.hrlogo)
+                        .error(R.drawable.hrlogo)
                         .into(exampleImage);
             }
         }).addOnFailureListener(new OnFailureListener() {
@@ -108,6 +114,10 @@ public class ProductInfo extends AppCompatActivity {
                         ImageView exampleImage = findViewById(R.id.imageFile);
                         Glide.with(getApplicationContext())
                                 .load(downloadUri)
+                                .apply(RequestOptions.fitCenterTransform())
+                                .placeholder(R.drawable.hrlogo)
+                                .fallback(R.drawable.hrlogo)
+                                .error(R.drawable.hrlogo)
                                 .into(exampleImage);
                     }
             }).addOnFailureListener(new OnFailureListener() {
@@ -120,6 +130,10 @@ public class ProductInfo extends AppCompatActivity {
                                 ImageView exampleImage = findViewById(R.id.imageFile);
                                 Glide.with(getApplicationContext())
                                         .load(downloadUri)
+                                        .apply(RequestOptions.fitCenterTransform())
+                                        .placeholder(R.drawable.hrlogo)
+                                        .fallback(R.drawable.hrlogo)
+                                        .error(R.drawable.hrlogo)
                                         .into(exampleImage);
                             }
 
@@ -127,7 +141,7 @@ public class ProductInfo extends AppCompatActivity {
                             @Override
                             public void onFailure(@NonNull Exception e) {
                                 ImageView exampleImage = findViewById(R.id.imageFile);
-                                exampleImage.setImageBitmap(testProduct.getPicture());
+                                exampleImage.setImageResource(R.drawable.hrlogo);;
                             }
                         });
                     }});}});
