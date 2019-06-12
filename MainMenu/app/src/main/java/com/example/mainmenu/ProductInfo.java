@@ -184,26 +184,13 @@ public class ProductInfo extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 firebaseDatabase = FirebaseDatabase.getInstance();
-                DatabaseReference databaseReference = firebaseDatabase.getReference().child("items");
-                databaseReference.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
-                        DatabaseReference myRef = firebaseDatabase.getReference().child("Users").child(firebaseAuth.getUid());
-                        myRef.child("itemsBorrowed").push().setValue(testProduct.getID());
-                        int currentValue = testProduct.getCurrentAmount();
-                        currentValue -= 1;
-                        DatabaseReference databaseReference2 = firebaseDatabase.getReference().child("items").child(testProduct.getName()).child("productCurrentStock");
-                        databaseReference2.setValue(currentValue);
-
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
-                        Toast.makeText(ProductInfo.this, databaseError.getCode(), Toast.LENGTH_SHORT);
-
-                    }
-                });
+                FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
+                DatabaseReference myRef = firebaseDatabase.getReference().child("Users").child(firebaseAuth.getUid());
+                myRef.child("itemsBorrowed").push().setValue(testProduct.getID());
+                int currentValue = testProduct.getCurrentAmount();
+                currentValue -= 1;
+                DatabaseReference databaseReference2 = firebaseDatabase.getReference().child("items").child(testProduct.getName()).child("productCurrentStock");
+                databaseReference2.setValue(currentValue);
             }
         };
 
