@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -67,7 +68,8 @@ public class MyItemsAdapter extends RecyclerView.Adapter<MyItemsAdapter.MyViewHo
     public void onBindViewHolder(MyViewHolder holder, final int position) {
         holder.name.setText(productName.get(position));
         holder.manufacturer.setText(product_manufacturer.get(position));
-        holder.prodID.setText(product_id.get(position));
+        final String baseID = product_id.get(position);
+        holder.prodID.setText(baseID);
         holder.button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -77,6 +79,24 @@ public class MyItemsAdapter extends RecyclerView.Adapter<MyItemsAdapter.MyViewHo
                 // - Remove item from User ItemsBorrowed List
                 // * Add +1 to the selected items amount
                 // * Remove said item from the recyclerview
+                final DatabaseReference databaseReference =  FirebaseDatabase.getInstance().getReference().child("Users").child(FirebaseAuth.getInstance().getUid()).child("itemsBorrowed");
+                databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
+                            String producID = dataSnapshot1.getValue(String.class);
+                            //String baseID = product_id.get(position);
+                            if(producID.equals(baseID)) {
+                                dataSnapshot1.getRef().removeValue();
+                            }
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
                 productName.remove(position);
                 product_manufacturer.remove(position);
                 product_id.remove(position);
@@ -88,6 +108,7 @@ public class MyItemsAdapter extends RecyclerView.Adapter<MyItemsAdapter.MyViewHo
                 productDescription.remove(position);
                 //notifyItemChanged(position);
                 notifyDataSetChanged();
+
             }
         });
     }
