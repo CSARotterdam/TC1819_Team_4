@@ -36,10 +36,12 @@ public class ResAdapter extends RecyclerView.Adapter<ResAdapter.MyViewHolder> {
 
     Object position1;
     Object ChosenItem;
+    String ChosenName;
     String ChosenItem2;
 
     ArrayList<Integer> selectedPosition = new ArrayList<>();
     ArrayList<String> Selection = new ArrayList<>();
+    ArrayList<String> nameSelection = new ArrayList<>();
 
     Context context;
 
@@ -70,6 +72,7 @@ public class ResAdapter extends RecyclerView.Adapter<ResAdapter.MyViewHolder> {
         holder.stock.setText("Currently " + productCurrentStock.get(position) + " out of " + productTotalStock.get(position) + " in stock.");
         Intent intent = new Intent("message_subject_intent");
         intent.putExtra("itemsChosen" , Selection);
+        intent.putExtra("itemNamesChosen", nameSelection);
         LocalBroadcastManager.getInstance(context).sendBroadcast(intent);
         if(selectedPosition.contains(position))
             holder.resrow_layout.setBackgroundColor(Color.parseColor("#A8A8A8"));
@@ -87,7 +90,10 @@ public class ResAdapter extends RecyclerView.Adapter<ResAdapter.MyViewHolder> {
                         selectedPosition.remove(position1);
                         notifyItemChanged(position);
                         ChosenItem = product_id.get(position);
+                        ChosenName = productName.get(position);
+                        nameSelection.remove(ChosenName);
                         Selection.remove(ChosenItem);
+                        System.out.println(nameSelection);
                     }
                     else {
                         if(selectedPosition.size() < 3) {
@@ -96,6 +102,9 @@ public class ResAdapter extends RecyclerView.Adapter<ResAdapter.MyViewHolder> {
                             ChosenItem2 = product_id.get(position);
                             Selection.remove(ChosenItem);
                             Selection.add(ChosenItem2);
+                            ChosenName = productName.get(position);
+                            nameSelection.add(ChosenName);
+                            System.out.println(nameSelection);
                         }
                         else {
                             AlertDialog.Builder builder;

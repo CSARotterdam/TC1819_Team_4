@@ -80,7 +80,7 @@ private Long productAmountLong;
                     //startActivity(openProductInfo);
 
                     firebaseDatabase = FirebaseDatabase.getInstance();
-                    DatabaseReference databaseReference = firebaseDatabase.getReference().child("items").child(productName); //make a child with product name as name
+                    DatabaseReference databaseReference = firebaseDatabase.getReference().child("items").child(productName);
                     productAmountLong = Long.parseLong(String.valueOf(productAmount));
                     databaseReference.child("productCurrentStock").setValue(productAmountLong);
                     databaseReference.child("productTotalStock").setValue(productAmountLong);

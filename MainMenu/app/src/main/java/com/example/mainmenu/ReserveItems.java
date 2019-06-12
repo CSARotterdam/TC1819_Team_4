@@ -42,6 +42,7 @@ public class ReserveItems extends AppCompatActivity{
     ArrayList<String> productURL = new ArrayList<>();
     ArrayList<String> productDescription = new ArrayList<>();
     ArrayList<String> itemsChosen = new ArrayList<>();
+    ArrayList<String> itemNamesChosen = new ArrayList<>();
 
     public String newproductName;
     public String newproduct_manufacturer;
@@ -57,6 +58,7 @@ public class ReserveItems extends AppCompatActivity{
         @Override
         public void onReceive(Context context, Intent intent) {
             itemsChosen = intent.getStringArrayListExtra("itemsChosen");
+            itemNamesChosen = intent.getStringArrayListExtra("itemNamesChosen");
         }
     };
     @Override
@@ -69,7 +71,7 @@ public class ReserveItems extends AppCompatActivity{
         recyclerView.setLayoutManager(linearLayoutManager);
         LocalBroadcastManager.getInstance(this).registerReceiver(mMessageReceiver, new IntentFilter("message_subject_intent"));
         firebaseDatabase = FirebaseDatabase.getInstance();
-        DatabaseReference databaseReference = firebaseDatabase.getReference().child("items");
+        final DatabaseReference databaseReference = firebaseDatabase.getReference().child("items");
 
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
@@ -134,6 +136,7 @@ public class ReserveItems extends AppCompatActivity{
                 DatabaseReference myRef = firebaseDatabase.getReference(firebaseAuth.getUid());
                 if (itemsChosen.size() == 1){
                     item1 = itemsChosen.get(0);
+                    reduceAmount(itemNamesChosen.get(0), databaseReference);
                     myRef.child("itemsBorrowed").push().setValue(item1);
                     finish();
                     overridePendingTransition(0, 0);
@@ -143,8 +146,10 @@ public class ReserveItems extends AppCompatActivity{
                 }
                 else if(itemsChosen.size() == 2){
                     item1 = itemsChosen.get(0);
+                    reduceAmount(itemNamesChosen.get(0), databaseReference);
                     myRef.child("itemsBorrowed").push().setValue(item1);
                     item2 = itemsChosen.get(1);
+                    reduceAmount(itemNamesChosen.get(1), databaseReference);
                     myRef.child("itemsBorrowed").push().setValue(item2);
                     finish();
                     overridePendingTransition(0, 0);
@@ -154,10 +159,13 @@ public class ReserveItems extends AppCompatActivity{
                 }
                 else if(itemsChosen.size() == 3){
                     item1 = itemsChosen.get(0);
+                    reduceAmount(itemNamesChosen.get(0), databaseReference);
                     myRef.child("itemsBorrowed").push().setValue(item1);
                     item2 = itemsChosen.get(1);
+                    reduceAmount(itemNamesChosen.get(1), databaseReference);
                     myRef.child("itemsBorrowed").push().setValue(item2);
                     item3 = itemsChosen.get(2);
+                    reduceAmount(itemNamesChosen.get(2), databaseReference);
                     myRef.child("itemsBorrowed").push().setValue(item3);
                     finish();
                     overridePendingTransition(0, 0);
@@ -168,6 +176,25 @@ public class ReserveItems extends AppCompatActivity{
                 else{
                     Toast.makeText(ReserveItems.this,"Something has gone wrong. Try again.", Toast.LENGTH_SHORT).show();
                 }
+            }
+        });
+
+
+    }
+    public void reduceAmount(String prodName, DatabaseReference dbr) {
+        final DatabaseReference newDBR = dbr.child(prodName).child("productCurrentStock");
+        newDBR.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                Long amount = dataSnapshot.getValue(Long.class);
+                amount -= 1;
+                newDBR.setValue(amount);
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
             }
         });
     }
