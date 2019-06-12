@@ -9,8 +9,7 @@
         android:roundIcon="@drawable/hrlogo3"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
-        <activity android:name=".statistics"></activity>
-        <activity android:name=".UpdatePassword" />
+        <activity android:name=".UpdatePassword"></activity>
         <activity android:name=".ProfileActivity" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".LoginActivityActivity">
@@ -21,7 +20,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity" />
-        <activity android:name=".MainActivityAdmin"/>
         <activity android:name=".TOS" />
         <activity android:name=".Inventory" />
         <activity android:name=".AccountSettings" />

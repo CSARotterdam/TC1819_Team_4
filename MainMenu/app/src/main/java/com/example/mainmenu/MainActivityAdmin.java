@@ -27,9 +27,6 @@ public class MainActivityAdmin extends AppCompatActivity{
         Button openMyItems = findViewById(R.id.usr_items_btn2);
         Button openReserveItems = findViewById(R.id.usr_reserve_btn2);
         Button openAccountSettings = findViewById(R.id.usr_settings_btn2);
-        Button openStatistics = findViewById(R.id.statistics_btn2);
-        Button openCreateItem = findViewById(R.id.create_item_btn_2);
-
         firebaseAuth = FirebaseAuth.getInstance();
         logout = (Button)findViewById(R.id.logout_btn2);
 
@@ -89,24 +86,6 @@ public class MainActivityAdmin extends AppCompatActivity{
                 firebaseAuth.signOut();
                 finish();
                 startActivity(new Intent(MainActivityAdmin.this, LoginActivityActivity.class));
-            }
-        });
-
-        openStatistics.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                System.out.println("Pressed Account Settings Button");
-
-                Intent openAccountSettings = new Intent(getApplicationContext(), statistics.class);
-                startActivity(openAccountSettings);
-            }
-        });
-
-        openCreateItem.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                System.out.println("Pressed Account Settings Button");
-
-                Intent openAccountSettings = new Intent(getApplicationContext(), ProductCreate.class);
-                startActivity(openAccountSettings);
             }
         });
 

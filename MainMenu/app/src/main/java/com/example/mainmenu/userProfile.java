@@ -28,7 +28,7 @@ public class userProfile {
         this.userID = userID;
         this.userPhone = userPhone;
         this.userClass = userClass;
-        this.userRole = userRole;
+        this.userRole = "User";
         this.itemsBorrowed = itemsBorrowed;
     }
 
@@ -101,7 +101,7 @@ public class userProfile {
     }
 
     public void setUserRole(String UserRole){
-        this.userRole = UserRole;
+        this.userRole = "User";
     }
 
     public HashMap<String,Object>  getItemsBorrowed() {
