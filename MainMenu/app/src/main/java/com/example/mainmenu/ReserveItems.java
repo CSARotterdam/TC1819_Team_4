@@ -187,7 +187,7 @@ public class ReserveItems extends AppCompatActivity{
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 Long amount = dataSnapshot.getValue(Long.class);
-                amount -= 1;
+                amount--;
                 newDBR.setValue(amount);
 
             }
