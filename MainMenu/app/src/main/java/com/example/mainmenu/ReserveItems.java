@@ -133,7 +133,7 @@ public class ReserveItems extends AppCompatActivity{
             @Override
             public void onClick(View v) {
                 FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
-                DatabaseReference myRef = firebaseDatabase.getReference(firebaseAuth.getUid());
+                DatabaseReference myRef = firebaseDatabase.getReference().child("Users").child(firebaseAuth.getUid());
                 if (itemsChosen.size() == 1){
                     item1 = itemsChosen.get(0);
                     reduceAmount(itemNamesChosen.get(0), databaseReference);
