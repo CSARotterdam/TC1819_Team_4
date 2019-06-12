@@ -74,6 +74,20 @@ public class MyItemsAdapter extends RecyclerView.Adapter<MyItemsAdapter.MyViewHo
                 System.out.println("Removed: " + productName.get(position));
                 DatabaseReference dbr = FirebaseDatabase.getInstance().getReference().child("items").child(productName.get(position)).child("productCurrentStock");
                 increaseAmount(dbr);
+                // - Remove item from User ItemsBorrowed List
+                // * Add +1 to the selected items amount
+                // * Remove said item from the recyclerview
+                productName.remove(position);
+                product_manufacturer.remove(position);
+                product_id.remove(position);
+                productCategory.remove(position);
+                productCurrentStock.remove(position);
+                productTotalStock.remove(position);
+                productAmountBroken.remove(position);
+                productURL.remove(position);
+                productDescription.remove(position);
+                //notifyItemChanged(position);
+                notifyDataSetChanged();
             }
         });
     }
