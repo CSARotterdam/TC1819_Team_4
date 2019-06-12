@@ -15,9 +15,13 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URI;
+import java.util.Locale;
 
 public class ProductCreate extends AppCompatActivity {
 
@@ -29,9 +33,14 @@ private String productName;
 private String productDesc;
 private int productAmount;
 private String productID;
-private EditText nameText, descText, idText, URLText, numText, manuText;
+private String productCat;
+private EditText nameText, descText, idText, URLText, numText, manuText, categoryText;
 private Button creaButton;
 private String manu;
+private FirebaseDatabase firebaseDatabase;
+private Long amountBroken;
+private Long productAmountLong;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,17 +66,32 @@ private String manu;
                     productID = idText.getText().toString().trim();
                     productUri = URLText.getText().toString().trim();
                     manu = manuText.getText().toString().trim();
+                    productCat = categoryText.getText().toString().trim();
 
                     //Product newProd = new Product(productID,productName,productDesc,productUri,imageBitmap,productAmount,productAmount);
-                    Intent openProductInfo = new Intent(getApplicationContext(), ProductInfo.class);
-                    openProductInfo.putExtra("product_id",productID);
-                    openProductInfo.putExtra("productName", productName);
-                    openProductInfo.putExtra("productDescription", productDesc);
-                    openProductInfo.putExtra("productURL",productUri);
-                    openProductInfo.putExtra("productTotalStock",productAmount);
-                    openProductInfo.putExtra("productCurrentStock",productAmount);
-                    openProductInfo.putExtra("product_manufacturer", manu);
-                    startActivity(openProductInfo);
+                    //Intent openProductInfo = new Intent(getApplicationContext(), ProductInfo.class);
+                    //openProductInfo.putExtra("product_id",productID);
+                    //openProductInfo.putExtra("productName", productName);
+                    //openProductInfo.putExtra("productDescription", productDesc);
+                    //openProductInfo.putExtra("productURL",productUri);
+                    //openProductInfo.putExtra("productTotalStock",productAmount);
+                    //openProductInfo.putExtra("productCurrentStock",productAmount);
+                    //openProductInfo.putExtra("product_manufacturer", manu);
+                    //startActivity(openProductInfo);
+
+                    firebaseDatabase = FirebaseDatabase.getInstance();
+                    DatabaseReference databaseReference = firebaseDatabase.getReference().child("items").child(productName);
+                    productAmountLong = Long.parseLong(String.valueOf(productAmount));
+                    databaseReference.child("productCurrentStock").setValue(productAmountLong);
+                    databaseReference.child("productTotalStock").setValue(productAmountLong);
+                    databaseReference.child("productDescription").setValue(productDesc);
+                    databaseReference.child("productName").setValue(productName);
+                    databaseReference.child("product_id").setValue(productID);
+                    databaseReference.child("productURL").setValue(productUri);
+                    databaseReference.child("product_manufacturer").setValue(manu);
+                    databaseReference.child("product_manufacturer").setValue(productCat);
+                    amountBroken = 0L;
+                    databaseReference.child("productAmountBroken").setValue(amountBroken);
                 }
 
             }
@@ -107,6 +131,7 @@ private String manu;
         numText = findViewById(R.id.productAmount);
         creaButton = findViewById(R.id.btnCreate);
         manuText = findViewById(R.id.productManu);
+        categoryText = findViewById(R.id.productCategory);
     }
 
 
@@ -120,8 +145,9 @@ private String manu;
         String URL = URLText.getText().toString();
         String amount = numText.getText().toString();
         String manufacturer = manuText.getText().toString();
+        String category = categoryText.getText().toString();
 
-        if(name.isEmpty() || manufacturer.isEmpty() || description.isEmpty() || id.isEmpty() || imageBitmap == null || URLUtil.isValidUrl(URL) == false || amount.isEmpty()){
+        if(name.isEmpty() || manufacturer.isEmpty() || description.isEmpty() || id.isEmpty() || imageBitmap == null || URLUtil.isValidUrl(URL) == false || amount.isEmpty() || category.isEmpty()){
             Toast.makeText(this, "Please enter all details", Toast.LENGTH_SHORT).show();
         }else {
             result = true;

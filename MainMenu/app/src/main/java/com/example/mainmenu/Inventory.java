@@ -49,6 +49,7 @@ public class Inventory extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.inventory);
         final RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+        recyclerView.setHasFixedSize(true);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(linearLayoutManager);
 
@@ -58,6 +59,15 @@ public class Inventory extends AppCompatActivity{
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                productName.clear();
+                product_manufacturer.clear();
+                product_id.clear();
+                productCategory.clear();
+                productTotalStock.clear();
+                productCurrentStock.clear();
+                productAmountBroken.clear();
+                productURL.clear();
+                productDescription.clear();
                 for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
                     listItem listItem = dataSnapshot1.getValue(listItem.class);
                     newproductName = listItem.getProductName();
@@ -79,11 +89,10 @@ public class Inventory extends AppCompatActivity{
                     productAmountBroken.add(newproductAmountBroken);
                     productURL.add(newproductURL);
                     productDescription.add(newproductDescription);
-                    System.out.println(product_manufacturer);
-                    CustomAdapter customAdapter = new CustomAdapter(Inventory.this, productName, product_manufacturer, product_id, productCategory, productTotalStock, productCurrentStock, productAmountBroken, productURL, productDescription);
-                    recyclerView.setAdapter(customAdapter);
                 }
-
+                CustomAdapter customAdapter = new CustomAdapter(Inventory.this, productName, product_manufacturer, product_id, productCategory, productTotalStock, productCurrentStock, productAmountBroken, productURL, productDescription);
+                recyclerView.setAdapter(customAdapter);
+                customAdapter.notifyDataSetChanged();
             }
 
             @Override
