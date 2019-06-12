@@ -110,7 +110,7 @@ public class MainActivity extends AppCompatActivity{
         });
 
         firebaseDatabase = FirebaseDatabase.getInstance();
-        DatabaseReference MyRef = firebaseDatabase.getReference(firebaseAuth.getUid()).child("itemsBorrowed");
+        DatabaseReference MyRef = firebaseDatabase.getReference().child("Users").child(firebaseAuth.getUid()).child("itemsBorrowed");
         MyRef.addValueEventListener(new ValueEventListener() {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()){

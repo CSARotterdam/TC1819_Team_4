@@ -189,7 +189,7 @@ public class ProductInfo extends AppCompatActivity {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
-                        DatabaseReference myRef = firebaseDatabase.getReference(firebaseAuth.getUid());
+                        DatabaseReference myRef = firebaseDatabase.getReference().child("Users").child(firebaseAuth.getUid());
                         myRef.child("itemsBorrowed").push().setValue(testProduct.getID());
                         int currentValue = testProduct.getCurrentAmount();
                         currentValue -= 1;
