@@ -118,7 +118,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     private void sendUserData(){
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = firebaseDatabase.getReference(firebaseAuth.getUid());
+        DatabaseReference myRef = firebaseDatabase.getReference().child("Users").child(firebaseAuth.getUid());
         userProfile userProfile = new userProfile(name,surname,Username,bday,email,id,phone,Class,Role,Borrowlist);
         myRef.setValue(userProfile);
 

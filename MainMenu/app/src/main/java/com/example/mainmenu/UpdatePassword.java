@@ -48,20 +48,8 @@ public class UpdatePassword extends AppCompatActivity {
                         }
                     }
                 });
-                String userEmailnew = newEmail.getText().toString();
 
-                firebaseUser.updateEmail(userEmailnew).addOnCompleteListener(new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        if(task.isSuccessful()){
-                            Toast.makeText(UpdatePassword.this, "Email Changed", Toast.LENGTH_SHORT).show();
-                            finish();
-                        }else{
-                            Toast.makeText(UpdatePassword.this, "Email Update Failed", Toast.LENGTH_SHORT).show();
                         }
-                    }
-                });
-            }
         });
     }
 }
