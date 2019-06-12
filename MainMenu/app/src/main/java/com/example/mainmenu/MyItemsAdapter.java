@@ -3,6 +3,7 @@ package com.example.mainmenu;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
+import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -11,6 +12,12 @@ import android.widget.Button;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -65,6 +72,8 @@ public class MyItemsAdapter extends RecyclerView.Adapter<MyItemsAdapter.MyViewHo
             @Override
             public void onClick(View v) {
                 System.out.println("Removed: " + productName.get(position));
+                DatabaseReference dbr = FirebaseDatabase.getInstance().getReference().child("items").child(productName.get(position)).child("productCurrentStock");
+                increaseAmount(dbr);
             }
         });
     }
@@ -86,5 +95,23 @@ public class MyItemsAdapter extends RecyclerView.Adapter<MyItemsAdapter.MyViewHo
             prodID = itemView.findViewById(R.id.prodid);
 
         }
+    }
+
+    public void increaseAmount(DatabaseReference DBR) {
+        final DatabaseReference newDBR = DBR;
+        newDBR.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                Long amount = dataSnapshot.getValue(Long.class);
+                amount += 1;
+                newDBR.setValue(amount);
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
     }
 }
