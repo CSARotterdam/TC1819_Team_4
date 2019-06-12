@@ -118,6 +118,7 @@ public class ReserveItems extends AppCompatActivity{
             }
         });
         Button back = findViewById(R.id.reserve_backtomenu_btn);
+        back.setVisibility(View.INVISIBLE);
         Button confirm = findViewById(R.id.reserve_confirm);
         back.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {

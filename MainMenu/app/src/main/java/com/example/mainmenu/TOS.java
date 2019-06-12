@@ -40,6 +40,7 @@ public class TOS extends AppCompatActivity{
         TOS_textfile.setText(TOS_text);
 
         Button back = findViewById(R.id.tos_backtomenu_btn);
+        back.setVisibility(View.INVISIBLE);
         back.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 System.out.println("Button Clicked!");

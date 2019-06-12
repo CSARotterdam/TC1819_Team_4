@@ -105,6 +105,7 @@ public class MyItems extends AppCompatActivity{
 
 
         Button back = findViewById(R.id.mitems_backtomenu_btn);
+        back.setVisibility(View.INVISIBLE);
         back.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 System.out.println("Button Clicked!");
