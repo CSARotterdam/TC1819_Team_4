@@ -31,8 +31,16 @@
         app:layout_constraintWidth_percent="0.8"
         android:layout_height="wrap_content"
         android:text="null"
+
+        android:singleLine="true"
+        android:ellipsize = "marquee"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:scrollHorizontally="true"
+        android:focusable="false"
+        android:focusableInTouchMode="true"
+
         android:textColor="#FFFFFF"
-        android:textSize="30sp"
+        android:textSize="30dp"
         android:gravity="center"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintVertical_bias="0.05"

@@ -22,12 +22,18 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -42,6 +48,7 @@ public class ProductInfo extends AppCompatActivity {
     int currAmount;
     Product testProduct;
     private FirebaseDatabase firebaseDatabase;
+    private FirebaseStorage firebaseStorage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +60,7 @@ public class ProductInfo extends AppCompatActivity {
         Intent prodinfo = getIntent();
         String productName = prodinfo.getStringExtra("productName");
         String product_manufacturer = prodinfo.getStringExtra("product_manufacturer");
-        String product_id = prodinfo.getStringExtra("product_id");
+        final String product_id = prodinfo.getStringExtra("product_id");
         //String productCategory = prodinfo.getStringExtra("productCategory");
         //int productTotalStock = prodinfo.getIntExtra("productTotalStock", 0);
         //int productCurrentStock = prodinfo.getIntExtra("productCurrentStock", 0);
@@ -72,17 +79,73 @@ public class ProductInfo extends AppCompatActivity {
         //testList.add("https://en.wikipedia.org/wiki/Virtual_reality_headset");
         //testList.add("VR Headset");
         //testList.add("test string about VR headsets or something I don't know I just programmed this page I didn't make VR headsets");
-        TextView title = (TextView) findViewById(R.id.itemName);
+        TextView title =findViewById(R.id.itemName);
+        title.setSelected(true);
         TextView body = findViewById(R.id.itemInfo);
         TextView wiki = findViewById(R.id.MoreInfo);
         TextView manufacturer = findViewById(R.id.itemManufacturer);
-        ImageView exampleImage = findViewById(R.id.imageFile);
         Button reserve = findViewById(R.id.ReserveButton);
         title.setText(testProduct.getName());
         body.setText(testProduct.getDescription());
         manufacturer.setText(product_manufacturer);
-        exampleImage.setImageBitmap(testProduct.getPicture());
         currAmount = testProduct.getCurrentAmount();
+
+        final StorageReference storageReference = FirebaseStorage.getInstance().getReference();
+        storageReference.child("item-pics/"+product_id+".jpg").getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+            @Override
+            public void onSuccess(Uri uri) {
+                String downloadUri = uri.toString();
+                ImageView exampleImage = findViewById(R.id.imageFile);
+                Glide.with(getApplicationContext())
+                        .load(downloadUri)
+                        .apply(RequestOptions.fitCenterTransform())
+                        .placeholder(R.drawable.hrlogo)
+                        .fallback(R.drawable.hrlogo)
+                        .error(R.drawable.hrlogo)
+                        .into(exampleImage);
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                storageReference.child("item-pics/"+product_id+".png").getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                    @Override
+                    public void onSuccess(Uri uri) {
+                        String downloadUri = uri.toString();
+                        ImageView exampleImage = findViewById(R.id.imageFile);
+                        Glide.with(getApplicationContext())
+                                .load(downloadUri)
+                                .apply(RequestOptions.fitCenterTransform())
+                                .placeholder(R.drawable.hrlogo)
+                                .fallback(R.drawable.hrlogo)
+                                .error(R.drawable.hrlogo)
+                                .into(exampleImage);
+                    }
+            }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        storageReference.child("item-pics/" + product_id + ".jpeg").getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                            @Override
+                            public void onSuccess(Uri uri) {
+                                String downloadUri = uri.toString();
+                                ImageView exampleImage = findViewById(R.id.imageFile);
+                                Glide.with(getApplicationContext())
+                                        .load(downloadUri)
+                                        .apply(RequestOptions.fitCenterTransform())
+                                        .placeholder(R.drawable.hrlogo)
+                                        .fallback(R.drawable.hrlogo)
+                                        .error(R.drawable.hrlogo)
+                                        .into(exampleImage);
+                            }
+
+                        }).addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                ImageView exampleImage = findViewById(R.id.imageFile);
+                                exampleImage.setImageResource(R.drawable.hrlogo);;
+                            }
+                        });
+                    }});}});
+
         wiki.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
