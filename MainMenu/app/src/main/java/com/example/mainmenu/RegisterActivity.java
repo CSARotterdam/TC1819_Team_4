@@ -18,13 +18,19 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 public class RegisterActivity extends AppCompatActivity {
 
     private EditText userNickName, userPassword, userEmail, userID, userClass, userName,userSurname, userPhone, userBday ;
     private Button regButton;
     private TextView userLogin;
     private FirebaseAuth firebaseAuth;
-    String email, Username, bday, password, name, surname, id, phone, Class ;
+
+    String email, Username, bday, password, name, surname, id, phone, Class, Role ;
+    HashMap<String,Object> Borrowlist;
+
 
 
     @Override
@@ -83,6 +89,7 @@ public class RegisterActivity extends AppCompatActivity {
         userPhone = (EditText)findViewById(R.id.etPhone);
         userSurname = (EditText)findViewById(R.id.etSurName);
         userBday = (EditText)findViewById(R.id.etBday);
+
     }
 
 
@@ -99,9 +106,7 @@ public class RegisterActivity extends AppCompatActivity {
         id = userID.getText().toString();
         phone = userPhone.getText().toString();
         Class = userClass.getText().toString();
-
-
-
+        Borrowlist = new HashMap<>();
 
         if(Username.isEmpty() || password.isEmpty() || email.isEmpty() ){
             Toast.makeText(this, "Please enter all details", Toast.LENGTH_SHORT).show();
@@ -114,8 +119,10 @@ public class RegisterActivity extends AppCompatActivity {
 
     private void sendUserData(){
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = firebaseDatabase.getReference(firebaseAuth.getUid());
-        userProfile userProfile = new userProfile(name,surname,Username,bday,email,id,phone,Class);
+
+        DatabaseReference myRef = firebaseDatabase.getReference().child("Users").child(firebaseAuth.getUid());
+
+        userProfile userProfile = new userProfile(name,surname,Username,bday,email,id,phone,Class,"User",Borrowlist);
         myRef.setValue(userProfile);
 
     }
@@ -123,9 +130,5 @@ public class RegisterActivity extends AppCompatActivity {
 
 
 
-
   //end of file
 }
-
-
-

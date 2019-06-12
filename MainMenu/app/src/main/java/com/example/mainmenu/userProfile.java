@@ -1,5 +1,8 @@
 package com.example.mainmenu;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 public class userProfile {
     public String userName;
     public String userSurname;
@@ -9,11 +12,14 @@ public class userProfile {
     public String userID;
     public String userPhone;
     public String userClass;
+    public String userRole;
+    public HashMap<String,Object> itemsBorrowed;
 
     public userProfile(){
     }
 
-    public userProfile(String userName, String userSurname, String userNickName, String userBday, String userEmail, String userID, String userPhone, String userClass) {
+    public userProfile(String userName, String userSurname, String userNickName, String userBday, String userEmail, String userID, String userPhone, String userClass, String userRole, HashMap<String,Object> itemsBorrowed) {
+
         this.userName = userName;
         this.userSurname = userSurname;
         this.userNickName = userNickName;
@@ -22,6 +28,8 @@ public class userProfile {
         this.userID = userID;
         this.userPhone = userPhone;
         this.userClass = userClass;
+        this.userRole = userRole;
+        this.itemsBorrowed = itemsBorrowed;
     }
 
     public String getUserName() {
@@ -87,7 +95,21 @@ public class userProfile {
     public void setUserClass(String userClass) {
         this.userClass = userClass;
     }
+
+    public String getUserRole() {
+        return userRole;
+    }
+
+    public void setUserRole(String UserRole){
+        this.userRole = UserRole;
+    }
+
+    public HashMap<String,Object>  getItemsBorrowed() {
+        return itemsBorrowed;
+    }
+
+    public void setItemsBorrowed(HashMap<String,Object> itemsBorrowed) {
+        this.itemsBorrowed = itemsBorrowed;
+    }
+
 }
-
-
-
