@@ -27,7 +27,7 @@ public class userProfile {
         this.userID = userID;
         this.userPhone = userPhone;
         this.userClass = userClass;
-        this.userRole = "User";
+        this.userRole = userRole;
         this.itemsBorrowed = itemsBorrowed;
 
     }
@@ -101,7 +101,7 @@ public class userProfile {
     }
 
     public void setUserRole(String UserRole){
-        this.userRole = "User";
+        this.userRole = UserRole;
     }
 
     public ArrayList<String> getItemsBorrowed() {return itemsBorrowed; }

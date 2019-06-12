@@ -88,6 +88,7 @@ public class RegisterActivity extends AppCompatActivity {
         userPhone = (EditText)findViewById(R.id.etPhone);
         userSurname = (EditText)findViewById(R.id.etSurName);
         userBday = (EditText)findViewById(R.id.etBday);
+
     }
 
 
@@ -123,7 +124,7 @@ public class RegisterActivity extends AppCompatActivity {
 
         DatabaseReference myRef = firebaseDatabase.getReference().child("Users").child(firebaseAuth.getUid());
 
-        userProfile userProfile = new userProfile(name,surname,Username,bday,email,id,phone,Class,Role,Borrowlist);
+        userProfile userProfile = new userProfile(name,surname,Username,bday,email,id,phone,Class,"User",Borrowlist);
         myRef.setValue(userProfile);
 
     }
