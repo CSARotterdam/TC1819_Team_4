@@ -24,7 +24,7 @@ import java.util.HashMap;
 
 public class AccountSettings extends AppCompatActivity {
 
-    private EditText newUserNickName, newUserDOB, newUserEmail, newUserClass, newUserStudentNumber, newUserPhoneNumber, newUserName, newUserSurName;
+    private EditText newUserNickName, newUserDOB, newUserClass, newUserStudentNumber, newUserPhoneNumber, newUserName, newUserSurName;
     private Button UPUpdateButton;
     private FirebaseAuth firebaseAuth;
     private FirebaseDatabase firebaseDatabase;
@@ -39,7 +39,6 @@ public class AccountSettings extends AppCompatActivity {
 
         newUserNickName = findViewById(R.id.UPUserNickName);
         newUserDOB = findViewById(R.id.UPUserDateBirth);
-        newUserEmail = findViewById(R.id.UPUserEmail);
         newUserClass = findViewById(R.id.UPUserClass);
         newUserStudentNumber = findViewById(R.id.UPUserstdNr);
         newUserPhoneNumber = findViewById(R.id.UPUserPhone);
@@ -58,7 +57,6 @@ public class AccountSettings extends AppCompatActivity {
                 userProfile userprofile = dataSnapshot.getValue(userProfile.class);
                 newUserNickName.setText(userprofile.getUserNickName());
                 newUserDOB.setText(userprofile.getUserBday());
-                newUserEmail.setText(userprofile.getUserEmail());
                 newUserName.setText(userprofile.getUserName());
                 newUserSurName.setText(userprofile.getUserSurname());
                 newUserClass.setText(userprofile.getUserClass());
@@ -76,16 +74,19 @@ public class AccountSettings extends AppCompatActivity {
         UPUpdateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                userProfile profile = new userProfile();
+
                 String Nickname = newUserNickName.getText().toString();
                 String DOB = newUserDOB.getText().toString();
-                String email = newUserEmail.getText().toString();
+                String email = (profile.getUserEmail());
                 String Name = newUserName.getText().toString();
                 String Surname = newUserSurName.getText().toString();
                 String Class = newUserClass.getText().toString();
                 String Studentnr = newUserStudentNumber.getText().toString();
                 String Phone = newUserPhoneNumber.getText().toString();
+                String User = (profile.getUserRole());
 
-                userProfile userprofile = new userProfile(Name, Surname, Nickname, DOB, email, Studentnr, Phone, Class, "User", newItemsBurrowed);
+                userProfile userprofile = new userProfile(Name, Surname, Nickname, DOB, email, Studentnr, Phone, Class, User, newItemsBurrowed);
 
                 databaseReference.setValue(userprofile);
 
