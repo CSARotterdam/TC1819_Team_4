@@ -16,7 +16,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class UpdatePassword extends AppCompatActivity {
 
     private Button update;
-    private EditText newPassword, newEmail;
+    private EditText newPassword;
     private FirebaseUser firebaseUser;
 
 
@@ -26,7 +26,6 @@ public class UpdatePassword extends AppCompatActivity {
         setContentView(R.layout.activity_update_password);
 
         update = findViewById(R.id.btnUpdatePassword);
-        newEmail = findViewById(R.id.etNewEmail);
         newPassword = findViewById(R.id.etNewPassword);
 
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
