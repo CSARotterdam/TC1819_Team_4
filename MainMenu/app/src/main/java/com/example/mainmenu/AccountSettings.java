@@ -10,6 +10,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.gms.common.util.Strings;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -22,11 +24,11 @@ import java.util.HashMap;
 
 public class AccountSettings extends AppCompatActivity {
 
-    private EditText newUserNickName, newUserDOB, newUserEmail, newUserClass, newUserStudentNumber, newUserPhoneNumber, newUserName, newUserSurName;
+    private EditText newUserNickName, newUserDOB, newUserClass, newUserStudentNumber, newUserPhoneNumber, newUserName, newUserSurName;
     private Button UPUpdateButton;
     private FirebaseAuth firebaseAuth;
     private FirebaseDatabase firebaseDatabase;
-    private HashMap<String,Object> newItemsBurrowed;
+    private HashMap<String, Object> newItemsBurrowed;
 
 
     @Override
@@ -34,16 +36,15 @@ public class AccountSettings extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.account_settings);
 
+
         newUserNickName = findViewById(R.id.UPUserNickName);
         newUserDOB = findViewById(R.id.UPUserDateBirth);
-        newUserEmail = findViewById(R.id.UPUserEmail);
         newUserClass = findViewById(R.id.UPUserClass);
         newUserStudentNumber = findViewById(R.id.UPUserstdNr);
         newUserPhoneNumber = findViewById(R.id.UPUserPhone);
         newUserName = findViewById(R.id.UpUserName);
         newUserSurName = findViewById(R.id.UPUserSurName);
         UPUpdateButton = findViewById(R.id.UPUpdateButton);
-
 
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseDatabase = FirebaseDatabase.getInstance();
@@ -56,7 +57,6 @@ public class AccountSettings extends AppCompatActivity {
                 userProfile userprofile = dataSnapshot.getValue(userProfile.class);
                 newUserNickName.setText(userprofile.getUserNickName());
                 newUserDOB.setText(userprofile.getUserBday());
-                newUserEmail.setText(userprofile.getUserEmail());
                 newUserName.setText(userprofile.getUserName());
                 newUserSurName.setText(userprofile.getUserSurname());
                 newUserClass.setText(userprofile.getUserClass());
@@ -71,25 +71,30 @@ public class AccountSettings extends AppCompatActivity {
 
             }
         });
-    UPUpdateButton.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            String Nickname = newUserNickName.getText().toString();
-            String DOB = newUserDOB.getText().toString();
-            String email = newUserEmail.getText().toString();
-            String Name = newUserName.getText().toString();
-            String Surname = newUserSurName.getText().toString();
-            String Class = newUserClass.getText().toString();
-            String Studentnr = newUserStudentNumber.getText().toString();
-            String Phone = newUserPhoneNumber.getText().toString();
+        UPUpdateButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                userProfile profile = new userProfile();
 
-            userProfile userprofile = new userProfile(Name, Surname, Nickname, DOB, email, Studentnr, Phone, Class, "User", newItemsBurrowed);
+                String Nickname = newUserNickName.getText().toString();
+                String DOB = newUserDOB.getText().toString();
+                String email = (profile.getUserEmail());
+                String Name = newUserName.getText().toString();
+                String Surname = newUserSurName.getText().toString();
+                String Class = newUserClass.getText().toString();
+                String Studentnr = newUserStudentNumber.getText().toString();
+                String Phone = newUserPhoneNumber.getText().toString();
+                String User = (profile.getUserRole());
 
-            databaseReference.setValue(userprofile);
+                userProfile userprofile = new userProfile(Name, Surname, Nickname, DOB, email, Studentnr, Phone, Class, User, newItemsBurrowed);
 
-            finish();
-        }
-    });
+                databaseReference.setValue(userprofile);
+
+                finish();
+            }
+        });
 
     }
 }
+
+
