@@ -3,6 +3,7 @@ package com.example.mainmenu;
 //  https://console.firebase.google.com/u/0/project/database-a772f/overview //
 
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -12,10 +13,20 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
 
 public class MainActivityAdmin extends AppCompatActivity{
 
+    ArrayList<String> itemsBorrowed = new ArrayList<>();
+
     private FirebaseAuth firebaseAuth;
+    public FirebaseDatabase firebaseDatabase;
     private Button logout;
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,7 +70,9 @@ public class MainActivityAdmin extends AppCompatActivity{
                 System.out.println("Pressed My Items Button");
 
                 Intent openMyItems = new Intent(getApplicationContext(), MyItems.class);
+                openMyItems.putExtra("itemsBorrowed" , itemsBorrowed);
                 startActivity(openMyItems);
+
                 //Intent openProductInfo = new Intent(getApplicationContext(), ProductInfo.class);
                 //startActivity(openProductInfo);
             }
@@ -107,6 +120,22 @@ public class MainActivityAdmin extends AppCompatActivity{
 
                 Intent openAccountSettings = new Intent(getApplicationContext(), ProductCreate.class);
                 startActivity(openAccountSettings);
+            }
+        });
+
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        DatabaseReference MyRef = firebaseDatabase.getReference().child("Users").child(firebaseAuth.getUid()).child("itemsBorrowed");
+        MyRef.addValueEventListener(new ValueEventListener() {
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()){
+                    String item = (String) dataSnapshot1.getValue();
+                    itemsBorrowed.add(item);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
             }
         });
 
