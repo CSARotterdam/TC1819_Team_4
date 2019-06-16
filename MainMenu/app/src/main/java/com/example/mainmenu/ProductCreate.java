@@ -91,7 +91,7 @@ private Long productAmountLong;
                     databaseReference.child("product_manufacturer").setValue(manu);
                     amountBroken = 0L;
                     databaseReference.child("productAmountBroken").setValue(amountBroken);
-                    databaseReference.child("ProductCategory").setValue(productCat);
+                    databaseReference.child("productCategory").setValue(productCat);
                 }
 
             }
