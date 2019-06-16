@@ -199,8 +199,9 @@ public class RULuser extends AppCompatActivity implements AdapterView.OnItemSele
             databaseReference.setValue("Admin");
             System.out.println(Uid);
 
+        } else if (parent.getItemAtPosition(position).equals("Select Role")) {
 
-        } else{
+        } else {
             DatabaseReference databaseReference = firebaseDatabase.getInstance().getReference().child("Users").child(Uid).child("userRole");
             databaseReference.setValue(null);
             databaseReference.setValue("User");

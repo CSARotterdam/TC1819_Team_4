@@ -112,14 +112,5 @@ public class ReserveUserlist extends AppCompatActivity{
 
             }
         });
-        Button back = findViewById(R.id.rul_backtomenu_btn);
-        back.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                System.out.println("Button Clicked!");
-
-                Intent back = new Intent(getApplicationContext(), MainActivity.class);
-                startActivity(back);
-            }
-        });
     }
 }
