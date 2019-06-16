@@ -120,27 +120,11 @@
         app:layout_constraintWidth_percent="0.34" />
 
     <Button
-        android:id="@+id/statistics_btn"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@color/White"
-        android:text="Statistics"
-        android:textColor="@color/Black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.230"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.85"
-        app:layout_constraintHeight_percent="0.08"
-        app:layout_constraintWidth_percent="0.34" />
-
-    <Button
         android:id="@+id/statistics_btn2"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@color/White"
-        android:text="Statistics"
+        android:text="User List"
         android:textColor="@color/Black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHeight_percent="0.08"
