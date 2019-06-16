@@ -30,6 +30,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     String email, Username, bday, password, name, surname, id, phone, Class, Role ;
     HashMap<String,Object> Borrowlist;
+    HashMap<String,Object> Reservelist;
 
 
 
@@ -107,6 +108,7 @@ public class RegisterActivity extends AppCompatActivity {
         phone = userPhone.getText().toString();
         Class = userClass.getText().toString();
         Borrowlist = new HashMap<>();
+        Reservelist = new HashMap<>();
 
         if(Username.isEmpty() || password.isEmpty() || email.isEmpty() ){
             Toast.makeText(this, "Please enter all details", Toast.LENGTH_SHORT).show();
@@ -122,7 +124,7 @@ public class RegisterActivity extends AppCompatActivity {
 
         DatabaseReference myRef = firebaseDatabase.getReference().child("Users").child(firebaseAuth.getUid());
 
-        userProfile userProfile = new userProfile(name,surname,Username,bday,email,id,phone,Class,"User",Borrowlist);
+        userProfile userProfile = new userProfile(name,surname,Username,bday,email,id,phone,Class,"User",Borrowlist, Reservelist);
         myRef.setValue(userProfile);
 
     }

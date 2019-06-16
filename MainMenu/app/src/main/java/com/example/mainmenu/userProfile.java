@@ -14,11 +14,12 @@ public class userProfile {
     public String userClass;
     public String userRole;
     public HashMap<String,Object> itemsBorrowed;
+    public HashMap<String,Object> itemsReserved;
 
     public userProfile(){
     }
 
-    public userProfile(String userName, String userSurname, String userNickName, String userBday, String userEmail, String userID, String userPhone, String userClass, String userRole, HashMap<String,Object> itemsBorrowed) {
+    public userProfile(String userName, String userSurname, String userNickName, String userBday, String userEmail, String userID, String userPhone, String userClass, String userRole, HashMap<String,Object> itemsReserved, HashMap<String,Object> itemsBorrowed ) {
 
         this.userName = userName;
         this.userSurname = userSurname;
@@ -29,6 +30,7 @@ public class userProfile {
         this.userPhone = userPhone;
         this.userClass = userClass;
         this.userRole = userRole;
+        this.itemsReserved = itemsReserved;
         this.itemsBorrowed = itemsBorrowed;
     }
 
@@ -102,6 +104,14 @@ public class userProfile {
 
     public void setUserRole(String UserRole){
         this.userRole = UserRole;
+    }
+
+    public HashMap<String,Object>  getItemsReserved() {
+        return itemsReserved;
+    }
+
+    public void setItemsReserved(HashMap<String,Object> itemsReserved) {
+        this.itemsReserved = itemsReserved;
     }
 
     public HashMap<String,Object>  getItemsBorrowed() {
