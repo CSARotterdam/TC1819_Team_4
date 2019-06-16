@@ -117,17 +117,9 @@ public class ReserveItems extends AppCompatActivity{
 
             }
         });
-        Button back = findViewById(R.id.reserve_backtomenu_btn);
+
+
         Button confirm = findViewById(R.id.reserve_confirm);
-        back.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                System.out.println("Button Clicked!");
-
-                Intent back = new Intent(getApplicationContext(), MainActivity.class);
-                startActivity(back);
-            }
-        });
-
 
         confirm.setOnClickListener(new View.OnClickListener() {
             @Override

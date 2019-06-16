@@ -103,7 +103,7 @@
         android:id="@+id/UPUpdateButton"
         android:layout_width="148dp"
         android:layout_height="44dp"
-        android:background="@color/White"
+        android:background="@drawable/rounded_corner"
         android:text="Confirm"
         android:textColor="@color/Black"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -64,30 +64,16 @@
         app:layout_constraintTop_toBottomOf="@id/TopofScreen">
 
         <Button
-            android:id="@+id/reserve_backtomenu_btn"
-            android:layout_width="175dp"
-            android:layout_height="60dp"
-            android:text="@string/BackToMenu_Button"
-            android:background="@color/White"
-            android:textColor="@color/Black"
-            app:layout_constraintHorizontal_bias="0.08"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
-
-        <Button
             android:id="@+id/reserve_confirm"
             android:layout_width="175dp"
             android:layout_height="60dp"
+            android:background="@drawable/rounded_corner"
             android:text="@string/Confirmsel_Button"
-            android:background="@color/White"
             android:textColor="@color/Black"
-            app:layout_constraintHorizontal_bias="0.915"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
     </android.support.constraint.ConstraintLayout>
 
