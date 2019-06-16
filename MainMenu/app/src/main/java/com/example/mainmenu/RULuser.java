@@ -55,6 +55,8 @@ public class RULuser extends AppCompatActivity implements AdapterView.OnItemSele
     public String newproductURL;
     public String newproductDescription;
 
+    public String Uid = null;
+
     private String ChangeUserRole;
     private FirebaseDatabase firebaseDatabase;
 
@@ -83,7 +85,7 @@ public class RULuser extends AppCompatActivity implements AdapterView.OnItemSele
         String UserName = ruluser.getStringExtra("UserName");
         String UserSurname = ruluser.getStringExtra("UserSurname");
         String UserClass = ruluser.getStringExtra("UserClass");
-        final String Uid = ruluser.getStringExtra("Uid");
+        Uid = ruluser.getStringExtra("Uid");
         final HashMap<String, Object> UserItemsBorrowed = (HashMap<String, Object>) ruluser.getSerializableExtra("UserItemsBorrowed");
         final HashMap<String, Object> UserItemsReserved = (HashMap<String, Object>) ruluser.getSerializableExtra("UserItemsReserved");
 
@@ -191,15 +193,17 @@ public class RULuser extends AppCompatActivity implements AdapterView.OnItemSele
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
         if (parent.getItemAtPosition(position).equals("Admin")){
-            DatabaseReference databaseReference = firebaseDatabase.getInstance().getReference().child("Users").child(Uid)
-
-            //userProfile profile = new userProfile();
-            //profile.setUserRole("Admin");
-            //ChangeUserRole = (profile.getUserRole());
+            DatabaseReference databaseReference = firebaseDatabase.getInstance().getReference().child("Users").child(Uid).child("userRole");
+            databaseReference.setValue(null);
+            databaseReference.setValue("Admin");
+            System.out.println(Uid);
 
 
         } else{
-
+            DatabaseReference databaseReference = firebaseDatabase.getInstance().getReference().child("Users").child(Uid).child("userRole");
+            databaseReference.setValue(null);
+            databaseReference.setValue("User");
+            System.out.println(Uid);
         }
 
 
