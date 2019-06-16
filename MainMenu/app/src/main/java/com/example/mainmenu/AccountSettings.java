@@ -29,13 +29,13 @@ public class AccountSettings extends AppCompatActivity {
     private FirebaseAuth firebaseAuth;
     private FirebaseDatabase firebaseDatabase;
     private HashMap<String, Object> newItemsBurrowed;
+    private String newUserRole, newUserEmail;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.account_settings);
-
 
         newUserNickName = findViewById(R.id.UPUserNickName);
         newUserDOB = findViewById(R.id.UPUserDateBirth);
@@ -63,6 +63,15 @@ public class AccountSettings extends AppCompatActivity {
                 newUserStudentNumber.setText(userprofile.getUserID());
                 newUserPhoneNumber.setText(userprofile.getUserPhone());
                 newItemsBurrowed = (userprofile.getItemsBorrowed());
+                newUserEmail = (userprofile.getUserEmail());
+                String role = userprofile.getUserRole();
+                if (role.equals("Admin")){
+                    newUserRole = "Admin";
+                } else{
+                    newUserRole = "User";
+                }
+
+
             }
 
             @Override
@@ -78,13 +87,13 @@ public class AccountSettings extends AppCompatActivity {
 
                 String Nickname = newUserNickName.getText().toString();
                 String DOB = newUserDOB.getText().toString();
-                String email = (profile.getUserEmail());
                 String Name = newUserName.getText().toString();
                 String Surname = newUserSurName.getText().toString();
                 String Class = newUserClass.getText().toString();
                 String Studentnr = newUserStudentNumber.getText().toString();
                 String Phone = newUserPhoneNumber.getText().toString();
-                String User = (profile.getUserRole());
+                String User = newUserRole;
+                String email = newUserEmail;
 
                 userProfile userprofile = new userProfile(Name, Surname, Nickname, DOB, email, Studentnr, Phone, Class, User, newItemsBurrowed);
 
