@@ -40,6 +40,16 @@ public class MyItems extends AppCompatActivity{
     ArrayList<String> productURL = new ArrayList<>();
     ArrayList<String> productDescription = new ArrayList<>();
 
+    ArrayList<String> productNameres = new ArrayList<>();
+    ArrayList<String> product_manufacturerres = new ArrayList<>();
+    ArrayList<String> product_idres = new ArrayList<>();
+    ArrayList<String> productCategoryres = new ArrayList<>();
+    ArrayList<String> productTotalStockres = new ArrayList<>();
+    ArrayList<String> productCurrentStockres = new ArrayList<>();
+    ArrayList<String> productAmountBrokenres = new ArrayList<>();
+    ArrayList<String> productURLres = new ArrayList<>();
+    ArrayList<String> productDescriptionres = new ArrayList<>();
+
     public String newproductName;
     public String newproduct_manufacturer;
     public String newproduct_id;
@@ -55,11 +65,17 @@ public class MyItems extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.my_items);
         final RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView2);
+        final RecyclerView recyclerView1 = findViewById(R.id.recyclerView3);
         recyclerView.setHasFixedSize(true);
+        recyclerView1.setHasFixedSize(true);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext());
+        LinearLayoutManager linearLayoutManager2 = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(linearLayoutManager);
+        recyclerView1.setLayoutManager(linearLayoutManager2);
+
 
         final ArrayList<String> itemsBorrowed = getIntent().getStringArrayListExtra("itemsBorrowed");
+        final ArrayList<String> itemsReserved = getIntent().getStringArrayListExtra("itemsReserved");
 
         firebaseDatabase = FirebaseDatabase.getInstance();
         FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
@@ -69,6 +85,25 @@ public class MyItems extends AppCompatActivity{
         databaseReference1.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                productName.clear();
+                product_manufacturer.clear();
+                product_id.clear();
+                productCategory.clear();
+                productTotalStock.clear();
+                productCurrentStock.clear();
+                productAmountBroken.clear();
+                productURL.clear();
+                productDescription.clear();
+
+                productNameres.clear();
+                product_manufacturerres.clear();
+                product_idres.clear();
+                productCategoryres.clear();
+                productTotalStockres.clear();
+                productCurrentStockres.clear();
+                productAmountBrokenres.clear();
+                productURLres.clear();
+                productDescriptionres.clear();
                 for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
                     listItem listItem = dataSnapshot1.getValue(listItem.class);
                     newproductName = listItem.getProductName();
@@ -80,7 +115,19 @@ public class MyItems extends AppCompatActivity{
                     newproductAmountBroken = listItem.getProductAmountBroken();
                     newproductURL = listItem.getProductURL();
                     newproductDescription = listItem.getProductDescription();
-
+                    if (itemsReserved.contains(newproduct_id)){
+                        productNameres.add(newproductName);
+                        product_manufacturerres.add(newproduct_manufacturer);
+                        product_idres.add(newproduct_id);
+                        productCategoryres.add(newproductCategory);
+                        productTotalStockres.add(newproductTotalStock);
+                        productCurrentStockres.add(newproductCurrentStock);
+                        productAmountBrokenres.add(newproductAmountBroken);
+                        productURLres.add(newproductURL);
+                        productDescriptionres.add(newproductDescription);
+                        MyItemsAdapter MyItemsAdapter = new MyItemsAdapter(MyItems.this, productNameres, product_manufacturerres, product_idres, productCategoryres, productTotalStockres, productCurrentStockres, productAmountBrokenres, productURLres, productDescriptionres);
+                        recyclerView.setAdapter(MyItemsAdapter);
+                    }
                     if (itemsBorrowed.contains(newproduct_id)){
                         productName.add(newproductName);
                         product_manufacturer.add(newproduct_manufacturer);
@@ -91,8 +138,8 @@ public class MyItems extends AppCompatActivity{
                         productAmountBroken.add(newproductAmountBroken);
                         productURL.add(newproductURL);
                         productDescription.add(newproductDescription);
-                        MyItemsAdapter MyItemsAdapter = new MyItemsAdapter(MyItems.this, productName, product_manufacturer, product_id, productCategory, productTotalStock, productCurrentStock, productAmountBroken, productURL, productDescription);
-                        recyclerView.setAdapter(MyItemsAdapter);
+                        borrowAdapter borrowAdapter = new borrowAdapter(MyItems.this, productName, product_manufacturer, product_id, productCategory, productTotalStock, productCurrentStock, productAmountBroken, productURL, productDescription);
+                        recyclerView1.setAdapter(borrowAdapter);
                     }
                 }
             }

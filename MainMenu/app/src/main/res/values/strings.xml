@@ -24,8 +24,12 @@
     <!-- Inventory Screen -->
     <string name="Inventory_Header">Inventory</string>
 
+    <!-- User List Screen -->
+    <string name="RUL_Header">Current Users:</string>
+
     <!-- My Items Screen -->
-    <string name="MyItems_Header">My Items</string>
+    <string name="Res_Header">Reserved items:</string>
+    <string name="Borrow_Header">Borrowed items:</string>
 
     <!-- Reserve Items Screen -->
     <string name="Reserve_Header">Reserve Items</string>

@@ -28,6 +28,7 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity{
 
     ArrayList<String> itemsBorrowed = new ArrayList<>();
+    ArrayList<String> itemsReserved = new ArrayList<>();
 
     private FirebaseAuth firebaseAuth;
     private FirebaseDatabase firebaseDatabase;
@@ -61,7 +62,7 @@ public class MainActivity extends AppCompatActivity{
             public void onClick(View v) {
                 System.out.println("Pressed ToS Button");
 
-                Intent openTOS = new Intent(getApplicationContext(), TOS.class);
+                Intent openTOS = new Intent(getApplicationContext(), ReserveUserlist.class);
                 startActivity(openTOS);
             }
         });
@@ -72,6 +73,7 @@ public class MainActivity extends AppCompatActivity{
 
                 Intent openMyItems = new Intent(getApplicationContext(), MyItems.class);
                 openMyItems.putExtra("itemsBorrowed" , itemsBorrowed);
+                openMyItems.putExtra("itemsReserved", itemsReserved);
                 startActivity(openMyItems);
 
 
@@ -111,11 +113,26 @@ public class MainActivity extends AppCompatActivity{
 
         firebaseDatabase = FirebaseDatabase.getInstance();
         DatabaseReference MyRef = firebaseDatabase.getReference().child("Users").child(firebaseAuth.getUid()).child("itemsBorrowed");
+        DatabaseReference MyRef2 = firebaseDatabase.getReference().child("Users").child(firebaseAuth.getUid()).child("itemsReserved");
         MyRef.addValueEventListener(new ValueEventListener() {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()){
                     String item = (String) dataSnapshot1.getValue();
                     itemsBorrowed.add(item);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+        MyRef2.addValueEventListener(new ValueEventListener() {
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()){
+                    String item = (String) dataSnapshot1.getValue();
+                    itemsReserved.add(item);
                 }
             }
 

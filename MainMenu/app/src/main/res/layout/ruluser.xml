@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#cc0033"
-    tools:context="com.example.mainmenu.Inventory">
+    tools:context="com.example.mainmenu.RULuser">
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/TopofScreen"
@@ -22,16 +22,32 @@
         app:layout_constraintBottom_toBottomOf="parent">
 
         <TextView
-            android:id="@+id/mitems_header"
+            android:id="@+id/nameclass"
             android:layout_width="350dp"
             android:layout_height="50dp"
-            android:text="@string/Res_Header"
+            android:text="Name"
             android:textAlignment="center"
             android:textSize="25dp"
             android:textStyle="bold"
             android:textColor="#FFFFFF"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintVertical_bias="0.06"
+            app:layout_constraintVertical_bias="0.04"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <TextView
+            android:id="@+id/mitems_header"
+            android:layout_width="350dp"
+            android:layout_height="50dp"
+            android:text="@string/Res_Header"
+            android:textAlignment="center"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintVertical_bias="0.1"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -43,14 +59,14 @@
             android:background="#ffffff"
             app:layout_constraintHeight_percent="0.4"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintVertical_bias="0.2"
+            app:layout_constraintVertical_bias="0.25"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent">
 
             <android.support.v7.widget.RecyclerView
-                android:id="@+id/recyclerView2"
+                android:id="@+id/recyclerView6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
         </RelativeLayout>
@@ -61,11 +77,11 @@
             android:layout_height="50dp"
             android:text="@string/Borrow_Header"
             android:textAlignment="center"
-            android:textSize="25dp"
+            android:textSize="20dp"
             android:textStyle="bold"
             android:textColor="#FFFFFF"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintVertical_bias="0.58"
+            app:layout_constraintVertical_bias="0.6"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -84,7 +100,7 @@
             app:layout_constraintBottom_toBottomOf="parent">
 
             <android.support.v7.widget.RecyclerView
-                android:id="@+id/recyclerView3"
+                android:id="@+id/recyclerView7"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
         </RelativeLayout>
@@ -98,7 +114,7 @@
         app:layout_constraintTop_toBottomOf="@id/TopofScreen">
 
         <Button
-            android:id="@+id/mitems_backtomenu_btn"
+            android:id="@+id/ruluser_backtomenu_btn"
             android:layout_width="250dp"
             android:layout_height="60dp"
             android:text="@string/BackToMenu_Button"

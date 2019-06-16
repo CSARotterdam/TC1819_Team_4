@@ -28,7 +28,8 @@ public class AccountSettings extends AppCompatActivity {
     private Button UPUpdateButton;
     private FirebaseAuth firebaseAuth;
     private FirebaseDatabase firebaseDatabase;
-    private HashMap<String, Object> newItemsBurrowed;
+    private HashMap<String, Object> newItemsBorrowed;
+    private HashMap<String, Object> newItemsReserved;
 
 
     @Override
@@ -62,7 +63,8 @@ public class AccountSettings extends AppCompatActivity {
                 newUserClass.setText(userprofile.getUserClass());
                 newUserStudentNumber.setText(userprofile.getUserID());
                 newUserPhoneNumber.setText(userprofile.getUserPhone());
-                newItemsBurrowed = (userprofile.getItemsBorrowed());
+                newItemsBorrowed = (userprofile.getItemsBorrowed());
+                newItemsReserved = (userprofile.getItemsReserved());
             }
 
             @Override
@@ -86,7 +88,7 @@ public class AccountSettings extends AppCompatActivity {
                 String Phone = newUserPhoneNumber.getText().toString();
                 String User = (profile.getUserRole());
 
-                userProfile userprofile = new userProfile(Name, Surname, Nickname, DOB, email, Studentnr, Phone, Class, User, newItemsBurrowed);
+                userProfile userprofile = new userProfile(Name, Surname, Nickname, DOB, email, Studentnr, Phone, Class, User, newItemsBorrowed, newItemsReserved);
 
                 databaseReference.setValue(userprofile);
 

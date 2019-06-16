@@ -79,7 +79,7 @@ public class MyItemsAdapter extends RecyclerView.Adapter<MyItemsAdapter.MyViewHo
                 // - Remove item from User ItemsBorrowed List
                 // * Add +1 to the selected items amount
                 // * Remove said item from the recyclerview
-                final DatabaseReference databaseReference =  FirebaseDatabase.getInstance().getReference().child("Users").child(FirebaseAuth.getInstance().getUid()).child("itemsBorrowed");
+                final DatabaseReference databaseReference =  FirebaseDatabase.getInstance().getReference().child("Users").child(FirebaseAuth.getInstance().getUid()).child("itemsReserved");
                 databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {

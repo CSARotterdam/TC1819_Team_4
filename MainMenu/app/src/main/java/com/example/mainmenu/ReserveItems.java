@@ -137,7 +137,7 @@ public class ReserveItems extends AppCompatActivity{
                 if (itemsChosen.size() == 1){
                     item1 = itemsChosen.get(0);
                     reduceAmount(itemNamesChosen.get(0), databaseReference);
-                    myRef.child("itemsBorrowed").push().setValue(item1);
+                    myRef.child("itemsReserved").push().setValue(item1);
                     finish();
                     overridePendingTransition(0, 0);
                     startActivity(getIntent());
@@ -147,10 +147,10 @@ public class ReserveItems extends AppCompatActivity{
                 else if(itemsChosen.size() == 2){
                     item1 = itemsChosen.get(0);
                     reduceAmount(itemNamesChosen.get(0), databaseReference);
-                    myRef.child("itemsBorrowed").push().setValue(item1);
+                    myRef.child("itemsReserved").push().setValue(item1);
                     item2 = itemsChosen.get(1);
                     reduceAmount(itemNamesChosen.get(1), databaseReference);
-                    myRef.child("itemsBorrowed").push().setValue(item2);
+                    myRef.child("itemsReserved").push().setValue(item2);
                     finish();
                     overridePendingTransition(0, 0);
                     startActivity(getIntent());
@@ -160,13 +160,13 @@ public class ReserveItems extends AppCompatActivity{
                 else if(itemsChosen.size() == 3){
                     item1 = itemsChosen.get(0);
                     reduceAmount(itemNamesChosen.get(0), databaseReference);
-                    myRef.child("itemsBorrowed").push().setValue(item1);
+                    myRef.child("itemsReserved").push().setValue(item1);
                     item2 = itemsChosen.get(1);
                     reduceAmount(itemNamesChosen.get(1), databaseReference);
-                    myRef.child("itemsBorrowed").push().setValue(item2);
+                    myRef.child("itemsReserved").push().setValue(item2);
                     item3 = itemsChosen.get(2);
                     reduceAmount(itemNamesChosen.get(2), databaseReference);
-                    myRef.child("itemsBorrowed").push().setValue(item3);
+                    myRef.child("itemsReserved").push().setValue(item3);
                     finish();
                     overridePendingTransition(0, 0);
                     startActivity(getIntent());

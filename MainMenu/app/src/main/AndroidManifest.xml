@@ -29,6 +29,8 @@
         <activity android:name=".MyItems" />
         <activity android:name=".ProductCreate" />
         <activity android:name=".ProductInfo" />
+        <activity android:name=".ReserveUserlist" />
+        <activity android:name=".RULuser" />
     </application>
 
 </manifest>

@@ -186,7 +186,7 @@ public class ProductInfo extends AppCompatActivity {
                 firebaseDatabase = FirebaseDatabase.getInstance();
                 FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
                 DatabaseReference myRef = firebaseDatabase.getReference().child("Users").child(firebaseAuth.getUid());
-                myRef.child("itemsBorrowed").push().setValue(testProduct.getID());
+                myRef.child("itemsReserved").push().setValue(testProduct.getID());
                 int currentValue = testProduct.getCurrentAmount();
                 currentValue -= 1;
                 DatabaseReference databaseReference2 = firebaseDatabase.getReference().child("items").child(testProduct.getName()).child("productCurrentStock");
