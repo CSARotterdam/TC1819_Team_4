@@ -14,9 +14,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.RuntimeExecutionException;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -93,39 +95,39 @@ public class LoginActivityActivity extends AppCompatActivity {
             firebaseAuth.signInWithEmailAndPassword(userName, userPassword).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
-                    final AuthResult taskResult = task.getResult();
-                    FirebaseUser user = task.getResult().getUser();
-                    String uid = user.getUid();
-                    FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
-                    DatabaseReference databaseReference = firebaseDatabase.getReference().child("Users").child(uid);
+                    try {
+                        final AuthResult taskResult = task.getResult();
+                        FirebaseUser user = task.getResult().getUser();
+                        String uid = user.getUid();
+                        FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+                        DatabaseReference databaseReference = firebaseDatabase.getReference().child("Users").child(uid);
 
-                    databaseReference.addValueEventListener(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                            userProfile profile = dataSnapshot.getValue(userProfile.class);
-                            String role = profile.getUserRole();
+                        databaseReference.addValueEventListener(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                userProfile profile = dataSnapshot.getValue(userProfile.class);
+                                String role = profile.getUserRole();
 
-                            if (role.equals("Admin")) {
-                                progressDialog.dismiss();
-                                Toast.makeText(LoginActivityActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
-                                AuthResult test = taskResult;
-                                startActivity(new Intent(LoginActivityActivity.this, MainActivityAdmin.class));
-                            } else {
-                                progressDialog.dismiss();
-                                Toast.makeText(LoginActivityActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
-                                startActivity(new Intent(LoginActivityActivity.this, MainActivity.class));
+                                if (role.equals("Admin")) {
+                                    progressDialog.dismiss();
+                                    Toast.makeText(LoginActivityActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
+                                    AuthResult test = taskResult;
+                                    startActivity(new Intent(LoginActivityActivity.this, MainActivityAdmin.class));
+                                } else {
+                                    progressDialog.dismiss();
+                                    Toast.makeText(LoginActivityActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
+                                    startActivity(new Intent(LoginActivityActivity.this, MainActivity.class));
+                                }
                             }
-                        }
 
-                        @Override
-                        public void onCancelled(@NonNull DatabaseError databaseError) {
-                            Toast.makeText(LoginActivityActivity.this, databaseError.getCode(), Toast.LENGTH_SHORT);
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError databaseError) {
+                                Toast.makeText(LoginActivityActivity.this, databaseError.getCode(), Toast.LENGTH_SHORT);
 
-                        }
-                    });
-
-
-                    if (!task.isSuccessful()) {
+                            }
+                        });
+                    }
+                    catch(RuntimeExecutionException e){
                         Toast.makeText(LoginActivityActivity.this, "Login Failed", Toast.LENGTH_SHORT).show();
                         progressDialog.dismiss();
                     }
