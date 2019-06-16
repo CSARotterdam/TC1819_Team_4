@@ -38,6 +38,7 @@ public class rulreserveadapter extends RecyclerView.Adapter<rulreserveadapter.My
     ArrayList<String> productAmountBroken;
     ArrayList<String> productURL;
     ArrayList<String> productDescription;
+    String Uid;
     String currentID;
 
     FirebaseDatabase firebaseDatabase;
@@ -46,7 +47,7 @@ public class rulreserveadapter extends RecyclerView.Adapter<rulreserveadapter.My
 
     Context context;
 
-    public rulreserveadapter(Context context, ArrayList<String> productName, ArrayList<String> product_manufacturer, ArrayList<String> product_id, ArrayList<String> productCategory, ArrayList<String> productTotalStock, ArrayList<String> productCurrentStock, ArrayList<String> productAmountBroken, ArrayList<String> productURL, ArrayList<String> productDescription) {
+    public rulreserveadapter(Context context, ArrayList<String> productName, ArrayList<String> product_manufacturer, ArrayList<String> product_id, ArrayList<String> productCategory, ArrayList<String> productTotalStock, ArrayList<String> productCurrentStock, ArrayList<String> productAmountBroken, ArrayList<String> productURL, ArrayList<String> productDescription, String Uid) {
         this.context = context;
         this.productName = productName;
         this.product_manufacturer = product_manufacturer;
@@ -57,6 +58,7 @@ public class rulreserveadapter extends RecyclerView.Adapter<rulreserveadapter.My
         this.productAmountBroken = productAmountBroken;
         this.productURL = productURL;
         this.productDescription = productDescription;
+        this.Uid = Uid;
     }
 
     @Override
@@ -75,8 +77,9 @@ public class rulreserveadapter extends RecyclerView.Adapter<rulreserveadapter.My
         holder.button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showChoiceDialog( "Lend out an item", "Accepting this will lend this item out to a user. Are you sure you want to do this?");
+                showChoiceDialog(position, "Lend out an item", "Accepting this will lend this item out to a user. Are you sure you want to do this?");
                 currentID = product_id.get(position);
+
             }
         });
     }
@@ -100,19 +103,45 @@ public class rulreserveadapter extends RecyclerView.Adapter<rulreserveadapter.My
         }
     }
 
-    public void showChoiceDialog(String title, CharSequence message) {
+    public void showChoiceDialog(final int position, String title, CharSequence message) {
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
-
+        final String baseID = product_id.get(position);
         if (title != null) builder.setTitle(title);
 
         DialogInterface.OnClickListener acceptitem = new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                firebaseDatabase = FirebaseDatabase.getInstance();
-                FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
-                DatabaseReference myRef = firebaseDatabase.getReference().child("Users").child(firebaseAuth.getUid());
-                myRef.child("itemsReserved").removeValue();
-                myRef.child("itemsBorrowed").push().setValue(currentID);
+                final DatabaseReference databaseReference =  FirebaseDatabase.getInstance().getReference().child("Users").child(Uid).child("itemsReserved");
+                databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
+                            String productID = dataSnapshot1.getValue(String.class);
+                            if(productID.equals(baseID)) {
+                                dataSnapshot1.getRef().removeValue();
+                            }
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+                final DatabaseReference databaseReference1 =  FirebaseDatabase.getInstance().getReference().child("Users").child(Uid).child("itemsBorrowed");
+                databaseReference1.push().setValue(baseID);
+
+                productName.remove(position);
+                product_manufacturer.remove(position);
+                product_id.remove(position);
+                productCategory.remove(position);
+                productCurrentStock.remove(position);
+                productTotalStock.remove(position);
+                productAmountBroken.remove(position);
+                productURL.remove(position);
+                productDescription.remove(position);
+                notifyItemChanged(position);
+                notifyDataSetChanged();
             }
         };
 

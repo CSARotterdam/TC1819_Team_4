@@ -17,7 +17,6 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 
 public class ReserveUserlist extends AppCompatActivity{
 
@@ -30,6 +29,7 @@ public class ReserveUserlist extends AppCompatActivity{
     ArrayList<String> UserNickName = new ArrayList<>();
     ArrayList<String> UserPhone = new ArrayList<>();
     ArrayList<String> UserRole = new ArrayList<>();
+    ArrayList<String> Uids = new ArrayList<>();
     ArrayList<HashMap<String,Object>> UserItemsBorrowed = new ArrayList<>();
     ArrayList<HashMap<String,Object>> UserItemsReserved = new ArrayList<>();
 
@@ -42,6 +42,7 @@ public class ReserveUserlist extends AppCompatActivity{
     public String newUserNickName;
     public String newUserPhone;
     public String newUserRole;
+    public String Uid;
     public HashMap<String,Object> newUserItemsBorrowed;
     public HashMap<String,Object> newUserItemsReserved;
 
@@ -74,6 +75,7 @@ public class ReserveUserlist extends AppCompatActivity{
                 UserItemsBorrowed.clear();
                 UserItemsReserved.clear();
                 for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
+                    Uid = dataSnapshot1.getKey();
                     userProfile userProfile = dataSnapshot1.getValue(userProfile.class);
                     newuserBday = userProfile.getUserBday();
                     newuserClass = userProfile.getUserClass();
@@ -98,8 +100,9 @@ public class ReserveUserlist extends AppCompatActivity{
                     UserRole.add(newUserRole);
                     UserItemsBorrowed.add(newUserItemsBorrowed);
                     UserItemsReserved.add(newUserItemsReserved);
+                    Uids.add(Uid);
                 }
-                RULAdapter RULAdapter = new RULAdapter(ReserveUserlist.this, userBday, userClass, userEmail, userID, UserName, UserSurname, UserNickName, UserPhone, UserRole, UserItemsBorrowed, UserItemsReserved);
+                RULAdapter RULAdapter = new RULAdapter(ReserveUserlist.this, userBday, userClass, userEmail, userID, UserName, UserSurname, UserNickName, UserPhone, UserRole, UserItemsBorrowed, UserItemsReserved, Uids);
                 recyclerView.setAdapter(RULAdapter);
                 RULAdapter.notifyDataSetChanged();
             }

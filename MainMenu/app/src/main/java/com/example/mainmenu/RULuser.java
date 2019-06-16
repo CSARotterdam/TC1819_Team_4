@@ -31,6 +31,16 @@ public class RULuser extends AppCompatActivity {
     ArrayList<String> productURL = new ArrayList<>();
     ArrayList<String> productDescription = new ArrayList<>();
 
+    ArrayList<String> productNameres = new ArrayList<>();
+    ArrayList<String> product_manufacturerres = new ArrayList<>();
+    ArrayList<String> product_idres = new ArrayList<>();
+    ArrayList<String> productCategoryres = new ArrayList<>();
+    ArrayList<String> productTotalStockres = new ArrayList<>();
+    ArrayList<String> productCurrentStockres = new ArrayList<>();
+    ArrayList<String> productAmountBrokenres = new ArrayList<>();
+    ArrayList<String> productURLres = new ArrayList<>();
+    ArrayList<String> productDescriptionres = new ArrayList<>();
+
     public String newproductName;
     public String newproduct_manufacturer;
     public String newproduct_id;
@@ -60,6 +70,7 @@ public class RULuser extends AppCompatActivity {
         String UserName = ruluser.getStringExtra("UserName");
         String UserSurname = ruluser.getStringExtra("UserSurname");
         String UserClass = ruluser.getStringExtra("UserClass");
+        final String Uid = ruluser.getStringExtra("Uid");
         final HashMap<String, Object> UserItemsBorrowed = (HashMap<String, Object>) ruluser.getSerializableExtra("UserItemsBorrowed");
         final HashMap<String, Object> UserItemsReserved = (HashMap<String, Object>) ruluser.getSerializableExtra("UserItemsReserved");
 
@@ -71,6 +82,15 @@ public class RULuser extends AppCompatActivity {
             databaseReference.addValueEventListener((new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    productName.clear();
+                    product_manufacturer.clear();
+                    product_id.clear();
+                    productCategory.clear();
+                    productTotalStock.clear();
+                    productCurrentStock.clear();
+                    productAmountBroken.clear();
+                    productURL.clear();
+                    productDescription.clear();
                     for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
                         listItem listItem = dataSnapshot1.getValue(listItem.class);
                         newproductName = listItem.getProductName();
@@ -93,7 +113,7 @@ public class RULuser extends AppCompatActivity {
                             productURL.add(newproductURL);
                             productDescription.add(newproductDescription);
                         }
-                        rulborrowedadapter rulborrowedadapter = new rulborrowedadapter(RULuser.this, productName, product_manufacturer, product_id, productCategory, productTotalStock, productCurrentStock, productAmountBroken, productURL, productDescription);
+                        rulborrowedadapter rulborrowedadapter = new rulborrowedadapter(RULuser.this, productName, product_manufacturer, product_id, productCategory, productTotalStock, productCurrentStock, productAmountBroken, productURL, productDescription, Uid);
                         recyclerView1.setAdapter(rulborrowedadapter);
                     }
                 }
@@ -110,6 +130,15 @@ public class RULuser extends AppCompatActivity {
             databaseReference.addValueEventListener((new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    productNameres.clear();
+                    product_manufacturerres.clear();
+                    product_idres.clear();
+                    productCategoryres.clear();
+                    productTotalStockres.clear();
+                    productCurrentStockres.clear();
+                    productAmountBrokenres.clear();
+                    productURLres.clear();
+                    productDescriptionres.clear();
                     for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
                         listItem listItem = dataSnapshot1.getValue(listItem.class);
                         newproductName = listItem.getProductName();
@@ -122,18 +151,17 @@ public class RULuser extends AppCompatActivity {
                         newproductURL = listItem.getProductURL();
                         newproductDescription = listItem.getProductDescription();
                         if (UserItemsReserved.containsValue(newproduct_id)) {
-                            productName.add(newproductName);
-                            product_manufacturer.add(newproduct_manufacturer);
-                            product_id.add(newproduct_id);
-                            productCategory.add(newproductCategory);
-                            productTotalStock.add(newproductTotalStock);
-                            productCurrentStock.add(newproductCurrentStock);
-                            productAmountBroken.add(newproductAmountBroken);
-                            productURL.add(newproductURL);
-                            productDescription.add(newproductDescription);
-                            System.out.println(productName);
+                            productNameres.add(newproductName);
+                            product_manufacturerres.add(newproduct_manufacturer);
+                            product_idres.add(newproduct_id);
+                            productCategoryres.add(newproductCategory);
+                            productTotalStockres.add(newproductTotalStock);
+                            productCurrentStockres.add(newproductCurrentStock);
+                            productAmountBrokenres.add(newproductAmountBroken);
+                            productURLres.add(newproductURL);
+                            productDescriptionres.add(newproductDescription);
                         }
-                        rulreserveadapter rulreserveadapter = new rulreserveadapter(RULuser.this, productName, product_manufacturer, product_id, productCategory, productTotalStock, productCurrentStock, productAmountBroken, productURL, productDescription);
+                        rulreserveadapter rulreserveadapter = new rulreserveadapter(RULuser.this, productNameres, product_manufacturerres, product_idres, productCategoryres, productTotalStockres, productCurrentStockres, productAmountBrokenres, productURLres, productDescriptionres, Uid);
                         recyclerView.setAdapter(rulreserveadapter);
                     }
                 }

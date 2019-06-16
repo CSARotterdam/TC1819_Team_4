@@ -24,12 +24,13 @@ public class RULAdapter extends RecyclerView.Adapter<RULAdapter.MyViewHolder> {
     ArrayList<String> UserNickName = new ArrayList<>();
     ArrayList<String> UserPhone = new ArrayList<>();
     ArrayList<String> UserRole = new ArrayList<>();
+    ArrayList<String> Uids = new ArrayList<>();
     ArrayList<HashMap<String,Object>> UserItemsBorrowed = new ArrayList<>();
     ArrayList<HashMap<String,Object>> UserItemsReserved = new ArrayList<>();
 
     Context context;
 
-    public RULAdapter(Context context, ArrayList<String> userBday, ArrayList<String> userClass, ArrayList<String> userEmail, ArrayList<String> userID, ArrayList<String> UserName, ArrayList<String> UserSurname, ArrayList<String> UserNickName, ArrayList<String> UserPhone, ArrayList<String> UserRole, ArrayList<HashMap<String,Object>> UserItemsBorrowed, ArrayList<HashMap<String,Object>> UserItemsReserved) {
+    public RULAdapter(Context context, ArrayList<String> userBday, ArrayList<String> userClass, ArrayList<String> userEmail, ArrayList<String> userID, ArrayList<String> UserName, ArrayList<String> UserSurname, ArrayList<String> UserNickName, ArrayList<String> UserPhone, ArrayList<String> UserRole, ArrayList<HashMap<String,Object>> UserItemsBorrowed, ArrayList<HashMap<String,Object>> UserItemsReserved, ArrayList<String> Uids) {
         this.context = context;
         this.userBday = userBday;
         this.userClass = userClass;
@@ -42,6 +43,7 @@ public class RULAdapter extends RecyclerView.Adapter<RULAdapter.MyViewHolder> {
         this.UserRole = UserRole;
         this.UserItemsBorrowed = UserItemsBorrowed;
         this.UserItemsReserved = UserItemsReserved;
+        this.Uids = Uids;
     }
 
     @Override
@@ -76,6 +78,7 @@ public class RULAdapter extends RecyclerView.Adapter<RULAdapter.MyViewHolder> {
             ruluser.putExtra("UserClass", userClass.get(position));
             ruluser.putExtra("UserItemsBorrowed", UserItemsBorrowed.get(position));
             ruluser.putExtra("UserItemsReserved", UserItemsReserved.get(position));
+            ruluser.putExtra("Uid", Uids.get(position));
             context.startActivity(ruluser);
             }
         });

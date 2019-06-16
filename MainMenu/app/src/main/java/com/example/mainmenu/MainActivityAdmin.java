@@ -24,6 +24,7 @@ import java.util.ArrayList;
 public class MainActivityAdmin extends AppCompatActivity{
 
     ArrayList<String> itemsBorrowed = new ArrayList<>();
+    ArrayList<String> itemsReserved = new ArrayList<>();
 
     private FirebaseAuth firebaseAuth;
     public FirebaseDatabase firebaseDatabase;
@@ -71,6 +72,7 @@ public class MainActivityAdmin extends AppCompatActivity{
 
                 Intent openMyItems = new Intent(getApplicationContext(), MyItems.class);
                 openMyItems.putExtra("itemsBorrowed" , itemsBorrowed);
+                openMyItems.putExtra("itemsReserved", itemsReserved);
                 startActivity(openMyItems);
 
                 //Intent openProductInfo = new Intent(getApplicationContext(), ProductInfo.class);
@@ -109,7 +111,7 @@ public class MainActivityAdmin extends AppCompatActivity{
             public void onClick(View v) {
                 System.out.println("Pressed Account Settings Button");
 
-                Intent openAccountSettings = new Intent(getApplicationContext(), statistics.class);
+                Intent openAccountSettings = new Intent(getApplicationContext(), ReserveUserlist.class);
                 startActivity(openAccountSettings);
             }
         });
@@ -125,11 +127,26 @@ public class MainActivityAdmin extends AppCompatActivity{
 
         firebaseDatabase = FirebaseDatabase.getInstance();
         DatabaseReference MyRef = firebaseDatabase.getReference().child("Users").child(firebaseAuth.getUid()).child("itemsBorrowed");
+        DatabaseReference MyRef2 = firebaseDatabase.getReference().child("Users").child(firebaseAuth.getUid()).child("itemsReserved");
         MyRef.addValueEventListener(new ValueEventListener() {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()){
                     String item = (String) dataSnapshot1.getValue();
                     itemsBorrowed.add(item);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+        MyRef2.addValueEventListener(new ValueEventListener() {
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()){
+                    String item = (String) dataSnapshot1.getValue();
+                    itemsReserved.add(item);
                 }
             }
 

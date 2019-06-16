@@ -84,9 +84,9 @@ public class MyItemsAdapter extends RecyclerView.Adapter<MyItemsAdapter.MyViewHo
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
-                            String producID = dataSnapshot1.getValue(String.class);
+                            String productID = dataSnapshot1.getValue(String.class);
                             //String baseID = product_id.get(position);
-                            if(producID.equals(baseID)) {
+                            if(productID.equals(baseID)) {
                                 dataSnapshot1.getRef().removeValue();
                             }
                         }
@@ -106,7 +106,7 @@ public class MyItemsAdapter extends RecyclerView.Adapter<MyItemsAdapter.MyViewHo
                 productAmountBroken.remove(position);
                 productURL.remove(position);
                 productDescription.remove(position);
-                //notifyItemChanged(position);
+                notifyItemChanged(position);
                 notifyDataSetChanged();
 
             }

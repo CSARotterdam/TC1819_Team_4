@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity{
             public void onClick(View v) {
                 System.out.println("Pressed ToS Button");
 
-                Intent openTOS = new Intent(getApplicationContext(), ReserveUserlist.class);
+                Intent openTOS = new Intent(getApplicationContext(), TOS.class);
                 startActivity(openTOS);
             }
         });

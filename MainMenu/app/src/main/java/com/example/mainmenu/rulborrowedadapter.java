@@ -37,6 +37,7 @@ public class rulborrowedadapter extends RecyclerView.Adapter<rulborrowedadapter.
     ArrayList<String> productAmountBroken;
     ArrayList<String> productURL;
     ArrayList<String> productDescription;
+    String Uid;
 
     public Button button;
 
@@ -44,7 +45,7 @@ public class rulborrowedadapter extends RecyclerView.Adapter<rulborrowedadapter.
 
     Context context;
 
-    public rulborrowedadapter(Context context, ArrayList<String> productName, ArrayList<String> product_manufacturer, ArrayList<String> product_id, ArrayList<String> productCategory, ArrayList<String> productTotalStock, ArrayList<String> productCurrentStock, ArrayList<String> productAmountBroken, ArrayList<String> productURL, ArrayList<String> productDescription) {
+    public rulborrowedadapter(Context context, ArrayList<String> productName, ArrayList<String> product_manufacturer, ArrayList<String> product_id, ArrayList<String> productCategory, ArrayList<String> productTotalStock, ArrayList<String> productCurrentStock, ArrayList<String> productAmountBroken, ArrayList<String> productURL, ArrayList<String> productDescription, String Uid) {
         this.context = context;
         this.productName = productName;
         this.product_manufacturer = product_manufacturer;
@@ -55,6 +56,7 @@ public class rulborrowedadapter extends RecyclerView.Adapter<rulborrowedadapter.
         this.productAmountBroken = productAmountBroken;
         this.productURL = productURL;
         this.productDescription = productDescription;
+        this.Uid = Uid;
     }
 
     @Override
@@ -73,7 +75,7 @@ public class rulborrowedadapter extends RecyclerView.Adapter<rulborrowedadapter.
         holder.button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showChoiceDialog( "Return item", "Accepting this will return the item to the inventory of the TechLab. Please make sure the item is not damaged, and is complete before clicking Yes.");
+                showChoiceDialog(position, "Return item", "Accepting this will return the item to the inventory of the TechLab. Please make sure the item is not damaged, and is complete before clicking Yes.");
             }
         });
     }
@@ -96,7 +98,7 @@ public class rulborrowedadapter extends RecyclerView.Adapter<rulborrowedadapter.
 
         }
     }
-    public void showChoiceDialog(String title, CharSequence message) {
+    public void showChoiceDialog(final int position, String title, CharSequence message) {
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
 
         if (title != null) builder.setTitle(title);
@@ -104,10 +106,38 @@ public class rulborrowedadapter extends RecyclerView.Adapter<rulborrowedadapter.
         DialogInterface.OnClickListener returnitem = new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                firebaseDatabase = FirebaseDatabase.getInstance();
-                FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
-                DatabaseReference myRef = firebaseDatabase.getReference().child("Users").child(firebaseAuth.getUid());
-                myRef.child("itemsBorrowed").removeValue();
+                System.out.println("Removed: " + productName.get(position));
+                DatabaseReference dbr = FirebaseDatabase.getInstance().getReference().child("items").child(productName.get(position)).child("productCurrentStock");
+                increaseAmount(dbr);
+                final String baseID = product_id.get(position);
+                final DatabaseReference databaseReference =  FirebaseDatabase.getInstance().getReference().child("Users").child(Uid).child("itemsBorrowed");
+                databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
+                            String producID = dataSnapshot1.getValue(String.class);
+                            if(producID.equals(baseID)) {
+                                dataSnapshot1.getRef().removeValue();
+                            }
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+                productName.remove(position);
+                product_manufacturer.remove(position);
+                product_id.remove(position);
+                productCategory.remove(position);
+                productCurrentStock.remove(position);
+                productTotalStock.remove(position);
+                productAmountBroken.remove(position);
+                productURL.remove(position);
+                productDescription.remove(position);
+                notifyItemChanged(position);
+                notifyDataSetChanged();
             }
         };
 
@@ -115,5 +145,23 @@ public class rulborrowedadapter extends RecyclerView.Adapter<rulborrowedadapter.
         builder.setNegativeButton("No", null);
         builder.setPositiveButton("Yes", returnitem);
         builder.show();
+    }
+
+    public void increaseAmount(DatabaseReference DBR) {
+        final DatabaseReference newDBR = DBR;
+        newDBR.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                Long amount = dataSnapshot.getValue(Long.class);
+                amount += 1;
+                newDBR.setValue(amount);
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
     }
 }
