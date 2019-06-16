@@ -191,10 +191,11 @@ public class RULuser extends AppCompatActivity implements AdapterView.OnItemSele
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
         if (parent.getItemAtPosition(position).equals("Admin")){
+            DatabaseReference databaseReference = firebaseDatabase.getInstance().getReference().child("Users").child(Uid)
 
-            userProfile profile = new userProfile();
-            profile.setUserRole("Admin");
-            ChangeUserRole = (profile.getUserRole());
+            //userProfile profile = new userProfile();
+            //profile.setUserRole("Admin");
+            //ChangeUserRole = (profile.getUserRole());
 
 
         } else{
