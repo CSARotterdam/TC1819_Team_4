@@ -97,7 +97,7 @@ public class AccountSettings extends AppCompatActivity {
                 String User = newUserRole;
                 String email = newUserEmail;
 
-                userProfile userprofile = new userProfile(Name, Surname, Nickname, DOB, email, Studentnr, Phone, Class, User, newItemsBorrowed, newItemsReserved);
+                userProfile userprofile = new userProfile(Name, Surname, Nickname, DOB, email, Studentnr, Phone, Class, User, newItemsReserved, newItemsBorrowed);
 
                 databaseReference.setValue(userprofile);
 
