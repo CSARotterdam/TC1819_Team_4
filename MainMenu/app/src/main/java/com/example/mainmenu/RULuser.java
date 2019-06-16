@@ -8,6 +8,10 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
@@ -19,7 +23,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class RULuser extends AppCompatActivity {
+public class RULuser extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     ArrayList<String> productName = new ArrayList<>();
     ArrayList<String> product_manufacturer = new ArrayList<>();
@@ -41,6 +45,7 @@ public class RULuser extends AppCompatActivity {
     public String newproductURL;
     public String newproductDescription;
 
+    private String ChangeUserRole;
     private FirebaseDatabase firebaseDatabase;
 
     @Override
@@ -55,6 +60,14 @@ public class RULuser extends AppCompatActivity {
         LinearLayoutManager linearLayoutManager2 = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView1.setLayoutManager(linearLayoutManager2);
+
+        Spinner Rolespinner = (Spinner) findViewById(R.id.RoleSpn);
+
+        ArrayAdapter<String> spinrAdapter = new ArrayAdapter<String>(RULuser.this,
+                android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.RoleList));
+        spinrAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        Rolespinner.setAdapter(spinrAdapter);
+
 
         Intent ruluser = getIntent();
         String UserName = ruluser.getStringExtra("UserName");
@@ -144,5 +157,27 @@ public class RULuser extends AppCompatActivity {
                 }
             }));
         }
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+        if (parent.getItemAtPosition(position).equals("Admin")){
+
+            userProfile profile = new userProfile();
+            profile.setUserRole("Admin");
+            ChangeUserRole = (profile.getUserRole());
+
+
+        } else{
+
+        }
+
+
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
     }
 }

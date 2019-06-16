@@ -26,6 +26,10 @@
 
     <!-- User List Screen -->
     <string name="RUL_Header">Current Users:</string>
+    <string-array name="RoleList">
+        <item>Admin</item>
+        <item>User</item>
+    </string-array>
 
     <!-- My Items Screen -->
     <string name="Res_Header">Reserved items:</string>
