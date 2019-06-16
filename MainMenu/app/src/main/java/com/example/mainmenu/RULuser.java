@@ -79,6 +79,7 @@ public class RULuser extends AppCompatActivity implements AdapterView.OnItemSele
                 android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.RoleList));
         spinrAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         Rolespinner.setAdapter(spinrAdapter);
+        Rolespinner.setOnItemSelectedListener(this);
 
 
         Intent ruluser = getIntent();
