@@ -3,6 +3,7 @@ package com.example.mainmenu;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
+import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -11,6 +12,13 @@ import android.widget.Button;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -60,11 +68,47 @@ public class MyItemsAdapter extends RecyclerView.Adapter<MyItemsAdapter.MyViewHo
     public void onBindViewHolder(MyViewHolder holder, final int position) {
         holder.name.setText(productName.get(position));
         holder.manufacturer.setText(product_manufacturer.get(position));
-        holder.prodID.setText(product_id.get(position));
+        final String baseID = product_id.get(position);
+        holder.prodID.setText(baseID);
         holder.button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 System.out.println("Removed: " + productName.get(position));
+                DatabaseReference dbr = FirebaseDatabase.getInstance().getReference().child("items").child(productName.get(position)).child("productCurrentStock");
+                increaseAmount(dbr);
+                // - Remove item from User ItemsBorrowed List
+                // * Add +1 to the selected items amount
+                // * Remove said item from the recyclerview
+                final DatabaseReference databaseReference =  FirebaseDatabase.getInstance().getReference().child("Users").child(FirebaseAuth.getInstance().getUid()).child("itemsBorrowed");
+                databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
+                            String producID = dataSnapshot1.getValue(String.class);
+                            //String baseID = product_id.get(position);
+                            if(producID.equals(baseID)) {
+                                dataSnapshot1.getRef().removeValue();
+                            }
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+                productName.remove(position);
+                product_manufacturer.remove(position);
+                product_id.remove(position);
+                productCategory.remove(position);
+                productCurrentStock.remove(position);
+                productTotalStock.remove(position);
+                productAmountBroken.remove(position);
+                productURL.remove(position);
+                productDescription.remove(position);
+                //notifyItemChanged(position);
+                notifyDataSetChanged();
+
             }
         });
     }
@@ -86,5 +130,23 @@ public class MyItemsAdapter extends RecyclerView.Adapter<MyItemsAdapter.MyViewHo
             prodID = itemView.findViewById(R.id.prodid);
 
         }
+    }
+
+    public void increaseAmount(DatabaseReference DBR) {
+        final DatabaseReference newDBR = DBR;
+        newDBR.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                Long amount = dataSnapshot.getValue(Long.class);
+                amount += 1;
+                newDBR.setValue(amount);
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
     }
 }
