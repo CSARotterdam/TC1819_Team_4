@@ -142,6 +142,7 @@ public class rulreserveadapter extends RecyclerView.Adapter<rulreserveadapter.My
                 productDescription.remove(position);
                 notifyItemChanged(position);
                 notifyDataSetChanged();
+
             }
         };
 
