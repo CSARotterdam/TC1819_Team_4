@@ -131,6 +131,7 @@ public class RULuser extends AppCompatActivity implements AdapterView.OnItemSele
                         }
                         rulborrowedadapter rulborrowedadapter = new rulborrowedadapter(RULuser.this, productName, product_manufacturer, product_id, productCategory, productTotalStock, productCurrentStock, productAmountBroken, productURL, productDescription, Uid);
                         recyclerView1.setAdapter(rulborrowedadapter);
+                        rulborrowedadapter.notifyDataSetChanged();
                     }
                 }
 
@@ -179,6 +180,7 @@ public class RULuser extends AppCompatActivity implements AdapterView.OnItemSele
                         }
                         rulreserveadapter rulreserveadapter = new rulreserveadapter(RULuser.this, productNameres, product_manufacturerres, product_idres, productCategoryres, productTotalStockres, productCurrentStockres, productAmountBrokenres, productURLres, productDescriptionres, Uid);
                         recyclerView.setAdapter(rulreserveadapter);
+                        rulreserveadapter.notifyDataSetChanged();
                     }
                 }
 
