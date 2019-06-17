@@ -7,6 +7,7 @@ import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.webkit.URLUtil;
@@ -15,9 +16,15 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 
+import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URI;
@@ -40,6 +47,8 @@ private String manu;
 private FirebaseDatabase firebaseDatabase;
 private Long amountBroken;
 private Long productAmountLong;
+FirebaseStorage storage = FirebaseStorage.getInstance();
+StorageReference storageRef = storage.getReference();
 
 
     @Override
@@ -92,6 +101,23 @@ private Long productAmountLong;
                     amountBroken = 0L;
                     databaseReference.child("productAmountBroken").setValue(amountBroken);
                     databaseReference.child("productCategory").setValue(productCat);
+                    ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                    imageBitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);
+                    byte[] bData = baos.toByteArray();
+                    StorageReference itemsRef = storageRef.child("item-pics/"+productID+".jpg");
+                    UploadTask uploadTask = itemsRef.putBytes(bData);
+                    uploadTask.addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception exception) {
+                            // Handle unsuccessful uploads
+                        }
+                    }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                        @Override
+                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                            // taskSnapshot.getMetadata() contains file metadata such as size, content-type, etc.
+                            // ...
+                        }
+                    });
                 }
 
             }
