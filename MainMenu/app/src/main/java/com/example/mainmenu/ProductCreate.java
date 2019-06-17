@@ -118,6 +118,7 @@ StorageReference storageRef = storage.getReference();
                             // ...
                         }
                     });
+                    finish();
                 }
 
             }
