@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/GithubDesktop-TC1819_Team_4.iml" filepath="$PROJECT_DIR$/.idea/modules/GithubDesktop-TC1819_Team_4.iml" group="TC1819_Team_4" />
       <module fileurl="file://$PROJECT_DIR$/TC1819_Team_4.iml" filepath="$PROJECT_DIR$/TC1819_Team_4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/TC1819_Team_4-app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/TC1819_Team_4-app.iml" group="TC1819_Team_4/app" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
